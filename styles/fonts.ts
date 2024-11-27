@@ -13,14 +13,14 @@ export const techniqNormal = localFont({
   weight: "100 900",
 });
 
-export const geistSans = localFont({
-  src: "../app/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+export const manropeReg = localFont({
+  src: "../app/fonts/manrope-regular.otf",
+  variable: "--font-monrope-r",
   weight: "100 900",
 });
 
-export const geistMono = localFont({
-  src: "../app/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+export const manropeThin = localFont({
+  src: "../app/fonts/manrope-thin.otf",
+  variable: "--font-manrope-t",
   weight: "100 900",
 });

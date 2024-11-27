@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { geistSans, geistMono, techniqNormal, techniqOutlined } from "@/styles/fonts";
+import { manropeReg, manropeThin, techniqNormal, techniqOutlined } from "@/styles/fonts";
 import "./globals.css";
 
 
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${techniqNormal.variable} ${techniqOutlined.variable} antialiased`}
+        className={`${manropeReg.variable} ${manropeThin.variable} ${techniqNormal.variable} ${techniqOutlined.variable} antialiased`}
       >
         {children}
       </body>
