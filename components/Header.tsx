@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Menu, MenuItem, ProductItem, HoveredLink } from "./Ui/Menu";
+import { Menu, MenuItem, ProductItem, HoveredLink } from "./ui/Menu";
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks, NavLink, SubLink } from "@/data/navLinks";
@@ -9,17 +9,17 @@ const Header = () => {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <header className="fixed top-0 w-full bg-foreground dark:bg-background z-50 shadow-md">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+    <header className="fixed top-0 w-full z-50 shadow-md">
+      <div className="px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" title="Adot Home">
+        <Link href="/" title="Adot Home" className="ml-4">
           <Image
-            className="dark:invert"
-            src="/logo.svg"
+            className=""
+            src="/logo-lyt.svg"
             alt="Next.js logo"
             width={200}
             height={75}
-            priority
+            priority 
           />
         </Link>
 

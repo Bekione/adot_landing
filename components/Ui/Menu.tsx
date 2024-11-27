@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 import Image from "next/image";
 
 const transition = {
@@ -24,30 +25,54 @@ export const MenuItem = ({
   setActive: (item: string | null) => void;
   active: string | null;
   item: string;
-  href?: string; // Add href for navigation
+  href?: string;
   hasDropdown?: boolean;
   children?: React.ReactNode;
 }) => {
+  const pathname = usePathname();
+
+  const isActive = href && pathname === href; // Check if the link is active
+
   return (
     <div
       onMouseEnter={() => setActive(hasDropdown ? item : null)}
-      onMouseLeave={() => setActive(null)}
-      className="relative group"
+      onMouseLeave={() => setActive(null)} // Reset state when leaving
+      className="relative"
     >
-      <div className="absolute -top-[100%] left-0 w-full h-8 bg-red-500 hidden hover:flex"></div>
       {/* Menu Link */}
       {href ? (
         <Link
           href={href}
-          className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+          className={`flex items-center space-x-1 cursor-pointer text-black hover:opacity-[0.9] hover:!text-foreground dark:text-white ${
+            isActive ? "font-bold !text-foreground" : ""
+          }`}
         >
-          {item}
+          <span>{item}</span>
+      
+          {hasDropdown && <span className="!-ml-[0.025rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" strokeWidth={1.5} stroke="currentColor" className="size-3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            </span>}
         </Link>
+        
       ) : (
-        <p className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white">
-          {item}
+        <p
+          className={`flex items-center space-x-1 cursor-pointer text-black hover:opacity-[0.9] hover:!text-foreground dark:text-white ${
+            isActive ? "font-bold !text-foreground" : ""
+          }`}
+        >
+          <span>{item}</span>
+          {hasDropdown && <span className="!-ml-[0.025rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" strokeWidth={1.5} stroke="currentColor" className="size-3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            </span>}
         </p>
       )}
+
+      {/* Invisible Div for Smooth Hover */}
+      <div className="absolute -bottom-[100%] left-0 w-full h-8"></div>
 
       {/* Submenu */}
       {active === item && hasDropdown && (
@@ -56,7 +81,7 @@ export const MenuItem = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 5 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          className="absolute top-full -left-1/2  mt-1 z-10 w-max"
+          className="absolute top-full left-0 mt-1 z-10 w-max"
         >
           <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl">
             <div className="p-4 flex flex-col space-y-2">{children}</div>
@@ -76,8 +101,8 @@ export const Menu = ({
 }) => {
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // Reset the state
-      className="relative shadow-input flex justify-center space-x-4 px-8 py-6"
+      onMouseLeave={() => setActive(null)} // resets the state
+      className="relative shadow-input flex justify-center space-x-4 px-8 py-6 "
     >
       {children}
     </nav>

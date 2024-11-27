@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { manropeReg, manropeThin, techniqNormal, techniqOutlined } from "@/styles/fonts";
 import "./globals.css";
+import Header from "@/components/Header";
 
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body
         className={`${manropeReg.variable} ${manropeThin.variable} ${techniqNormal.variable} ${techniqOutlined.variable} antialiased`}
       >
+         <Header />
         {children}
       </body>
     </html>
