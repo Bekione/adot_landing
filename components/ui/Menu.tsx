@@ -81,9 +81,9 @@ export const MenuItem = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 5 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          className="absolute top-full left-0 mt-1 z-10 w-max"
+          className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 z-10 w-max"
         >
-          <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl">
+          <div className="bg-[#d5cea371] backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl">
             <div className="p-4 flex flex-col space-y-2">{children}</div>
           </div>
         </motion.div>

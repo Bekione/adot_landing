@@ -18,7 +18,7 @@ export type SubLink = {
       title: "Products",
       subLinks: [
         { title: "Adot ERP", description: "Manage your enterprise efficiently.", href: "/products/erp", src: "/images/Adot erp.svg" },
-        { title: "CRM Tool", description: "Boost customer relationships.", href: "/products/crm", src: "/images/crm.png" },
+        { title: "CRM Tool", description: "Boost customer relationships.", href: "/products/crm", src: "/images/Adot crm.svg" },
         { title: "Adot Ai", description: "Custom ai for Ethiopia", href: "/products/adot-ai", src: "/images/Adot ai.svg" },
       ],
     },
