@@ -2,13 +2,25 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, MenuItem, ProductItem, HoveredLink } from "./ui/Menu";
-import Link from "next/link";
-import Image from "next/image";
 import { navLinks, NavLink, SubLink } from "@/data/navLinks";
+import Logo from "./Logo";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  
+  // Check if the screen is small
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Run on initial load
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,26 +44,17 @@ const Header = () => {
         boxShadow: "none",
       }}
       animate={{
-        width: isScrolled ? "70%" : "100%",
-        top: isScrolled ? "1rem" : 0,
+        width: isScrolled ? (isSmallScreen ? "90%" : "85%") : "100%",
+        top: isScrolled ? (isSmallScreen ? "0.5rem" : "1rem") : 0,
         backgroundColor: isScrolled ? "rgba(80, 60, 60, 0.9)" : "transparent",
         boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none",
       }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <div className="px-4 flex justify-between items-center">
+      <div className="p-2 sm:px-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" title="Adot Home" className="ml-4">
-          <Image
-            className=""
-            src="/logo-lyt.svg"
-            alt="Next.js logo"
-            width={200}
-            height={75}
-            priority
-          />
-        </Link>
-
+        <Logo />
+      
         {/* Navigation Menu */}
         <Menu setActive={setActive}>
           {navLinks.map((navLink: NavLink) => (
@@ -82,6 +85,8 @@ const Header = () => {
             </MenuItem>
           ))}
         </Menu>
+        <Sidebar />
+      
       </div>
     </motion.header>
   );
