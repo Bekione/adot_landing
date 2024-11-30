@@ -3,6 +3,7 @@ import React from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/BeamBackground";
 import { FlipWords } from "./ui/FlipWords";
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const Hero = () => {
   const services = [
@@ -29,13 +30,14 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 font-sans mt-8 sm:mt-12 mx-auto z-1">
-            <button className="w-[25ch] inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#503c3c] bg-[linear-gradient(110deg,#503c3c,45%,#704d4d,55%,#503c3c)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#503c3c] focus:ring-offset-2 focus:ring-offset-slate-50">
+            <Link href="/services" className="w-[25ch] inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#503c3c] bg-[linear-gradient(110deg,#503c3c,45%,#704d4d,55%,#503c3c)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors hover:shadow-2xl hover:shadow-[#d5cea3]/[0.3]">
               Explore our Services
-            </button>
+            </Link>
 
-            <button className="w-[25ch] inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#d5cea3] bg-[linear-gradient(110deg,#d5cea3,45%,#e2dcc1,55%,#d5cea3)] bg-[length:200%_100%] px-6 font-medium text-[#503c3c] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d5cea3] focus:ring-offset-2 focus:ring-offset-slate-50">
+            <Link href="/contact" className="w-[25ch] inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#d5cea3] bg-[linear-gradient(110deg,#d5cea3,45%,#e2dcc1,55%,#d5cea3)] bg-[length:200%_100%] px-6 font-medium text-[#503c3c] transition-colors hover:shadow-2xl hover:shadow-[#d5cea3]/[0.3]">
               Contact Us
-            </button>
+            </Link>
+            
           </div>
         </motion.div>
       </BackgroundBeamsWithCollision>

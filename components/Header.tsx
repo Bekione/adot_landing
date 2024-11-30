@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className="fixed w-full z-50 rounded-md"
+      className="fixed w-full z-50 rounded-md backdrop-blur-sm"
       style={{ left: 0, right: 0, marginLeft: "auto", marginRight: "auto" }}
       initial={{
         width: "100%",
