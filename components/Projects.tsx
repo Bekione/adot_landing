@@ -1,72 +1,61 @@
-import GradientWord from "./ui/GradientWord"
-import { HeroParallax } from "./ui/HeroParallax"
-import { projects } from "@/data/projects"
-import { Tabs } from "./ui/Tabs"
-import Image from "next/image"
-import { ProjectsImageGrid } from "./ProjectsImageGrid"
+import GradientWord from "./ui/GradientWord";
+import { Tabs } from "./ui/Tabs";
+import {
+    webProjects,
+    appProjects,
+    softwareProjects,
+    botProjects,
+    designProjects,
+} from "@/data/projects";
+import { ProjectsImageGrid } from "./ProjectsImageGrid";
+
+const ProjectsTabContent = ({
+    projects,
+}: {
+    projects: any[];
+}) => (
+    <div className="w-full overflow-hidden relative h-[fit-content] rounded-2xl p-10 bg-gradient-to-br from-primary to-secondary">
+        <ProjectsImageGrid projects={projects} />
+    </div>
+);
 
 const Projects = () => {
     const tabs = [
         {
             title: "Websites",
             value: "websites",
-            content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-                    <p>Product Tab</p>
-                    <ProjectsImageGrid />
-                </div>
-            ),
+            content: <ProjectsTabContent projects={webProjects} />,
         },
         {
             title: "Apps",
             value: "apps",
-            content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-                    <p>Services tab</p>
-                    <ProjectsImageGrid />
-                </div>
-            ),
+            content: <ProjectsTabContent projects={appProjects} />,
         },
         {
             title: "Softwares",
             value: "softwares",
-            content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-                    <p>Playground tab</p>
-                    <ProjectsImageGrid />
-                </div>
-            ),
+            content: <ProjectsTabContent projects={softwareProjects} />,
         },
         {
             title: "Bots",
             value: "bots",
-            content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-                    <p>Content tab</p>
-                    <ProjectsImageGrid />
-                </div>
-            ),
+            content: <ProjectsTabContent projects={botProjects} />,
         },
         {
             title: "Designs",
             value: "designs",
-            content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-                    <p>Random tab</p>
-                    <ProjectsImageGrid />
-                </div>
-            ),
+            content: <ProjectsTabContent projects={designProjects} />,
         },
     ];
 
     return (
-        <div className="mt-20 flex flex-col items-center bg-primary/40">
+        <div className="mt-20 mx-16 sm:mx-20 flex flex-col items-center">
             <GradientWord word="Projects" />
-            <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
-                <Tabs tabs={tabs} />
+            <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full  items-start justify-start mt-10 mb-40">
+                <Tabs tabs={tabs} tabClassName="text-primary hover:text-red-500" />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;

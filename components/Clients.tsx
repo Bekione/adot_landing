@@ -12,7 +12,7 @@ const Clients = () => {
                 direction="left"
                 speed="normal"
                 pauseOnHover={true}
-                className="mt-10"
+                className="mt-10 pb-12"
             />
         </div>
     );

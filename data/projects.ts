@@ -1,92 +1,136 @@
-export const projects = [
+// projects.ts
+export const webProjects = [
     {
-        title: "MebaMuday",
-        link: "https://mebamuday.com",
-        thumbnail:
-            "/images/project.png",
+      title: "Faith Import Landing site",
+      src: "/images/webProject-1.png",
+      liveLink: "https://webproject1.com",
+      githubLink: "https://github.com/example/webproject1",
     },
     {
-        title: "Afro Events",
-        link: "https://afroevents.com",
-        thumbnail:
-            "/images/project1.png",
+      title: "Web Project 2",
+      src: "/images/webProject-2.jpg",
+      liveLink: "https://webproject2.com",
+      githubLink: "https://github.com/example/webproject2",
     },
     {
-        title: "Ethiopian Tours",
-        link: "https://ethiopiantours.com",
-        thumbnail:
-            "/images/project2.png",
+      title: "Web Project 3",
+      src: "/images/webProject-3.png",
+      liveLink: "https://webproject3.com",
+      githubLink: "https://github.com/example/webproject3",
     },
     {
-        title: "Passport ET",
-        link: "https://passport.et",
-        thumbnail:
-            "/images/project3.png",
+      title: "Web Project 4",
+      src: "/images/webProject-1.png",
+      liveLink: "https://webproject4.com",
+      githubLink: "https://github.com/example/webproject4",
+    },
+  ];
+  
+  export const appProjects = [
+    {
+      title: "App Project 1",
+      src: "/images/appProject-1.png",
+      liveLink: "https://appproject1.com",
+      githubLink: "https://github.com/example/appproject1",
     },
     {
-        title: "Meba Event & Ticketing",
-        link: "https://mebaevents.com",
-        thumbnail:
-            "/images/project4.jpg",
+      title: "App Project 2",
+      src: "/images/appProject-2.png",
+      liveLink: "https://appproject2.com",
+      githubLink: "https://github.com/example/appproject2",
     },
     {
-        title: "Job Finder Bot ",
-        link: "https://jobfinderbot.com",
-        thumbnail:
-            "/images/project5.jpg",
+      title: "App Project 3",
+      src: "/images/appProject-3.png",
+      liveLink: "https://appproject3.com",
+      githubLink: "https://github.com/example/appproject3",
     },
     {
-        title: "Faith Import & Trade",
-        link: "https://faithimporttrade.com",
-        thumbnail:
-            "/images/project6.png",
+      title: "App Project 4",
+      src: "/images/appProject-4.png",
+      liveLink: "https://appproject4.com",
+      githubLink: "https://github.com/example/appproject4",
+    },
+  ];
+  
+  export const softwareProjects = [
+    {
+      title: "Software Project 1",
+      src: "/images/softwareProject-1.png",
+      liveLink: "https://softwareproject1.com",
+      githubLink: "https://github.com/example/softwareproject1",
     },
     {
-        title: "RenderHubs",
-        link: "https://renderhub.com",
-        thumbnail:
-            "/images/project.png",
+      title: "Software Project 2",
+      src: "/images/softwareProject-2.png",
+      liveLink: "https://softwareproject2.com",
+      githubLink: "https://github.com/example/softwareproject2",
     },
     {
-        title: "Tena Cares",
-        link: "https://tenacare.com",
-        thumbnail:
-            "/images/project3.png",
+      title: "Software Project 3",
+      src: "/images/softwareProject-3.png",
+      liveLink: "https://softwareproject3.com",
+      githubLink: "https://github.com/example/softwareproject3",
     },
     {
-        title: "Digital Sdouq",
-        link: "https://digitalsouq.com",
-        thumbnail:
-            "/images/project2.png",
+      title: "Software Project 4",
+      src: "/images/softwareProject-4.png",
+      liveLink: "https://softwareproject4.com",
+      githubLink: "https://github.com/example/softwareproject4",
+    },
+  ];
+  
+  export const botProjects = [
+    {
+      title: "Bot Project 1",
+      src: "/images/botProject-1.png",
+      liveLink: "https://botproject1.com",
+      githubLink: "https://github.com/example/botproject1",
     },
     {
-        title: "MebaMuday ",
-        link: "https://mebamuday.com",
-        thumbnail:
-            "/images/project.png",
+      title: "Bot Project 2",
+      src: "/images/botProject-2.png",
+      liveLink: "https://botproject2.com",
+      githubLink: "https://github.com/example/botproject2",
     },
     {
-        title: "Afro Events ",
-        link: "https://afroevents.com",
-        thumbnail:
-            "/images/project1.png",
+      title: "Bot Project 3",
+      src: "/images/botProject-3.png",
+      liveLink: "https://botproject3.com",
+      githubLink: "https://github.com/example/botproject3",
     },
     {
-        title: "Ethiopian Tours ",
-        link: "https://ethiopiantours.com",
-        thumbnail:
-            "/images/project2.png",
+      title: "Bot Project 4",
+      src: "/images/botProject-4.png",
+      liveLink: "https://botproject4.com",
+      githubLink: "https://github.com/example/botproject4",
+    },
+  ];
+  
+  export const designProjects = [
+    {
+      title: "Design Project 1",
+      src: "/images/designProject-1.png",
+      liveLink: "https://designproject1.com",
+      githubLink: "https://github.com/example/designproject1",
     },
     {
-        title: "Passport ET ",
-        link: "https://passport.et",
-        thumbnail:
-            "/images/project3.png",
+      title: "Design Project 2",
+      src: "/images/designProject-2.png",
+      liveLink: "https://designproject2.com",
+      githubLink: "https://github.com/example/designproject2",
     },
     {
-        title: "Meba Event & Ticketing ",
-        link: "https://mebaevents.com",
-        thumbnail:
-            "/images/project4.jpg",
+      title: "Design Project 3",
+      src: "/images/designProject-3.png",
+      liveLink: "https://designproject3.com",
+      githubLink: "https://github.com/example/designproject3",
     },
-];
+    {
+      title: "Design Project 4",
+      src: "/images/designProject-4.png",
+      liveLink: "https://designproject4.com",
+      githubLink: "https://github.com/example/designproject4",
+    },
+  ];
+  

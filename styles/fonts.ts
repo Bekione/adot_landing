@@ -7,11 +7,7 @@ export const techniqOutlined = localFont({
   weight: "100 900",
 });
 
-export const techniqNormal = localFont({
-  src: "../app/fonts/techniqu.ttf",
-  variable: "--font-techniq-n",
-  weight: "100 900",
-});
+https://www.linkedin.com/company/adot-tech
 
 export const manropeReg = localFont({
   src: "../app/fonts/manrope-regular.otf",

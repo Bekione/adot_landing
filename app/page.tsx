@@ -14,6 +14,7 @@ export default function Home() {
       <WhatWeOfferSection />
       <Clients />
       <Projects />
+      
       <div className="h-screen w-full border">
         <h2>Fullscreen Content</h2>
       </div>
