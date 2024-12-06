@@ -37,6 +37,14 @@ export default {
       cursor: {
         custom: "url('/cursor.cur'), auto",
       },
+      fontFamily: {
+        techniq: ["var(--font-techniq-u)", "sans-serif"],
+        techniqOutlined: ["var(--font-techniq-o)", "sans-serif"],
+        ubuntuReg: ["var(--font-ubuntu-r)", "sans-serif"],
+        ubuntuBold: ["var(--font-ubuntu-b)", "sans-serif"],
+        manropeReg: ["var(--font-monrope-r)", "sans-serif"],
+        manropeThin: ["var(--font-manrope-t)", "sans-serif"],
+      },
     },
   },
   plugins: [],
