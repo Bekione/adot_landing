@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { manropeReg, manropeThin, techniqNormal, techniqOutlined } from "@/styles/fonts";
+import { manropeReg, manropeThin, ubuntuReg, ubuntuBold, techniqNormal, techniqOutlined } from "@/styles/fonts";
 import "./globals.css";
 import Header from "@/components/Header";
-
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Adot Solutions",
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manropeReg.variable} ${manropeThin.variable} ${techniqNormal.variable} ${techniqOutlined.variable} antialiased`}
+        className={`${manropeReg.variable} ${manropeThin.variable} ${ubuntuReg.variable} ${ubuntuBold.variable} ${techniqNormal.variable} ${techniqOutlined.variable} antialiased relative min-h-screen flex flex-col`}
       >
-         <Header />
-        {children}
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
