@@ -1,9 +1,8 @@
-import React from 'react'
-
+import AboutUs from "@/components/about-us/AboutUs"
 const page = () => {
   return (
-    <div className='min-h-[110vh]'>
-      
+    <div className='min-h-screen'>
+      <AboutUs />
     </div>
   )
 }
