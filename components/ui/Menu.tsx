@@ -43,7 +43,7 @@ export const MenuItem = ({
       {href ? (
         <Link
           href={href}
-          className={`flex items-center space-x-1 cursor-pointer text-black hover:opacity-[0.9] hover:!text-foreground dark:text-white ${
+          className={`flex items-center space-x-1 cursor-pointer hover:opacity-[0.9] hover:!text-foregroundtext-white ${
             isActive ? "font-bold !text-foreground" : ""
           }`}
         >
@@ -58,7 +58,7 @@ export const MenuItem = ({
         
       ) : (
         <p
-          className={`flex items-center space-x-1 cursor-pointer text-black hover:opacity-[0.9] hover:!text-foreground dark:text-white ${
+          className={`flex items-center space-x-1 cursor-pointer hover:opacity-[0.9] hover:!text-foreground text-red-500 ${
             isActive ? "font-bold !text-foreground" : ""
           }`}
         >
@@ -83,7 +83,7 @@ export const MenuItem = ({
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
           className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 z-10 w-max"
         >
-          <div className="bg-[#d5cea371] backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl">
+          <div className="bg-[#d5cea371] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl">
             <div className="p-4 flex flex-col space-y-2">{children}</div>
           </div>
         </motion.div>
@@ -102,7 +102,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="hidden md:flex relative shadow-input justify-center space-x-4 px-8 py-6 font-sans"
+      className="hidden md:flex relative shadow-input font-ubuntuReg justify-center space-x-4 px-8 py-6"
     >
       {children}
     </nav>
@@ -130,10 +130,10 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className="text-xl font-bold mb-1 text-white">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="text-sm max-w-[10rem] text-neutral-300">
           {description}
         </p>
       </div>
@@ -145,7 +145,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black"
+      className="text-neutral-200 hover:text-secondary"
     >
       {children}
     </Link>
