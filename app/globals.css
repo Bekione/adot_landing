@@ -63,6 +63,8 @@ html{
   :root {
     --background: #503c3c;
     --foreground: #d5cea3;
+    /* --backgroudnd: #503c3ce1; */
+    font-family: var('--font-ubuntu-r');
   }
 }
 
