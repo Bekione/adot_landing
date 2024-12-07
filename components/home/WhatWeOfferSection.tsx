@@ -30,7 +30,7 @@ const WhatWeOfferSection = () => {
                                     <Image src={item.header} alt={item.title} width={1000} height={1000} className="object-cover" />
                                 </div>
                             }
-                            icon={<IconComponent className="h-4 w-4 text-neutral-500" />} // Render the icon dynamically
+                            icon={<IconComponent className="h-4 w-4 text-neutral-200" />} // Render the icon dynamically
                             className={i === 3 || i === 6 ? "md:col-span-2" : ""}
                         />
                     );

@@ -12,7 +12,7 @@ export const WobbleCard = ({
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
-  allowScale?: boolean; // New prop
+  allowScale?: boolean;
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
