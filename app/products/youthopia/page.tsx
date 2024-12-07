@@ -1,65 +1,50 @@
-"use client"
+"use client";
+import { MacbookScroll } from "@/components/ui/MacbookScroll";
+import { motion } from "framer-motion";
+import {
+  CheckCircle,
+  ArrowRight,
+  MousePointerIcon,
+  BarChartIcon,
+  MapPinIcon,
+} from "lucide-react";
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import ErpFeatures from "@/components/products/ErpFeatures";
+import GradientWord from "@/components/ui/GradientWord";
+import CTABlock from "@/components/ui/CTABlock";
 
-import { motion } from 'framer-motion'
-import { CheckCircle, ArrowRight } from 'lucide-react'
-
-export default function Youthopia() {
+export default function AdotERP() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-12"
-      >
-        <h1 className="text-4xl font-bold text-[#503c3c] mb-4">Youthopia</h1>
-        <p className="text-xl text-gray-600">An all-in-one educational and social platform designed exclusively for kids</p>
-      </motion.section>
-
+    <section>
+      <Hero
+        title="Youthopia"
+        description="Learn, Play, and Grow Together – A Social Learning Platform for Children."
+        backgroundImage="/images/youthopia-kid.avif"
+        ctaText="Explore Now"
+        ctaLink="https://youthopia.vercel.app/"
+      />
+      <About
+        title="About Youthopia"
+        description="Youthopia is a children’s media platform designed for both education and entertainment. It offers interactive courses, a social community for learning, and carefully crafted content to engage young minds in an immersive experience."
+        imgSrc="/images/youthopia.avif"
+      />
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+        className="container flex flex-col items-center gap-6 mt-6 mb-10 mx-auto"
       >
-        <div>
-          <h2 className="text-2xl font-bold text-[#503c3c] mb-4">Key Features</h2>
-          <ul className="space-y-2">
-            {[
-              "Subscription-based access to high-quality educational content",
-              "Safe social media features tailored for kids",
-              "Brain-growing activities and challenges to enhance cognitive development",
-              "Social and collaborative features to build teamwork and communication skills"
-            ].map((feature, index) => (
-              <motion.li
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center"
-              >
-                <CheckCircle className="text-[#d5cea3] mr-2" size={20} />
-                {feature}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-        <div className="bg-[#f0ebe3] p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-[#503c3c] mb-4">Why Choose Youthopia?</h2>
-          <p className="text-gray-700 mb-4">
-            Youthopia offers a safe and engaging environment for learning, socializing, and exploring 
-            creativity through curated content and activities. It's designed to nurture young minds 
-            while providing parents with peace of mind.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="bg-[#503c3c] text-white px-6 py-2 rounded-full inline-flex items-center"
-          >
-            Explore Youthopia <ArrowRight size={16} className="ml-2" />
-          </motion.button>
-        </div>
+        <GradientWord word="Features" />
       </motion.section>
-    </div>
-  )
-}
 
+      <CTABlock
+        title="Let Your Child Explore a World of Learning and Fun!"
+        linkText="Get Started Today"
+        link="https://www.adot-erp.com/demo"
+        type="secondary"
+      />
+    </section>
+  );
+}
