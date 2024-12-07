@@ -1,5 +1,5 @@
-import GradientWord from "./ui/GradientWord";
-import { Tabs } from "./ui/Tabs";
+import GradientWord from "../ui/GradientWord";
+import { Tabs } from "../ui/Tabs";
 import {
     webProjects,
     appProjects,
@@ -7,7 +7,7 @@ import {
     botProjects,
     designProjects,
 } from "@/data/projects";
-import { ProjectsImageGrid } from "./ProjectsImageGrid";
+import { ProjectsImageGrid } from "../ProjectsImageGrid";
 
 const ProjectsTabContent = ({
     projects,

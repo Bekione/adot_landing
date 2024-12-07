@@ -1,5 +1,5 @@
-import GradientWord from "./ui/GradientWord"
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import GradientWord from "../ui/GradientWord"
+import { BentoGrid, BentoGridItem } from "../ui/BentoGrid";
 import { Globe, Cog, BadgeDollarSign, Lightbulb, TabletSmartphone } from 'lucide-react';
 import { items } from "@/data/serviceOffers";
 import Image from "next/image";

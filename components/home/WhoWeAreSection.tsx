@@ -1,9 +1,10 @@
 "use client";
 
-import GradientWord from "./ui/GradientWord";
+import GradientWord from "../ui/GradientWord";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { CardBody, CardContainer, CardItem } from './ui/3dCard'
+import { CardBody, CardContainer, CardItem } from '../ui/3dCard'
+import Button from "../ui/Button";
 const WhoWeAreSection = () => {
   return (
     <section className="py-16 w-full overflow-hidden">
@@ -48,9 +49,7 @@ const WhoWeAreSection = () => {
               businesses and individuals with technology that drives growth and
               fosters innovation.
             </p>
-            <button className="px-8 py-2 mt-4 rounded-md bg-primary text-white font-bold font-sans transition duration-200 hover:bg-white hover:text-primary border-2 border-transparent hover:border-primary">
-              See more
-            </button>
+            <Button text="See more" to="/about" className="mt-4" />
           </motion.div>
         </div>
       </div>

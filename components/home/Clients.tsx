@@ -1,6 +1,6 @@
 "use client";
-import GradientWord from "./ui/GradientWord";
-import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
+import GradientWord from "../ui/GradientWord";
+import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
 import { clients } from "@/data/clients";
 
 const Clients = () => {

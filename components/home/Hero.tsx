@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/BeamBackground";
-import { FlipWords } from "./ui/FlipWords";
+import { FlipWords } from "../ui/FlipWords";
 import { motion } from "framer-motion";
 import Link from 'next/link';
 
@@ -20,11 +20,11 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center flex flex-col justify-center"
         >
-          <h2 className="mx-4 mt-8 md:mt-0 relative z-20 text-3xl sm:text-5xl lg:text-7xl font-extrabold md:font-bold text-center text-black dark:text-white font-sans tracking-tight z-1">
+          <h2 className="mx-4 mt-8 md:mt-0 relative techniq z-20 font-ubuntuBold text-3xl sm:text-5xl lg:text-7xl font-extrabold md:font-bold text-center text-white tracking-tight z-1">
             Your one stop solution for <br />
             <FlipWords words={services} />
           </h2>
-          <p className="text-lg mx-8 text-white text-center font-sans mt-6 sm:mt-10 z-1">
+          <p className="text-lg mx-8 text-white text-center mt-6 sm:mt-10 z-1">
             We are revolutionizing Ethiopia&apos;s Tech Industry with Quality
             and Innovation.
           </p>
