@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import About from "@/components/services/About";
+import About from "@/components/About";
 import Features from "@/components/services/Features";
 import Process from "@/components/services/Process";
 import Testimonials from "@/components/services/Testimonial";
-import Header from "@/components/services/Hero";
+import Header from "@/components/Hero";
 import { softwareFeatureData } from "@/data/features";
 import { customSoftwareProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
