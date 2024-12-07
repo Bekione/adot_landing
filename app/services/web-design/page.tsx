@@ -6,10 +6,9 @@ import Features from "@/components/services/Features";
 import Process from "@/components/services/Process";
 import Testimonials from "@/components/services/Testimonial";
 import Hero from "@/components/services/Hero";
-import { webFeatureData } from "@/data/features";
-import { webDevelopmentProcess } from "@/data/process";
+import { webDesignFeatureData, webFeatureData } from "@/data/features";
+import { webDesignProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
-
 
 const page = () => {
   return (
@@ -20,21 +19,21 @@ const page = () => {
       className="font-ubuntuReg"
     >
       <Hero
-        title="Web Development"
-        description="Building modern, scalable, and high-performing websites for your business success."
-        backgroundImage="/images/web-development.avif"
+        title="Web Design"
+        description="Creative designs that captivate and convert."
+        backgroundImage="/images/web-design.avif"
       />
       <About
-        title="About Our Web Development Service"
-        description="We build websites that are fast, secure, and easy to manage. Our team of experts will help you build a website that will help you achieve your business goals."
-        imgSrc="/images/web-development.avif"
+        title="About Our Web Design Service"
+        description="Your website is your brand’s digital face. Our web design services ensure a visually stunning and user-friendly experience that communicates your brand effectively."
+        imgSrc="/images/web-design.avif"
       />
       <Features features={webFeatureData} />
-      <Process steps={webDevelopmentProcess} />
+      <Process steps={webDesignProcess} />
       <Testimonials />
       <CTABlock
-        title="Start Your Project with Us Today!"
-        description="Let's build a website that drives your business forward."
+        title="Transform Your Website With Us."
+        description="Elevate your online presence with designs that captivate and convert."
         linkText="Contact Us Now"
         link="/contact"
         className="mb-32"
