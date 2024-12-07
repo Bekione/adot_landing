@@ -1,16 +1,19 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Lightbulb, Code, Rocket } from 'lucide-react'
-import GradientWord from '../ui/GradientWord'
+import { motion } from 'framer-motion';
+import GradientWord from '../ui/GradientWord';
 
-const steps = [
-  { icon: Lightbulb, title: 'Discovery & Planning', description: 'We analyze your needs and create a roadmap.' },
-  { icon: Code, title: 'Design & Development', description: 'Our team brings your vision to life.' },
-  { icon: Rocket, title: 'Launch & Maintenance', description: 'We deploy your site and provide ongoing support.' },
-]
+interface ProcessStep {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+}
 
-export default function Process() {
+interface ProcessProps {
+  steps: ProcessStep[];
+}
+
+export default function Process({ steps }: ProcessProps) {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 flex flex-col items-center">
@@ -37,6 +40,5 @@ export default function Process() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

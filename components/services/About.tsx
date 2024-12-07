@@ -3,7 +3,13 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-export default function About() {
+interface AboutProps {
+  title: string;
+  description: string;
+  imgSrc: string;
+}
+
+export default function About({ title, description, imgSrc }: AboutProps) {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -15,9 +21,9 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold font-ubuntuBold mb-4 text-primary">About Our Web Development Service</h2>
+            <h2 className="text-3xl font-bold font-ubuntuBold mb-4 text-primary">{title}</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Our web development services are designed to deliver tailor-made websites that meet your business goals. From corporate sites to e-commerce platforms, we craft digital solutions that impress and convert.
+              {description}
             </p>
           </motion.div>
           <motion.div
@@ -28,7 +34,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/webProject-2.jpg"
+              src={imgSrc}
               alt="Web Development"
               width={600}
               height={400}

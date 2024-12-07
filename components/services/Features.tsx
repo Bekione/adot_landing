@@ -1,21 +1,23 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Smartphone, Search, Zap, ShieldCheck } from 'lucide-react'
-import GradientWord from '../ui/GradientWord'
+import { motion } from 'framer-motion';
+import GradientWord from '../ui/GradientWord';
 
-const features = [
-  { icon: Smartphone, title: 'Responsive Design', description: 'Ensures your site looks great on any device.' },
-  { icon: Search, title: 'SEO Optimization', description: 'Rank higher in search engines with our techniques.' },
-  { icon: Zap, title: 'Fast Load Times', description: 'Websites optimized for speed and performance.' },
-  { icon: ShieldCheck, title: 'Secure Infrastructure', description: 'Keeping your data and customers safe.' },
-]
+interface Feature {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+}
 
-export default function Features() {
+interface FeaturesProps {
+  features: Feature[]; // Array of features
+}
+
+export default function Features({ features }: FeaturesProps) {
   return (
     <section className="py-10 pb-16 bg-secondary">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <GradientWord word="Our Features" />
+        <GradientWord word="Features" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
           {features.map((feature, index) => (
             <motion.div
@@ -34,6 +36,5 @@ export default function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
