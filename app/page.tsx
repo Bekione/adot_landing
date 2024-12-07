@@ -1,23 +1,24 @@
-import Hero from "@/components/Hero";
-import WhoWeAreSection from "@/components/WhoWeAreSection";
-import { BentoGridDemo } from "@/components/BentoDemo";
-import WhatWeOfferSection from "@/components/WhatWeOfferSection";
-import Clients from "@/components/Clients";
-import Projects from "@/components/Projects";
+import Hero from "@/components/home/Hero";
+import WhoWeAreSection from "@/components/home/WhoWeAreSection";
+import WhatWeOfferSection from "@/components/home/WhatWeOfferSection";
+import Clients from "@/components/home/Clients";
+import Projects from "@/components/home/Projects";
+import Testimonials from "@/components/home/Testimonials";
+import NewsletterSubscription from "@/components/home/NewsletterSubscriptionSection";
+import AdotLabsSection from "@/components/home/AdotLabsSection";
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-[family-name:var(--font-manrope-reg)]">
+    <div className="min-h-screen font-ubuntuReg">
       <Hero />
       <WhoWeAreSection />
       <WhatWeOfferSection />
       <Clients />
       <Projects />
-      
-      <div className="h-screen w-full border">
-        <h2>Fullscreen Content</h2>
-      </div>
+      <AdotLabsSection />
+      <Testimonials />
+      <NewsletterSubscription />
     </div>
   );
 }
