@@ -1,4 +1,4 @@
-import Hero from "@/components/home/Hero";
+import HomeHero from "@/components/home/HomeHero";
 import WhoWeAreSection from "@/components/home/WhoWeAreSection";
 import WhatWeOfferSection from "@/components/home/WhatWeOfferSection";
 import Clients from "@/components/home/Clients";
@@ -11,7 +11,7 @@ import AdotLabsSection from "@/components/home/AdotLabsSection";
 export default function Home() {
   return (
     <div className="min-h-screen font-ubuntuReg">
-      <Hero />
+      <HomeHero />
       <WhoWeAreSection />
       <WhatWeOfferSection />
       <Clients />
