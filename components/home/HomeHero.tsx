@@ -5,7 +5,7 @@ import { FlipWords } from "../ui/FlipWords";
 import { motion } from "framer-motion";
 import Link from 'next/link';
 
-const Hero = () => {
+const HomeHero = () => {
   const services = [
     "creative websites",
     "custom software",
@@ -66,4 +66,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;
