@@ -36,9 +36,6 @@ const blogPosts = [
 ]
 
 export default function Footer() {
-//   const scrollToTop = () => {
-//     window.scrollTo({ top: 0, behavior: 'smooth' })
-//   }
 
   return (
     <footer className="bg-gradient-to-br from-[#503c3c] via-[#3d2e2e] to-[#2d2222] text-slate-200">
@@ -54,15 +51,15 @@ export default function Footer() {
           <motion.div variants={item} className="space-y-4 lg:col-span-2">
             <Link href="/" className="block">
               <Image
-                src="/images/adot-footer-logo.png"
+                src="/footer-logo.png"
                 alt="Adot Labs Logo"
-                width={120}
-                height={40}
+                width={170}
+                height={70}
                 className="brightness "
               />
             </Link>
-            <p className="text-slate-400">
-              Innovating digital solutions through cutting-edge technology and creative excellence.
+            <p className="text-white/80">
+              Powering Bold Dreams.
             </p>
             <div className="flex space-x-4">
               <motion.a
@@ -197,7 +194,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mt-12 pt-8 border-t border-[#634b4b] flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
-          <p className="text-slate-400 text-sm">
+          <p className="text-white/80 text-sm">
             © {new Date().getFullYear()} Adot Technologies. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
@@ -205,16 +202,6 @@ export default function Footer() {
             <Link href="#" className="hover:text-white">Cookie Policy</Link>
           </div>
         </motion.div>
-
-        {/* Scroll to Top Button
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-[#503c3c] text-white p-3 rounded-full shadow-lg hover:bg-[#634b4b]"
-        >
-          <ArrowUp className="h-5 w-5" />
-        </motion.button> */}
       </div>
     </footer>
   )
