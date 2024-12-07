@@ -53,8 +53,8 @@ export default function Footer() {
               <Image
                 src="/footer-logo.png"
                 alt="Adot Labs Logo"
-                width={170}
-                height={70}
+                width={200}
+                height={90}
                 className="brightness "
               />
             </Link>
