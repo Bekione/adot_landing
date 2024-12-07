@@ -4,13 +4,17 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { navLinks, NavLink, SubLink } from "@/data/navLinks";
 import Link from "next/link";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { X, ChevronRight } from "lucide-react";
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
+
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-  // Sidebar animation variants
+  
   const sidebarVariants = {
     closed: {
       x: "100%", // Slide out of view (right)
@@ -24,15 +28,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Hamburger Icon */}
-      <button
-        className="p-2 rounded-md text-[#d5cea3] flex md:hidden"
-        onClick={() => setIsOpen(true)}
-        aria-label="Open Menu"
-      >
-        <Menu size={32} />
-      </button>
-
       {/* Sidebar */}
       <motion.div
         className="fixed top-0 right-0 h-screen w-3/4 max-w-sm bg-gradient-to-b from-[#503c3c] to-[#443232] text-white z-40 shadow-lg md:hidden flex flex-col overflow-hidden"
@@ -50,9 +45,7 @@ const Sidebar = () => {
         </button>
 
         {/* Sidebar Links */}
-        <nav
-          className="mt-16 px-6 flex-1 overflow-y-auto"
-        >
+        <nav className="mt-16 px-6 flex-1 overflow-y-auto">
           {navLinks.map((link: NavLink) => (
             <div key={link.title} className="mb-4">
               <div
@@ -63,10 +56,7 @@ const Sidebar = () => {
                     : setIsOpen(false)
                 }
               >
-                <Link
-                  href={link.href || "#"}
-                  className={link.subLinks ? "w-full" : ""}
-                >
+                <Link href={link.href || "#"} className={link.subLinks ? "w-full" : ""}>
                   {link.title}
                 </Link>
                 {link.subLinks && (
@@ -85,15 +75,14 @@ const Sidebar = () => {
                 <motion.ul
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="pl-4 mt-2 space-y-2 overflow-hidden"
+                  transition={{ duration: 0.3 }}
+                  className="ml-6"
                 >
                   {link.subLinks.map((subLink: SubLink) => (
-                    <li key={subLink.title}>
+                    <li key={subLink.title} className="py-2">
                       <Link
-                        href={subLink.href}
-                        className="block text-sm text-slate-300 font-sans hover:bg-[#d5cea381] px-3 py-1 rounded-lg transition"
-                        onClick={() => setIsOpen(false)}
+                        href={subLink.href || "#"}
+                        className="block px-3 text-white hover:bg-[#3e3333] rounded-md"
                       >
                         {subLink.title}
                       </Link>
@@ -109,7 +98,7 @@ const Sidebar = () => {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-30"
+          className="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-30"
           onClick={() => setIsOpen(false)}
         />
       )}
