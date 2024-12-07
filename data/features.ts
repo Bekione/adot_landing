@@ -1,4 +1,28 @@
-import { Smartphone, Search, Zap, ShieldCheck, User, Layers, LifeBuoy, Palette, UserCheck, Fingerprint, Code, Server, Link } from "lucide-react";
+import {
+  Smartphone,
+  Search,
+  Zap,
+  ShieldCheck,
+  User,
+  Layers,
+  LifeBuoy,
+  Palette,
+  UserCheck,
+  Fingerprint,
+  Code,
+  Server,
+  Link,
+} from "lucide-react";
+import {
+  CloudIcon,
+  DollarSignIcon,
+  HelpCircleIcon,
+  MapPinIcon,
+  MousePointerIcon,
+  BarChartIcon,
+  LockIcon,
+  LinkIcon,
+} from "lucide-react";
 
 export const webFeatureData = [
   {
@@ -91,3 +115,55 @@ export const webDesignFeatureData = [
     description: "Optimized for all screen sizes.",
   },
 ];
+
+export const erpFeatures = [
+  {
+    title: "Tailored for Ethiopian Businesses",
+    description:
+      "Adot ERP is customized to fit the unique needs of businesses in Ethiopia, with local tax systems and reporting compliance.",
+    icon: MapPinIcon,
+  },
+  {
+    title: "User-Friendly Interface",
+    description:
+      "Designed for ease of use, Adot ERP ensures that employees, regardless of tech expertise, can seamlessly manage their work.",
+    icon: MousePointerIcon,
+  },
+  {
+    title: "Comprehensive Financial Tools",
+    description:
+      "Adot ERP simplifies accounting with automated financial reports, budgeting tools, and local tax compliance.",
+    icon: DollarSignIcon,
+  },
+  {
+    title: "100% Uptime Guarantee",
+    description:
+      "Our platform ensures business continuity with 100% uptime, keeping your business operations always up and running.",
+    icon: CloudIcon,
+  },
+  {
+    title: "Scalable for Growing Businesses",
+    description:
+      "Whether you're a small business or growing rapidly, Adot ERP scales with your business needs without any added complexity.",
+    icon: BarChartIcon,
+  },
+  {
+    title: "24/7 Customer Support",
+    description:
+      "Our support team is available around the clock to assist with any technical or operational issues.",
+    icon: HelpCircleIcon,
+  },
+  {
+    title: "Data Security and Backup",
+    description:
+      "Adot ERP offers robust data security and backup to ensure your critical business information is always safe.",
+    icon: LockIcon,
+  },
+  {
+    title: "Easy Integration with Local Systems",
+    description:
+      "Adot ERP integrates seamlessly with local Ethiopian systems, ensuring smooth and quick adoption across industries.",
+    icon: LinkIcon,
+  },
+];
+
