@@ -1,20 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import { EvervaultCard, Icon } from '../ui/EvervalutCard';
 import GradientWord from '../ui/GradientWord';
+import { teams } from '@/data/teams';
 
 interface TeamMemberProps {
     name: string;
     role: string;
     image: string;
   }
-
-const team = [
-  { name: 'Dagmawi Yohannes', role: 'Co-Founder & CEO', image: '/images/team-1.jpg' },
-  { name: 'Bereket Kinfe', role: 'Co-founder & CTO', image: '/images/team-2.jfif' },
-]
 
 export default function MeetTheTeam() {
   return (
@@ -26,7 +21,7 @@ export default function MeetTheTeam() {
     >
       <GradientWord word="Meet The Team" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 mx-auto">
-        {team.map((member, index) => (
+        {teams.map((member, index) => (
           <TeamMember key={index} {...member} />
         ))}
       </div>
