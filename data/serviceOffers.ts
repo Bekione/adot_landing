@@ -33,3 +33,32 @@ export const items = [
     icon: "BadgeDollarSign",
   },
 ];
+
+
+
+export const services = [
+  {
+    icon: "Code",
+    title: 'Web Development',
+    description: 'Create modern, responsive websites tailored to your business needs.',
+    link: '/services/web-development'
+  },
+  {
+    icon: "Smartphone",
+    title: 'App Development',
+    description: 'Build powerful mobile applications for iOS and Android platforms.',
+    link: '/services/app-development'
+  },
+  {
+    icon: "Database",
+    title: 'Custom Software',
+    description: 'Develop bespoke software solutions to streamline your business processes.',
+    link: '/services/custom-software'
+  },
+  {
+    icon: "PenTool",
+    title: 'Web Design',
+    description: 'Create stunning, user-friendly designs that captivate your audience.',
+    link: '/services/web-design'
+  }
+]
