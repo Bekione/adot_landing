@@ -6,9 +6,10 @@ import Vision from "./Vision";
 import CoreValues from "./CoreValues";
 import OurStory from "./OurStory";
 import MeetTheTeam from "./MeetTheTeam";
-import WhyAdot from "./WhyAdot";
 import GradientWord from "../ui/GradientWord";
 import { WobbleCard } from "../ui/WobbleCard";
+import { whyChooseUs } from "@/data/whyChoose";
+import WhyChoose from "../products/WhyChoose";
 
 export default function AboutUs() {
   return (
@@ -39,7 +40,7 @@ export default function AboutUs() {
         </div>
         <OurStory />
         <MeetTheTeam />
-        <WhyAdot />
+        <WhyChoose title="Why Choose Us?" cards={whyChooseUs} />
       </motion.div>
     </section>
   );
