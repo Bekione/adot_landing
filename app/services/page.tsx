@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { Code, Smartphone, PenTool, Database } from "lucide-react";
 import { services } from "@/data/serviceOffers";
+import GradientHeader from "@/components/GradientHeader";
 import CTABlock from "@/components/ui/CTABlock";
 
 type IconNames = "Code" | "Smartphone" | "PenTool" | "Database";
@@ -18,26 +19,10 @@ const iconMap: Record<IconNames, React.FC<React.SVGProps<SVGSVGElement>>> = {
 export default function ServicesOverview() {
   return (
     <div className="min-h-screen font-ubuntuReg">
-      <header className="bg-primary text-white py-20 min-h-96 flex items-center justify-center">
-        <div className="container mx-auto px-4">
-          <motion.h1
-            className="text-4xl md:text-5xl font-bold font-ubuntuBold mb-4 text-center"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Our Services
-          </motion.h1>
-          <motion.p
-            className="text-xl text-center max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Empowering your digital journey with cutting-edge solutions
-          </motion.p>
-        </div>
-      </header>
+      <GradientHeader
+        title="Our Services"
+        subtitle="Empowering your digital journey with cutting-edge solutions"
+      />
 
       <main className="py-20">
         <div className="container mx-auto px-4">
