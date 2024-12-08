@@ -1,11 +1,10 @@
-import React from 'react'
+import BlogList from "@/components/blog/BlogList"
 
-const page = () => {
+export default function BlogPage() {
   return (
-    <div className='min-h-[110vh]'>
-      
-    </div>
+    <main className="min-h-screen bg-white">
+      <BlogList />
+    </main>
   )
 }
 
-export default page
