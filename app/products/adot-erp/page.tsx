@@ -1,19 +1,20 @@
 "use client";
-import { MacbookScroll } from "@/components/ui/MacbookScroll";
+
 import { motion } from "framer-motion";
 import {
-  CheckCircle,
-  ArrowRight,
   MousePointerIcon,
   BarChartIcon,
   MapPinIcon,
 } from "lucide-react";
-import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ErpFeatures from "@/components/products/ErpFeatures";
+import Highlights from "@/components/products/Highlights";
 import GradientWord from "@/components/ui/GradientWord";
 import CTABlock from "@/components/ui/CTABlock";
+import { erpHighlights } from "@/data/highlights";
+import WhyChoose from "@/components/products/WhyChoose";
+import { whyChooseERP } from "@/data/whyChoose";
 
 export default function AdotERP() {
   return (
@@ -21,23 +22,27 @@ export default function AdotERP() {
       <Hero
         title="Adot ERP"
         description="All-in-One ERP Solution for Ethiopian Businesses"
-        backgroundImage="/images/adot-erp.jfif"
+        backgroundImage="/images/adot-erp-hd.jfif"
         ctaText="Request a Demo"
-        ctaLink="https://www.adot-erp.com/demo"
+        ctaLink="https://erpnext-demo.frappe.cloud/app"
       />
       <About
         title="About Adot Erp"
         description="Adot ERP is a comprehensive business management solution designed to help Ethiopian businesses streamline their operations, improve efficiency, and drive growth. Our ERP software is tailored to meet the unique needs of Ethiopian businesses, providing powerful tools for accounting, inventory management, HR, and more."
-        imgSrc="/images/erp-snap.png"
+        images={["/images/erp-snap-1.png", "/images/erp-snap-2.png", "/images/erp-snap-3.jpg"]}
       />
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="container flex flex-col items-center gap-6 mt-6 mb-10 mx-auto"
+        className="flex flex-col items-center gap-6 mt-6 mb-10 mx-auto"
       >
         <GradientWord word="Features" />
         <ErpFeatures />
+
+        <Highlights highlights={erpHighlights}/>
+
+        <WhyChoose title="Why Choose Adot ERP?" cards={whyChooseERP} />
 
         <div className="container mx-auto px-6 flex flex-col items-center">
             <GradientWord word="Why Choose Adot ERP?" />
@@ -103,7 +108,7 @@ export default function AdotERP() {
       <CTABlock
         title="Ready to Take Control of Your Business?"
        linkText="Request a Demo"
-        link="https://www.adot-erp.com/demo"
+        link="https://erpnext-demo.frappe.cloud/app"
         type="secondary"
       />
     </section>
