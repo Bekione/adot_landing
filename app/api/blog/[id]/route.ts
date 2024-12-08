@@ -1,13 +1,12 @@
-import { NextResponse } from 'next/server'
-import { blogPosts } from '@/data/blogs'
-import { BlogPostRaw } from '@/types/blog'
+import { NextRequest, NextResponse } from 'next/server';
+import { blogPosts } from '@/data/blogs';
+import { BlogPostRaw } from '@/types/blog';
 
-// Update the type for the second argument to match Next.js requirements
 export async function GET(
-  request: Request,
-  context: { params: { id: string } }
+  request: NextRequest,
+  context: { params: { id: string } } // Use "context" for params
 ) {
-  const { params } = context; // Extract `params` from `context`
+  const { params } = context;
   const { id } = params;
 
   const blogPost = (blogPosts as BlogPostRaw[]).find((post) => post.id === id);
