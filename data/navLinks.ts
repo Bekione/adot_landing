@@ -16,6 +16,7 @@ export const navLinks: NavLink[] = [
   { title: "About Us", href: "/about" },
   {
     title: "Services",
+    href: "/services",
     subLinks: [
       { title: "Web Development", href: "/services/web-development" },
       { title: "App Development", href: "/services/app-development" },
@@ -25,6 +26,7 @@ export const navLinks: NavLink[] = [
   },
   {
     title: "Products",
+    href: "/products",
     subLinks: [
       { title: "Adot ERP", description: "Manage your enterprise efficiently.", href: "/products/adot-erp", src: "/images/adot-erp.svg" },
       { title: "Youthopia", description: "Kids number one choice.", href: "/products/youthopia", src: "/images/youthopia.avif" },
