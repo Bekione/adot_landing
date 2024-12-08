@@ -2,11 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { blogPosts } from '@/data/blogs';
 import { BlogPostRaw } from '@/types/blog';
 
+interface RouteParams {
+  params: { id: string };
+}
+
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } } // Use "context" for params
+  { params }: RouteParams // Fix: Type the second argument properly
 ) {
-  const { params } = context;
   const { id } = params;
 
   const blogPost = (blogPosts as BlogPostRaw[]).find((post) => post.id === id);
