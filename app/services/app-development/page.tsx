@@ -26,7 +26,7 @@ const page = () => {
       <About
         title="About Our Application Development Service"
         description="We specialize in building mobile and web apps tailored to your needs. Whether it’s a startup idea or an enterprise solution, our apps are designed for performance, scalability, and user satisfaction."
-        imgSrc="/images/app-development.avif"
+        images={["/images/app-development.avif"]}
       />
       <Features features={appFeatureData} />
       <Process steps={appDevelopmentProcess} />

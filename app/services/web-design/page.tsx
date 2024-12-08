@@ -26,7 +26,7 @@ const page = () => {
       <About
         title="About Our Web Design Service"
         description="Your website is your brand’s digital face. Our web design services ensure a visually stunning and user-friendly experience that communicates your brand effectively."
-        imgSrc="/images/web-design.avif"
+        images={["/images/web-design.avif"]}
       />
       <Features features={webFeatureData} />
       <Process steps={webDesignProcess} />

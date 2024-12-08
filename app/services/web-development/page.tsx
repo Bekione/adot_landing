@@ -27,7 +27,7 @@ const page = () => {
       <About
         title="About Our Web Development Service"
         description="We build websites that are fast, secure, and easy to manage. Our team of experts will help you build a website that will help you achieve your business goals."
-        imgSrc="/images/web-development.avif"
+        images={["/images/web-development.avif"]}
       />
       <Features features={webFeatureData} />
       <Process steps={webDevelopmentProcess} />

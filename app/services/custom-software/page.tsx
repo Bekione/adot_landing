@@ -26,7 +26,7 @@ const page = () => {
       <About
         title="About Our Custom Software Development Service"
         description="From automation tools to enterprise systems, we develop custom software designed to solve your business-specific problems. Experience innovation with our cutting-edge solutions."
-        imgSrc="/images/software-development.avif"
+        images={["/images/software-development.avif"]}
       />
       <Features features={softwareFeatureData} />
       <Process steps={customSoftwareProcess} />
