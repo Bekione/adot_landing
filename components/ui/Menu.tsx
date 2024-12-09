@@ -93,7 +93,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="hidden md:flex relative shadow-input font-ubuntuReg justify-center space-x-4 px-8 py-6"
+      className="hidden md:flex relative font-ubuntuReg justify-center space-x-4 px-8 py-6"
     >
       {children}
     </nav>
