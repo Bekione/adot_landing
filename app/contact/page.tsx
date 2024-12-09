@@ -23,14 +23,16 @@ const page = () => {
       />
 
       <main className="container mx-auto px-4 py-16">
-        <motion.div
-          className="grid md:grid-cols-2 gap-16"
+      <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16"
           variants={fadeIn}
           initial="initial"
           animate="animate"
         >
-          <ContactForm />
-          <div>
+          <div className="lg:col-span-3">
+            <ContactForm />
+          </div>
+          <div className="lg:col-span-2 mx-auto w-full">
             <ContactInfo />
             <SocialLinks />
           </div>
