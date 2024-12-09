@@ -1,13 +1,18 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { MDXRemote } from 'next-mdx-remote'
-import { BlogPostSerialized } from '@/types/blog'
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
+import { MDXRemote } from "next-mdx-remote";
+import { BlogPostSerialized } from "@/types/blog";
+import { TracingBeam } from "../ui/TracingBeam";
 
-export default function BlogContent({ blogPost }: { blogPost: BlogPostSerialized }) {
+export default function BlogContent({
+  blogPost,
+}: {
+  blogPost: BlogPostSerialized;
+}) {
   return (
     <article className="bg-gradient-to-b from-white to-[#d5cea3]/10">
       <div className="container px-4 py-12 md:px-6 md:py-24 mx-auto">
@@ -37,45 +42,47 @@ export default function BlogContent({ blogPost }: { blogPost: BlogPostSerialized
           </div>
 
           {/* Blog Content */}
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-4 mb-8">
-              {/* Category */}
-              <span className="inline-block px-3 py-1 text-sm font-medium bg-[#d5cea3] text-[#503c3c] rounded-full">
-                {blogPost.category}
-              </span>
+          <TracingBeam>
+            <div className="max-w-3xl mx-auto">
+              <div className="space-y-4 mb-8">
+                {/* Category */}
+                <span className="inline-block px-3 py-1 text-sm font-medium bg-[#d5cea3] text-[#503c3c] rounded-full">
+                  {blogPost.category}
+                </span>
 
-              {/* Title */}
-              <h1 className="text-4xl font-bold font-ubuntuBold tracking-tighter sm:text-5xl text-[#503c3c]">
-                {blogPost.title}
-              </h1>
+                {/* Title */}
+                <h1 className="text-4xl font-bold font-ubuntuBold tracking-tighter sm:text-5xl text-[#503c3c]">
+                  {blogPost.title}
+                </h1>
 
-              {/* Author Info */}
-              <div className="flex items-center gap-4">
-                <Image
-                  src={blogPost.author?.image || '/placeholder.svg'}
-                  alt={blogPost.author?.name || 'Author'}
-                  width={40}
-                  height={40}
-                  className="rounded-full border-2 border-secondary"
-                />
-                <div>
-                  <p className="font-medium text-[#503c3c]">
-                    {blogPost.author?.name || 'Unknown Author'}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {blogPost.date} · {blogPost.readTime || 'Read Time'}
-                  </p>
+                {/* Author Info */}
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={blogPost.author?.image || "/placeholder.svg"}
+                    alt={blogPost.author?.name || "Author"}
+                    width={40}
+                    height={40}
+                    className="rounded-full border-2 border-secondary"
+                  />
+                  <div>
+                    <p className="font-medium text-[#503c3c]">
+                      {blogPost.author?.name || "Unknown Author"}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      {blogPost.date} · {blogPost.readTime || "Read Time"}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Render MDX Content */}
-            <div className="prose prose-lg max-w-none text-gray-700 leading-7">
-              <MDXRemote {...blogPost.content} />
+              {/* Render MDX Content */}
+              <div className="prose prose-lg max-w-none text-gray-700 leading-7">
+                <MDXRemote {...blogPost.content} />
+              </div>
             </div>
-          </div>
+          </TracingBeam>
         </motion.div>
       </div>
     </article>
-  )
+  );
 }
