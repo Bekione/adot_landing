@@ -58,7 +58,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
               <div>
                 <h2 className="text-2xl font-bold font-ubuntuBold text-primary mb-2">{item.title}</h2>
-                <p className="text-neutral-800  text-lg font-normal mb-8">
+                <p className="text-neutral-800  text-lg font-normal mb-8 text-justify">
                   {item.description}
                 </p>
               </div>

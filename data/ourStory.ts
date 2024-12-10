@@ -12,7 +12,7 @@ export const ourStory = [
         "After graduation, the passion for helping others and solving real-world problems turned into a bold mission. Adot Technologies was born, founded on the values of service and innovation. The idea was not only to provide the best software services in the country but also to nurture young innovators through Adot Labs, an initiative that fuels creativity and growth for aspiring talents.",
     },
     {
-      year: "2025",
+      year: "2024",
       title: "Powering Bold Dreams",
       description:
         "With the slogan 'Powering Bold Dreams,' Adot Technologies officially launched operations, focusing on delivering transformative software services while addressing Ethiopia's pressing challenges through innovative products. The team expanded, and early successes helped establish a growing reputation within Ethiopia's tech ecosystem.",
