@@ -5,7 +5,7 @@ import { clients } from "@/data/clients";
 
 const Clients = () => {
     return (
-        <div className="mt-20 flex flex-col items-center">
+        <div className="mt-20 flex flex-col items-center overflow-hidden">
             <GradientWord word="Trusted By" />
             <InfiniteMovingCards
                 items={clients}
