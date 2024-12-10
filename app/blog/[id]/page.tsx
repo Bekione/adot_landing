@@ -67,23 +67,23 @@ export default function BlogPostPage() {
   }, [id]); // Use `id` in the dependency array
 
   if (!blogPost) {
-    return(
+    return (
       <div className="min-h-72 py-24 flex items-center justify-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center text-center p-8 bg-gray-200 w-fit h-fit rounded-lg mx-auto"
-      >
-        <AlertCircle className="w-12 h-12 text-gray-400 mb-4" />
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">
-          No blog posts found
-        </h3>
-        <p className="text-gray-600">Make sure you are on the right page.</p>
-      </motion.div>
-    </div>
-    )
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-center text-center p-8 bg-gray-200 w-fit h-fit rounded-lg mx-auto"
+        >
+          <AlertCircle className="w-12 h-12 text-gray-400 mb-4" />
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            No blog posts found
+          </h3>
+          <p className="text-gray-600">Make sure you are on the right page.</p>
+        </motion.div>
+      </div>
+    );
   }
 
   return (
@@ -98,7 +98,7 @@ export default function BlogPostPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <GradientWord word="Related Posts" />
+        <GradientWord word="Related Posts" size="sm" />
         <motion.div
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6 mx-10"
           initial="hidden"
@@ -132,7 +132,21 @@ export default function BlogPostPage() {
               </motion.div>
             ))
           ) : (
-            <p>No related posts found.</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center justify-center text-center p-8 bg-gray-50 rounded-lg col-span-full row-span-full"
+            >
+              <AlertCircle className="w-12 h-12 text-gray-400 mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                No related blog posts found
+              </h3>
+              <p className="text-gray-600">
+                Tab back to blog to see other blogs.
+              </p>
+            </motion.div>
           )}
         </motion.div>
       </motion.div>
