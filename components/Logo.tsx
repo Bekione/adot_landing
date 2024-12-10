@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Link href="/" title="Adot Home" className="ml-2 md:ml-4 flex">
           <Image
-            className="w-10 sm:w-16 h-auto m-auto"
+            className="w-12 sm:w-16 h-auto m-auto"
             src="/logo-icon.png"
             alt="Adot logo icon"
             width={50}
@@ -13,7 +13,7 @@ const Logo = () => {
             priority
           />
           <Image
-            className="hidden md:flex"
+            className="hidden lg:flex"
             src="/logo-text.png"
             alt="Adot logo text"
             width={170}
