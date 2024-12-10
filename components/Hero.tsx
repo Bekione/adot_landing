@@ -61,6 +61,7 @@ export default function Hero({
           >
             <Link
               href={ctaLink ? ctaLink : "/contact"}
+              target={ctaLink ? "_blank" : undefined}
               className="w-[25ch] inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#503c3c] bg-[linear-gradient(110deg,#503c3c,45%,#704d4d,55%,#503c3c)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors hover:shadow-2xl hover:shadow-[#d5cea3]/[0.3]"
             >
               {ctaText ? ctaText : "Contact Us"}
