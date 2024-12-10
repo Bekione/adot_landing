@@ -5,14 +5,14 @@ import { clients } from "@/data/clients";
 
 const Clients = () => {
     return (
-        <div className="mt-20 flex flex-col items-center overflow-hidden">
+        <div className="mt-18 flex flex-col items-center overflow-hidden">
             <GradientWord word="Trusted By" />
             <InfiniteMovingCards
                 items={clients}
                 direction="left"
                 speed="normal"
                 pauseOnHover={true}
-                className="mt-10 pb-12"
+                className="mt-6 pb-12"
             />
         </div>
     );

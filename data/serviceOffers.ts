@@ -1,36 +1,37 @@
+import { Globe, Cog, BadgeDollarSign, Lightbulb, TabletSmartphone } from 'lucide-react';
 
-export const items = [
+export const offers = [
   {
     title: "Creative Website Design",
     description: "Modern, responsive, and visually stunning websites tailored to your brand.",
-    header: "/images/home/web design.png", 
-    icon: "Globe",
+    header: "/images/home/web-design.avif", 
+    icon: Globe,
   },
   {
     title: "Mobile App Development",
     description:
       "Engage your audience on the go with intuitive and user-friendly mobile apps.",
     header: "/images/home/mobile.avif",
-    icon: "TabletSmartphone",
+    icon: TabletSmartphone,
   },
   {
     title: "Custom Software Development",
     description: "Flexible pricing tailored to your budget without compromising quality.",
-    header: "/images/home/software.jpg",
-    icon: "Cog",
+    header: "/images/home/software.avif",
+    icon: Cog,
   },
   {
     title: "Lab for Incubating Ideas",
     description:
       "A creative hub for nurturing and transforming innovative ideas into reality.",
     header: "/images/home/lab.avif",
-    icon: "Lightbulb",
+    icon: Lightbulb,
   },
   {
     title: "Affordable Service Packages",
     description: "Discover the beauty of thoughtful and functional design.",
     header: "/images/home/package.avif",
-    icon: "BadgeDollarSign",
+    icon: BadgeDollarSign,
   },
 ];
 

@@ -38,47 +38,51 @@ export const Tabs = ({
 
   return (
     <>
-      <div
-        className={cn(
-          "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
-          containerClassName
-        )}
-      >
-        {propTabs.map((tab, idx) => (
-          <button
-            key={tab.title}
-            onClick={() => {
-              moveSelectedTabToTop(idx);
-            }}
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-            className={cn("relative px-4 py-2 rounded-full", tabClassName)}
-            style={{
-              transformStyle: "preserve-3d",
-            }}
-          >
-            {active.value === tab.value && (
-              <motion.div
-                layoutId="clickedbutton"
-                transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-                className={cn(
-                  "absolute inset-0 bg-primary rounded-full",
-                  activeTabClassName
-                )}
-              />
-            )}
-
-            <span
-              className={cn(
-                "relative block",
-                active.value === tab.value ? "text-white" : "text-primary"
-              )}
+      <div className="w-full overflow-x-auto sm:overflow-visible no-visible-scrollbar scroll-smooth">
+        <div
+          className={cn(
+            "flex flex-row items-center justify-center [perspective:1000px] relative  w-fit mx-auto",
+            
+            containerClassName
+          )}
+        >
+          {propTabs.map((tab, idx) => (
+            <button
+              key={tab.title}
+              onClick={() => {
+                moveSelectedTabToTop(idx);
+              }}
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+              className={cn("relative px-4 py-2 rounded-full", tabClassName)}
+              style={{
+                transformStyle: "preserve-3d",
+              }}
             >
-              {tab.title}
-            </span>
-          </button>
-        ))}
+              {active.value === tab.value && (
+                <motion.div
+                  layoutId="clickedbutton"
+                  transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
+                  className={cn(
+                    "absolute inset-0 bg-primary rounded-full",
+                    activeTabClassName
+                  )}
+                />
+              )}
+
+              <span
+                className={cn(
+                  "relative block",
+                  active.value === tab.value ? "text-white" : "text-primary"
+                )}
+              >
+                {tab.title}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
+
       <FadeInDiv
         tabs={tabs}
         active={active}

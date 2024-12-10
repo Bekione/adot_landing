@@ -7,15 +7,17 @@ import {
   designProjects,
   otherProjects,
 } from "@/data/projects";
-import { ProjectsImageGrid } from "../ProjectsImageGrid";
+import { FocusCards } from "../ui/FocusCards";
 
 const ProjectsTabContent = ({ projects }: { projects: any[] }) => (
-  <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 bg-gradient-to-br from-primary to-secondary">
+  <div className="w-full overflow-hidden relative h-full p-2 sm:p-4 md:p-8 rounded-2xl bg-gradient-to-br from-primary to-secondary">
     {projects.length === 0 && (
-      <div className="text-center text-lg text-white p-8">No projects found</div> // Render a message if no projects are found
+      <div className="text-center text-lg text-white p-8">
+        No projects found
+      </div>
     )}
 
-    <ProjectsImageGrid projects={projects} />
+    <FocusCards cards={projects} />
   </div>
 );
 
@@ -49,10 +51,10 @@ const Projects = () => {
   ];
 
   return (
-    <div className="mt-20 mx-16 sm:mx-20 flex flex-col items-center">
+    <div className="mt-2 mx-8 sm:mx-20 flex flex-col items-center">
       <GradientWord word="Projects" />
-      <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full  items-start justify-start mt-10 mb-40">
-        <Tabs tabs={tabs} tabClassName="text-primary hover:text-red-500" />
+      <div className="h-[calc(16rem*4)] md:h-[calc(20rem*2)] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full  items-start justify-start mt-4 mb-14">
+        <Tabs tabs={tabs} tabClassName="" />
       </div>
     </div>
   );

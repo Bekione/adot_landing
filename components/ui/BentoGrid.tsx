@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export const BentoGrid = ({
   className,
@@ -25,15 +26,21 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
+  idx
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
+  idx: number;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: idx * 0.15 }}
+      viewport={{ once: true }}
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:border-white/[0.2] bg-primary border border-transparent justify-between flex flex-col space-y-4",
         className
@@ -45,10 +52,10 @@ export const BentoGridItem = ({
         <div className="font-sans font-bold text-neutral-200 mb-2 mt-2">
           {title}
         </div>
-        <div className="font-sans font-normal text-xs text-neutral-300">
+        <div className="font-sans font-normal text-sm text-neutral-300">
           {description}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

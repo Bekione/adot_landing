@@ -17,7 +17,7 @@ const GradientWord: React.FC<GradientWordProps> = ({ word, type = 'default', siz
   const gradientDirection =
     type === 'secondary' ? 'bg-gradient-to-b' : 'bg-gradient-to-r';
 
-  const textSize = size === 'md' ? 'text-3xl md:text-5xl' : 'text-2xl md:text-4xl';
+  const textSize = size === 'md' ? 'text-4xl md:text-5xl' : 'text-2xl md:text-4xl';
 
   return (
     <div className={`relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))] ${className}`}>

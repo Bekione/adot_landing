@@ -98,7 +98,7 @@ export const InfiniteMovingCards = ({
                         title={item.hoverTitle}
                     >
                         <div
-                            className="relative min-[180px] md:w-[200px] h-[100px]"
+                            className="relative min-w-[180px] md:w-[200px] h-[100px] outline-2 outline-red-500"
                         >
                             <Image
                                 src={item.logoUrl}
@@ -106,11 +106,6 @@ export const InfiniteMovingCards = ({
                                 fill
                                 className="object-contain"
                             />
-                            {/* <div
-                                className="absolute inset-0 rounded-lg bg-primary bg-opacity-95 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-                            >
-                                <p className="text-white text-center text-lg">{item.hoverTitle}</p>
-                            </div> */}
                         </div>
                     </li>
                 ))}

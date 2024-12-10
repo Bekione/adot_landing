@@ -39,10 +39,10 @@ export const Card = React.memo(
         <h3 className="text-lg font-bold">{card.title}</h3>
         <div className="flex space-x-4 mt-2">
           <a href={card.liveLink} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="w-6 h-6 text-white hover:text-secondary" />
+            <ExternalLink className="w-6 h-6 text-white hover:text-primary/60" />
           </a>
           <a href={card.githubLink} target="_blank" rel="noopener noreferrer">
-            <Github className="w-6 h-6 text-white hover:text-secondary" />
+            <Github className="w-6 h-6 text-white hover:text-primary/60" />
           </a>
         </div>
       </div>

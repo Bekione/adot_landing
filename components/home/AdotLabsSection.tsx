@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import GradientWord from "../ui/GradientWord";
@@ -8,9 +8,9 @@ import Image from "next/image";
 
 const AdotLabsSection = () => {
   return (
-    <section className="py-16 w-full overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section className="my-10 pt-16 pb-10 w-full overflow-hidden">
+      <div className="container mx-auto px-4  md:w-11/12 lg:w-10/12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 mx-8 md:mx-0">
           <motion.div
             className="w-full lg:w-3/5"
             initial={{ x: 1000, opacity: 0 }}
@@ -22,7 +22,7 @@ const AdotLabsSection = () => {
             }}
           >
             <GradientWord word="Adot Labs" />
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 mb-6 text-justify">
               At ADOT Labs, we support innovation through incubation and
               funding, helping startups and tech enthusiasts bring their ideas
               to life. Our goal is to foster creativity and drive
@@ -37,13 +37,15 @@ const AdotLabsSection = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
           >
-            <Image
-              src="/images/adot-labs/adot-lab.avif"
-              alt="Adot Labs"
-              width={500}
-              height={300}
-              className="w-full h-auto aspect-video rounded-md shadow-lg"
-            />
+            <div className="w-full flex justify-center">
+              <Image
+                src="/images/adot-labs/adot-lab.avif"
+                alt="Adot Labs"
+                width={500}
+                height={300}
+                className="w-full max-w-md h-auto aspect-video rounded-md shadow-lg"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
