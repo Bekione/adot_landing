@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Facebook, Twitter, Linkedin, Send } from 'lucide-react'
+import { socialLinks } from '@/data/socialLinks' // Import the socialLinks data
 import GradientWord from '../ui/GradientWord';
 
 export default function SocialLinks() {
@@ -9,19 +9,26 @@ export default function SocialLinks() {
     <div className="mt-12 flex flex-col items-center mx-auto">
       <GradientWord word='Stay Connected' size='sm' />
       <div className="flex space-x-4">
-        <SocialIcon icon={<Facebook />} href="https://www.facebook.com/adot-tech" />
-        <SocialIcon icon={<Twitter />} href="https://www.x.com/adot-tech" />
-        <SocialIcon icon={<Linkedin />} href="https://www.linkedin.com/adot-tech" />
-        <SocialIcon icon={<Send />} href="https://www.t.me/adot-tech" />
+        {socialLinks.map((social) => (
+          <SocialIcon 
+            key={social.name}
+            icon={<social.icon className="h-5 w-5" />} 
+            href={social.href} 
+            ariaLabel={social.name}
+          />
+        ))}
       </div>
     </div>
   )
 }
 
-function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
+function SocialIcon({ icon, href, ariaLabel }: { icon: React.ReactNode; href: string; ariaLabel: string }) {
   return (
     <motion.a 
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ariaLabel}
       className="bg-[#503c3c] p-3 rounded-full text-white hover:hero-bg transition duration-300"
       whileHover={{ scale: 1.1, rotate: 5 }}
       transition={{ duration: 0.2 }}
@@ -30,4 +37,3 @@ function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
     </motion.a>
   )
 }
-
