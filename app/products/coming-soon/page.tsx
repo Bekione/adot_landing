@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import { WobbleCard } from "@/components/ui/WobbleCard";
 import { motion } from "framer-motion";
 import { Clock, Bell } from "lucide-react";
+import Link from "next/link";
 
 export default function ComingSoon() {
   return (
@@ -10,7 +11,7 @@ export default function ComingSoon() {
       <Hero
         title="Commign Soon"
         description="Our team is hard at work developing an innovative new product that will redefine the way you interact with technology."
-        backgroundImage="/images/future.avif"
+        backgroundImage="/images/products/coming-soon.avif"
         noButton
       />
 
@@ -31,12 +32,11 @@ export default function ComingSoon() {
             will redefine the way you interact with technology. Stay tuned for
             updates and be the first to experience what's next from Adot.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="bg-white/80 text-[#503c3c] px-6 py-2 rounded-full inline-flex items-center z-40 "
+          <Link href="/contact"
+            className="px-8 py-2 rounded-md bg-primary text-white font-bold font-sans transition duration-200 hover:bg-white hover:text-primary border-2 border-transparent hover:border-primary flex items-center z-40 "
           >
             Get Notified <Bell size={16} className="ml-2" />
-          </motion.button>
+          </Link>
         </motion.div>
       </WobbleCard>
     </section>
