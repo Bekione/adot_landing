@@ -4,6 +4,8 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import GradientWord from "./GradientWord";
+import Button from "./Button";
 
 export const StickyScroll = ({
   content,
@@ -69,17 +71,17 @@ export const StickyScroll = ({
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
-              <motion.h2
+              <motion.div
                 initial={{
                   opacity: 0,
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-primary font-ubuntuBold"
+                className=""
               >
-                {item.title}
-              </motion.h2>
+                <GradientWord word={item.title} size="sm" />
+              </motion.div>
               <motion.p
                 initial={{
                   opacity: 0,
@@ -87,13 +89,11 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-black/50 max-w-sm mt-10 mb-8"
+                className="text-lg text-black/70 max-w-sm mt-10 mb-8 text-justify"
               >
                 {item.description}
               </motion.p>
-              <Link href={item.link} className="px-8 py-2 rounded-md bg-primary text-white font-bold transition duration-200 hover:bg-transparent hover:text-primary border-2 border-transparent hover:border-primary">
-                Learn More
-              </Link>
+              <Button text="Learn More" to={item.link} /> 
             </div>
           ))}
           <div className="h-40" />
@@ -102,7 +102,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-64 w-96 aspect-video rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
