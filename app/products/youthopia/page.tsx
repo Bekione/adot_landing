@@ -15,7 +15,7 @@ export default function Youthopia() {
       <Hero
         title="Youthopia"
         description="Learn, Play, and Grow Together – A Social Learning Platform for Children."
-        backgroundImage="/images/youthopia-kid.jfif"
+        backgroundImage="/images/products/youthopia/youthopia-kid.jpeg"
         ctaText="Explore Now"
         ctaLink="https://youthopia.vercel.app/"
       />
@@ -23,9 +23,9 @@ export default function Youthopia() {
         title="About Youthopia"
         description="Youthopia is a children’s media platform designed for both education and entertainment. It offers interactive courses, a social community for learning, and carefully crafted content to engage young minds in an immersive experience."
         images={[
-          "/images/youthopia-snap-1.png",
-          "/images/youthopia-snap-2.png",
-          "/images/youthopia-snap-3.png",
+          "/images/products/youthopia/youthopia-snap-1.png",
+          "/images/products/youthopia/youthopia-snap-2.png",
+          "/images/products/youthopia/youthopia-snap-3.png",
         ]}
       />
       <div className="flex flex-col items-center gap-6 mt-6 mb-14 mx-auto">

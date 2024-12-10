@@ -38,7 +38,7 @@ const AdotLabsSection = () => {
             transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
           >
             <Image
-              src="/images/adot-lab.avif"
+              src="/images/adot-labs/adot-lab.avif"
               alt="Adot Labs"
               width={500}
               height={300}

@@ -21,12 +21,12 @@ const page = () => {
       <Header
         title="Custom Software Development"
         description="Solutions tailored to your unique business challenges."
-        backgroundImage="/images/software-development.avif"
+        backgroundImage="/images/services/software-development.avif"
       />
       <About
-        title="About Our Custom Software Development Service"
+        title="About The Service"
         description="From automation tools to enterprise systems, we develop custom software designed to solve your business-specific problems. Experience innovation with our cutting-edge solutions."
-        images={["/images/software-development.avif"]}
+        images={["/images/services/software-development-2.avif"]}
       />
       <Features features={softwareFeatureData} />
       <Process steps={customSoftwareProcess} />

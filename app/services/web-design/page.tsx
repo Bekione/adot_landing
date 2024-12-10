@@ -21,12 +21,12 @@ const page = () => {
       <Hero
         title="Web Design"
         description="Creative designs that captivate and convert."
-        backgroundImage="/images/web-design.avif"
+        backgroundImage="/images/services/web-design.avif"
       />
       <About
-        title="About Our Web Design Service"
+        title="About The Service"
         description="Your website is your brand’s digital face. Our web design services ensure a visually stunning and user-friendly experience that communicates your brand effectively."
-        images={["/images/web-design.avif"]}
+        images={["/images/services/web-design-2.avif"]}
       />
       <Features features={webFeatureData} />
       <Process steps={webDesignProcess} />

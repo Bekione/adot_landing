@@ -22,12 +22,12 @@ const page = () => {
       <Hero
         title="Web Development"
         description="Building modern, scalable, and high-performing websites for your business success."
-        backgroundImage="/images/web-development.avif"
+        backgroundImage="/images/services/web-development.avif"
       />
       <About
-        title="About Our Web Development Service"
+        title="About The Service"
         description="We build websites that are fast, secure, and easy to manage. Our team of experts will help you build a website that will help you achieve your business goals."
-        images={["/images/web-development.avif"]}
+        images={["/images/services/web-development-2.avif"]}
       />
       <Features features={webFeatureData} />
       <Process steps={webDevelopmentProcess} />

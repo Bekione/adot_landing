@@ -21,12 +21,12 @@ const page = () => {
       <Hero
         title="App Development"
         description="Custom apps that deliver seamless experiences for your users."
-        backgroundImage="/images/app-development.avif"
+        backgroundImage="/images/services/app-development.avif"
       />
       <About
-        title="About Our Application Development Service"
+        title="About The Service"
         description="We specialize in building mobile and web apps tailored to your needs. Whether it’s a startup idea or an enterprise solution, our apps are designed for performance, scalability, and user satisfaction."
-        images={["/images/app-development.avif"]}
+        images={["/images/services/app-development-2.avif"]}
       />
       <Features features={appFeatureData} />
       <Process steps={appDevelopmentProcess} />
