@@ -14,7 +14,7 @@ export default function ProductsOverwiew() {
         subtitle="Solving real-world problems with innovative solutions tailored for Ethiopian businesses and beyond."
       />
 
-      <main className="py-20">
+      <main className="py-12 w-full">
         <StickyScroll content={products} /> 
       </main>
 

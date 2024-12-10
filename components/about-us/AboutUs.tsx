@@ -13,7 +13,7 @@ import WhyChoose from "../products/WhyChoose";
 
 export default function AboutUs() {
   return (
-    <section className="py-16 pt-32 font-ubuntuReg">
+    <section className="py-16 pt-32 font-ubuntuReg md:w-11/12 lg:w-10/12 mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -15,7 +15,7 @@ const iconMap: Record<IconNames, React.FC<React.SVGProps<SVGSVGElement>>> = {
 };
 const WhatWeOfferSection = () => {
     return (
-        <div className="mt-4 mx-10 md:mx-16 flex flex-col items-center">
+        <div className="mt-4 flex flex-col items-center md:w-11/12 lg:w-10/12 mx-auto">
             <GradientWord word="What We Offer" />
             <BentoGrid className="max-w-5xl mx-auto mt-6">
                 {items.map((item, i) => {

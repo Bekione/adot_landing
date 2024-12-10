@@ -15,9 +15,9 @@ interface ProcessProps {
 
 export default function Process({ steps }: ProcessProps) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-8 bg-white md:w-11/12 lg:w-10/12 mx-auto">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <GradientWord word="Our Process" />
+        <GradientWord word="Our Process" size='sm' />
         <div className="flex flex-wrap justify-center mt-10">
           {steps.map((step, index) => (
             <motion.div

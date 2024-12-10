@@ -34,7 +34,7 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative w-[400px] md:w-[500px] aspect-video mx-auto">
+    <div className="relative w-9/12 sm:w-8/12 md:w-full aspect-video mx-auto mt-8">
       <AnimatePresence>
         {cards.map((image, index) => {
           const isTopCard = index === 0; // Identify the top card for exit animation
