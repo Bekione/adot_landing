@@ -18,6 +18,7 @@
 :root {
   --background: #d5cea3;
   --foreground: #503c3c;
+  font-family: var('--font-ubuntu-r');
 }
 
 /* Custom Scrollbar */
@@ -67,14 +68,6 @@
 
 html{
   scroll-behavior: smooth;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #503c3c;
-    --foreground: #d5cea3;
-    /* --backgroudnd: #503c3ce1; */
-    font-family: var('--font-ubuntu-r');
-  }
 }
 
 body {
