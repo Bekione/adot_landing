@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { EvervaultCard, Icon } from '../ui/EvervalutCard';
 import GradientWord from '../ui/GradientWord';
 import { teams } from '@/data/teams';
+import { Noise } from '../ui/WobbleCard';
 
 interface TeamMemberProps {
     name: string;
@@ -19,7 +20,7 @@ export default function MeetTheTeam() {
       transition={{ duration: 0.6, delay: 0.8 }}
       className="my-16 mb-20 flex flex-col items-center"
     >
-      <GradientWord word="Meet The Team" />
+      <GradientWord word="Meet The Team" size='sm'/>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 mx-auto">
         {teams.map((member, index) => (
           <TeamMember key={index} {...member} />
@@ -32,7 +33,8 @@ export default function MeetTheTeam() {
 function TeamMember({ name, role, image }: TeamMemberProps) {
 
   return (
-    <div className="border border-black/[0.2] bg-secondary flex flex-col items-start max-w-sm mx-auto p-4 relative h-[20rem]">
+    <div className="border border-black/[0.2] bg-secondary flex flex-col items-start max-w-sm mx-auto p-4 relative h-[20rem] ">
+      <Noise />
       <Icon className="absolute h-6 w-6 -top-3 -left-3  text-primary" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-primary" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3  text-primary" />
