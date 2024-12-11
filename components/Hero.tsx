@@ -28,7 +28,7 @@ export default function Hero({
 
   return (
     <motion.header
-      className="relative min-h-96 hero-bg flex items-center justify-center text-white"
+      className="relative min-h-96 w-full hero-bg flex items-center justify-center text-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

@@ -10,7 +10,7 @@ import { Noise } from "../ui/WobbleCard";
 export default function FeaturedProjects() {
   return (
     <section
-      className="py-10 bg-secondary relative"
+      className="py-10 bg-secondary relative overflow-hidden"
     >
       <Noise />
       <div className="container mx-auto px-4 flex flex-col items-center">
@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
         >
           <GradientWord word="Projects We're Working On" size="sm" />
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 md:px-auto md:w-11/12 lg:w-10/12">
           {labProjects.map((project, index) => (
             <motion.div
               key={project.name}

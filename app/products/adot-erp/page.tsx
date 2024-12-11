@@ -51,6 +51,7 @@ export default function AdotERP() {
         title="Ready to Take Control of Your Business?"
         linkText="Request a Demo"
         link="https://erpnext-demo.frappe.cloud/app"
+        target="_blank"
         type="secondary"
       />
     </section>

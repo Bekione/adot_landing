@@ -8,6 +8,7 @@ interface CTABlockProps {
   description?: string;
   linkText: string;
   link: string;
+  target?: string;
   type?: "default" | "secondary";
   className?: string;
 }
@@ -17,9 +18,13 @@ const CTABlock: React.FC<CTABlockProps> = ({
   description,
   linkText,
   link,
+  target,
   type = "default",
   className,
 }) => {
+  // Check if the link is external
+  const isExternal = target === "_blank";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -37,11 +42,12 @@ const CTABlock: React.FC<CTABlockProps> = ({
           className
         )}
       >
+        {/* Title */}
         <motion.h2
           className={cn(
             type === "default" && "text-primary",
-            type === "secondary" && "text-secondary",
-            "text-3xl font-bold font-ubuntuBold mb-4"
+            type === "secondary" && "text-white",
+            "text-2xl md:text-3xl font-bold font-ubuntuBold mb-4"
           )}
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,12 +55,14 @@ const CTABlock: React.FC<CTABlockProps> = ({
         >
           {title}
         </motion.h2>
+
+        {/* Description */}
         {description && (
           <motion.p
             className={cn(
               type === "default" && "text-gray-700",
               type === "secondary" && "text-white",
-              "text-xl mb-8 text-center w-full sm:w-10/12 mx-auto"
+              "text-lg md:text-xl mb-8 text-center w-full sm:w-10/12 mx-auto"
             )}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,13 +72,20 @@ const CTABlock: React.FC<CTABlockProps> = ({
           </motion.p>
         )}
 
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="relative"
         >
-          <Button text={linkText} to={link} type="secondary" />
+          {/* Button Component */}
+          <Button
+            text={linkText}
+            to={link}
+            target={target as "_blank" | "_self" | "_parent" | "_top" || undefined}
+            type="secondary"
+          />
         </motion.div>
       </WobbleCard>
     </motion.div>

@@ -26,7 +26,7 @@ const benefits = [
 
 export default function Internships() {
   return (
-    <section className="py-20" id="get-involved">
+    <section className="py-10 md:py-16" id="get-involved">
       <div className="container mx-auto px-4 flex flex-col items-center md:w-11/12 lg:w-10/12">
         {/* Title */}
         <motion.div
@@ -44,7 +44,7 @@ export default function Internships() {
 
         {/* Description & Benefits */}
         <motion.div
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-3xl text-justify md:text-center mx-6 md:mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

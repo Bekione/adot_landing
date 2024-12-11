@@ -25,8 +25,10 @@ const page = () => {
         <Hero
           title="Adot Labs"
           description="Where Innovation Meets Collaboration"
-          backgroundImage="/images/adot-lab.avif"
-          noButton
+          backgroundImage="/images/adot-labs/adot-lab.avif"
+          ctaText="Get Involved"
+          ctaLink="#get-involved"
+
         />
         <main>
           <About
@@ -36,9 +38,9 @@ const page = () => {
               "Our mission is to incubate ideas from youth and aspiring innovators, develop open-source projects, support initiatives like TechTonic Club, and provide opportunities through internships and mentorship.",
             ]}
             images={[
-              "/images/adot-labs-team.avif",
-              "/images/adot-labs-team-2.avif",
-              "/images/adot-labs-team-3.avif",
+              "/images/adot-labs/adot-labs-team.avif",
+              "/images/adot-labs/adot-labs-team-2.avif",
+              "/images/adot-labs/adot-labs-team-3.avif",
             ]}
           />
           <FocusAreas />

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function ComingSoon() {
   return (
-    <section className="">
+    <section className="flex flex-col items-center">
       <Hero
         title="Commign Soon"
         description="Our team is hard at work developing an innovative new product that will redefine the way you interact with technology."
@@ -17,7 +17,7 @@ export default function ComingSoon() {
 
       <WobbleCard
         allowScale={false}
-        containerClassName="relative max-w-2xl mx-auto my-6 bg-primary overflow-hidden"
+        containerClassName=" w-10/12 max-w-2xl mx-auto my-6 bg-primary"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ export default function ComingSoon() {
         >
           <Clock size={64} className="mx-auto mb-4 text-white" />
           <h2 className="text-3xl font-bold font-ubuntuBold text-center mb-4 text-white">Something Big is Coming</h2>
-          <p className="mb-6 text-white/80">
+          <p className="mb-6 px-2 text-white/80 text-justify">
             Our team is hard at work developing an innovative new product that
             will redefine the way you interact with technology. Stay tuned for
             updates and be the first to experience what's next from Adot.

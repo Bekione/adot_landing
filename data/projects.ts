@@ -112,21 +112,21 @@ export const labProjects = [
     name: "API Documentation Generator",
     description:
       "An open-source tool that generates API documentation from REST or GraphQL APIs.",
-    image: "/images/project-snaps/lab-project-1.webp",
+    image: "/images/adot-labs/lab-project-1.webp",
     link: "#",
   },
   {
     name: "Open Source AI Blogger",
     description:
       "An AI-powered blogger designed to help readers get unique insights on trending topics.",
-    image: "/images/project-snaps/lab-project-2.webp",
+    image: "/images/adot-labs/lab-project-2.webp",
     link: "#",
   },
   {
     name: "TechTonic Attendance System",
     description:
       "A custom attendance system tailored for tech education, developed in collaboration with TechTonic Club.",
-    image: "/images/project-snaps/lab-project-3.webp",
+    image: "/images/adot-labs/lab-project-3.webp",
     link: "#",
   },
 ];

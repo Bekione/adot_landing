@@ -51,7 +51,8 @@ export default function Youthopia() {
       <CTABlock
         title="Let Your Child Explore a World of Learning and Fun!"
         linkText="Get Started Today"
-        link="https://www.adot-erp.com/demo"
+        link="https://youthopia.vercel.app/"
+        target="_blank"
         type="secondary"
       />
     </section>

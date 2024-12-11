@@ -75,6 +75,7 @@ export const CardStack = ({
                 objectFit="cover" 
                 quality={90} 
                 priority={index === 0} // Load the top card image first
+                className="bg-secondary"
               />
             </motion.div>
           );

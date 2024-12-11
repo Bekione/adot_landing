@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -10,18 +10,26 @@ interface ButtonProps {
   to: string;
   type?: "default" | "secondary";
   className?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top"; 
 }
 
-const Button = ({ text, to, type = "default", className }: ButtonProps) => {
+const Button = ({
+  text,
+  to,
+  type = "default",
+  className,
+  target,
+}: ButtonProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
     >
-      
       <Link
         href={to}
+        target={target} 
+        rel={target ? "noopener noreferrer" : undefined}
         className={cn(
           className,
           type === "default"
