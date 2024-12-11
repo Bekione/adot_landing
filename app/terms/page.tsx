@@ -6,8 +6,8 @@ import GradientWord from '@/components/ui/GradientWord'
 
 const page = () => {
   return (
-    <section className="py-12 md:py-24">
-      <div className="container mx-auto px-4 ">
+    <section className="py-12 pt-16 md:py-24">
+      <div className="container mx-auto px-8">
         <motion.div
           className="mb-8 text-center"
           initial={{ opacity: 0, y: -20 }}

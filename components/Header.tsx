@@ -31,7 +31,7 @@ const Header = () => {
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <div className="mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="mx-auto px-4 py-2 flex justify-between items-center">
           <Logo />
           <NavbarMenu />
           <button

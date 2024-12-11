@@ -23,7 +23,7 @@ export default function ContactForm() {
       transition={{ duration: 0.6 }}
     >
       <GradientWord word="Get in Touch" size="sm" className="ml-2 lg:ml-0 lg:mx-auto"/>
-      <form className="space-y-6 mt-6 shadow-xl rounded-lg p-8" onSubmit={handlesubmit}>
+      <form className="space-y-6 mt-6 shadow-xl rounded-lg p-2 md:p-8" onSubmit={handlesubmit}>
   
           <LabelInputContainer>
             <Label htmlFor="fullname">First name</Label>
@@ -47,7 +47,7 @@ export default function ContactForm() {
                     
         <button
           type="submit"
-          className="w-full px-8 py-2 rounded-md flex items-center justify-center bg-primary text-white font-bold font-sans transition duration-200 hover:bg-white hover:text-primary border-2 border-transparent hover:border-primary"
+          className="w-full px-8 py-2 rounded-md flex items-center justify-center relative inline-block px-6 py-2 rounded-lg text-white bg-[#503c3c] hover:bg-[#d5cea3] hover:text-primary transition-all duration-300 overflow-hidden z-50"
         >
           <Send className="mr-2 h-5 w-5" />
           <span>Send Message</span>

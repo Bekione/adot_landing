@@ -11,7 +11,7 @@ export default function OfficeLocation() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-        <GradientWord word='Office Location' />
+        <GradientWord word='Office Location' size='sm' />
       <div className="bg-gray-200 rounded-lg shadow-md h-96 w-full flex items-center justify-center">
         <p className="text-gray-500">Interactive Map Coming Soon</p>
       </div>

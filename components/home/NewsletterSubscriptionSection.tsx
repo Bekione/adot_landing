@@ -78,7 +78,7 @@ export default function NewsletterSection() {
     <WobbleCard allowScale={false} containerClassName="relative w-11/12 mx-auto my-10 bg-primary overflow-hidden">
       {/* Decorative background patterns */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41Ij48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMwIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMjAiLz48L2c+PC9zdmc+')] bg-no-repeat bg-cover rotate-45 transform translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute right-0 top-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41Ij48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMwIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMjAiLz48L2c+PC9zdmc+')] bg-no-repeat bg-cover rotate-45 transform translate-x-1/2 -translate-y-1/2" />
       </div>
 
       <motion.div
@@ -113,7 +113,7 @@ export default function NewsletterSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="w-full flex items-center"
         >
-          <div className="relative ml-auto h-16 w-full bg-white/30 rounded-full flex">
+          <div className="relative ml-auto h-16 w-full max-w-lg bg-white/30 rounded-full flex flex-wrap">
             <input
               type="email"
               placeholder="your email here"

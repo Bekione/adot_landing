@@ -16,13 +16,13 @@ const page = () => {
   };
 
   return (
-    <div className="min-h-screen font-ubuntuReg">
+    <div className="min-h-screen w-full font-ubuntuReg">
       <GradientHeader
         title="Contact Us"
         subtitle="We are here to help you with any questions you may have. Reach out to us and we will get back to you as soon as possible."
       />
 
-      <main className="container mx-auto px-4 py-16">
+      <main className="flex flex-col  px-4 py-8 md:py-16 md:w-11/12 lg:w-10/12 mx-4 md:mx-auto">
       <motion.div 
           className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16"
           variants={fadeIn}

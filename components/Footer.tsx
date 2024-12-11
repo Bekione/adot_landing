@@ -33,7 +33,7 @@ const item = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#503c3c] via-[#3d2e2e] to-[#2d2222] text-slate-200">
+    <footer className="bg-gradient-to-br from-primary via-[#3d2e2e] to-[#2d2222] text-slate-200">
       <div className="container mx-auto px-4 py-12">
         <motion.div
           variants={container}

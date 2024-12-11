@@ -33,7 +33,7 @@ export const navLinks: NavLink[] = [
       { title: "Comming Soon", description: "Something exciting on it's way.", href: "/products/coming-soon", src: "/images/products/coming-soon.avif" },
     ],
   },
-  { title: "Adot Labs", href: "/adot-labs" },
+  { title: "Labs", href: "/adot-labs" },
   { title: "Blog", href: "/blog" },
   { title: "Contact Us", href: "/contact" },
 ];

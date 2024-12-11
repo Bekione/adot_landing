@@ -87,7 +87,7 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Blog Content */}
       <BlogContent blogPost={blogPost} />
 
