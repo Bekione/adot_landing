@@ -1,14 +1,16 @@
 export type SubLink = {
   title: string;
-  description?: string; // Optional for cases like Services
+  description?: string;
   href: string;
-  src?: string; // Optional image for sub-links
+  src?: string; 
+  badge?: string;
 };
 
 export type NavLink = {
   title: string;
-  href?: string; // Optional if there are sub-links
-  subLinks?: SubLink[]; // Array of sub-links for dropdowns
+  href?: string; 
+  subLinks?: SubLink[]; 
+  badge?: string;
 };
 
 export const navLinks: NavLink[] = [
@@ -29,7 +31,7 @@ export const navLinks: NavLink[] = [
     href: "/products",
     subLinks: [
       { title: "Adot ERP", description: "Manage your enterprise efficiently.", href: "/products/adot-erp", src: "/images/products/adot-erp/adot-erp.svg" },
-      { title: "Youthopia", description: "Kids number one choice.", href: "/products/youthopia", src: "/images/products/youthopia/youthopia-snap-1.png" },
+      { title: "Youthopia", description: "Kids number one choice.", href: "/products/youthopia", src: "/images/products/youthopia/youthopia-snap-1.png", badge: "New" },
       { title: "Comming Soon", description: "Something exciting on it's way.", href: "/products/coming-soon", src: "/images/products/coming-soon.avif" },
     ],
   },
