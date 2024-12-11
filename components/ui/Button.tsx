@@ -10,7 +10,8 @@ interface ButtonProps {
   to: string;
   type?: "default" | "secondary";
   className?: string;
-  target?: "_blank" | "_self" | "_parent" | "_top"; 
+  target?: "_blank" | "_self" | "_parent" | "_top" | undefined; 
+  rel?: "noopener" | "noreferrer" | "noopener noreferrer" | undefined;
 }
 
 const Button = ({
@@ -32,9 +33,10 @@ const Button = ({
         rel={target ? "noopener noreferrer" : undefined}
         className={cn(
           className,
+          'font-ubuntuReg',
           type === "default"
-            ? "relative inline-block px-6 py-2 rounded-lg text-white bg-[#503c3c] hover:bg-[#d5cea3] hover:text-primary transition-all duration-300 overflow-hidden z-50"
-            : "relative inline-flex w-fit h-12 animate-shimmer items-center justify-center rounded-md border border-[#503c3c] bg-[linear-gradient(110deg,#503c3c,45%,#704d4d,55%,#503c3c)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors hover:shadow-2xl hover:shadow-[#d5cea3]/[0.3] overflow-hidden z-50"
+            ? "relative inline-block px-6 py-2 rounded-lg text-white bg-[#503c3c] hover:bg-secondary hover:text-primary transition-all duration-300 overflow-hidden z-50"
+            : "relative inline-flex w-fit h-12 animate-shimmer items-center justify-center rounded-md border border-primary bg-[linear-gradient(110deg,#503c3c,45%,#704d4d,55%,#503c3c)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors hover:shadow-2xl hover:shadow-primary/[0.3] overflow-hidden z-50"
         )}
       >
         <Noise />
