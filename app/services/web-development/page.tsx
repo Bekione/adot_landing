@@ -37,7 +37,6 @@ const page = () => {
         description="Let's build a website that drives your business forward."
         linkText="Contact Us Now"
         link="/contact"
-        className="mb-32"
       />
     </motion.div>
   );

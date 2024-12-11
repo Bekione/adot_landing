@@ -22,7 +22,7 @@ const GradientHeader: React.FC<GradientHeaderProps> = ({ title, subtitle, childr
         </motion.div>
         {subtitle && (
           <motion.p
-            className="text-xl text-center max-w-2xl mx-auto"
+            className="text-xl text-center w-10/12 max-w-xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}

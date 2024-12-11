@@ -12,12 +12,12 @@ interface AboutProps {
 
 export default function About({ title, description, images }: AboutProps) {
   return (
-    <section className="py-20">
+    <section className="py-10 md:py-16">
       <div className="container mx-auto px-4 md:w-11/12 lg:w-10/12">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-4 items-center justify-center relative">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-center relative">
           {/* Left Side Content */}
           <motion.div
-            className="w-full md:w-7/12 flex flex-col mb-12 md:mb-0 px-4"
+            className="w-full md:w-7/12 flex flex-col mb- md:mb-0 px-4"
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -39,7 +39,7 @@ export default function About({ title, description, images }: AboutProps) {
 
           {/* Right Side Card Stack */}
           <motion.div
-            className="w-full md:w-5/12 px-4"
+            className="w-full md:w-5/12 px-4 flex items-center justify-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}

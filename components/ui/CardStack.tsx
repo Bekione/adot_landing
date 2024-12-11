@@ -2,11 +2,12 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 let interval: any;
 
 type CardStackProps = {
-  images: string[]; // Array of image URLs
+  images: string[];
   offset?: number; // Offset between cards
   scaleFactor?: number; // Scale reduction for stacked cards
 };
@@ -34,14 +35,14 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative w-9/12 sm:w-8/12 md:w-full aspect-video mx-auto mt-8">
+    <div className={cn("relative w-10/12 sm:w-8/12 md:w-full aspect-video mx-auto", cards.length === 1 ? 'mb-4 md:mb-0' : 'mt-8')}>
       <AnimatePresence>
         {cards.map((image, index) => {
           const isTopCard = index === 0; // Identify the top card for exit animation
           return (
             <motion.div
               key={image} // Ensure each image has a unique key
-              className="absolute w-full h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-200"
+              className="absolute w-full h-full rounded-lg md:rounded-3xl overflow-hidden shadow-xl border border-gray-300"
               style={{
                 transformOrigin: "top center",
               }}
@@ -70,9 +71,9 @@ export const CardStack = ({
               <Image
                 src={image}
                 alt={`Card ${index}`}
-                layout="fill" // Ensure the image fills the card container
-                objectFit="cover" // Maintain aspect ratio while filling the card
-                quality={90} // Optimize image quality
+                layout="fill" 
+                objectFit="cover" 
+                quality={90} 
                 priority={index === 0} // Load the top card image first
               />
             </motion.div>

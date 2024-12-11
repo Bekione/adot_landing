@@ -19,6 +19,7 @@ export default function AdotERP() {
         description="All-in-One ERP Solution for Ethiopian Businesses"
         backgroundImage="/images/products/adot-erp/adot-erp-header.jfif"
         ctaText="Request a Demo"
+        target="_blank"
         ctaLink="https://erpnext-demo.frappe.cloud/app"
       />
       <About

@@ -18,7 +18,7 @@ export default function Process({ steps }: ProcessProps) {
     <section className="py-8 bg-white md:w-11/12 lg:w-10/12 mx-auto">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <GradientWord word="Our Process" size='sm' />
-        <div className="flex flex-wrap justify-center mt-10">
+        <div className="flex flex-wrap justify-center mt-10 mx-6 md:mx-0">
           {steps.map((step, index) => (
             <motion.div
               key={index}

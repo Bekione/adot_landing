@@ -7,9 +7,9 @@ import { motion } from 'framer-motion'
 
 export default function Testimonials() {
   return (
-    <section className="py-20 mb-8">
+    <section className=" mb-8 overflow-hidden">
       <motion.div
-        className="container mx-auto px-4 flex flex-col items-center gap-8"
+        className="container mx-auto px-4 flex flex-col items-center gap-4 md:gap-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

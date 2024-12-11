@@ -19,7 +19,7 @@ export default function Features({ features }: FeaturesProps) {
       <Noise />
       <div className="container mx-auto px-4 flex flex-col items-center">
         <GradientWord word="Features" type="secondary" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 md:w-11/12 lg:w-10/12 mx-6 md:mx-0">
           {features.map((feature, index) => (
             <motion.div
               key={index}

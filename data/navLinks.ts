@@ -30,9 +30,10 @@ export const navLinks: NavLink[] = [
     subLinks: [
       { title: "Adot ERP", description: "Manage your enterprise efficiently.", href: "/products/adot-erp", src: "/images/products/adot-erp/adot-erp.svg" },
       { title: "Youthopia", description: "Kids number one choice.", href: "/products/youthopia", src: "/images/products/youthopia/youthopia-snap-1.png" },
-      { title: "Comming Soon", description: "Something exciting on it way.", href: "/products/coming-soon", src: "/images/products/coming-soon.avif" },
+      { title: "Comming Soon", description: "Something exciting on it's way.", href: "/products/coming-soon", src: "/images/products/coming-soon.avif" },
     ],
   },
+  { title: "Adot Labs", href: "/adot-labs" },
   { title: "Blog", href: "/blog" },
   { title: "Contact Us", href: "/contact" },
 ];

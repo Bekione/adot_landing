@@ -26,7 +26,7 @@ export default function ServicesOverview() {
       />
 
       {/* Services Grid */}
-      <main className="py-16 md:w-11/12 lg:w-10/12 mx-auto">
+      <main className="py-16 md:w-11/12 lg:w-10/12 mx-6 md:mx-auto">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
             {services.map((service, index) => {
