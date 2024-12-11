@@ -2,85 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================== */
+/* Base Styles                */
+/* ========================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
+  body {
+    @apply font-openSansReg; /* Open Sans for global content */
+    font-family: var(--font-openSans-v), sans-serif; /* Fallback in case of error */
+  }
+
+  :root {
+    font-family: var(--font-ubuntu-r); /* Ubuntu Regular as a fallback */
+  }
+}
+
+/* ========================== */
+/* Utilities                  */
+/* ========================== */
 @layer utilities {
   .hero-bg {
     background-size: 100% 100%;
-    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
-    background-image: radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%),
+    background-position: 0 0;
+    background-image: 
+      radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%),
       radial-gradient(113% 91% at 198% -32%, #d5cea3 1%, #503c3c 99%),
       radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%),
       radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%),
       radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%);
   }
+
+  .no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 1.5s infinite;
+  }
 }
 
-:root {
-  --background: #d5cea3;
-  --foreground: #503c3c;
-  font-family: var('--font-ubuntu-r');
-}
+/* ========================== */
+/* Custom Scrollbar           */
+/* ========================== */
 
-/* Custom Scrollbar */
+/* Chrome, Safari, Edge */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #503c3c; /* Track color */
+  background: #503c3c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d5cea3; /* Thumb color */
-  border-radius: 4px; /* Rounded corners for the thumb */
+  background: #d5cea3;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8ad8c; /* Thumb color on hover */
+  background: #b8ad8c;
 }
 
-/* For Firefox */
+/* Firefox Scrollbar */
 * {
-  scrollbar-width: thin; /* Thin scrollbar */
-  scrollbar-color: #d5cea3 #503c3c; /* Thumb color, Track color */
+  scrollbar-width: thin;
+  scrollbar-color: #d5cea3 #503c3c; /* Thumb and track color */
 }
 
-
-.no-visible-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.no-visible-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-  scrollbar-width: none;    /* Hide scrollbar for Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
-}
-
-
-html{
-  scroll-behavior: smooth;
-}
-
-body {
-  /* color: var(--background);
-  background: var(--foreground); */
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
+/* ========================== */
+/* Custom Cursor              */
+/* ========================== */
 .hero-section {
-  cursor: url('/cursor.cur'), auto; /* Custom cursor */
+  cursor: url('/cursor.cur'), auto;
 }
 
+/* ========================== */
+/* Animations                 */
+/* ========================== */
 @keyframes bounce-slow {
   0%, 100% {
     transform: translateY(0);
@@ -89,8 +105,3 @@ body {
     transform: translateY(-10px);
   }
 }
-
-.animate-bounce-slow {
-  animation: bounce-slow 1.5s infinite;
-}
-
