@@ -10,7 +10,7 @@ import AdotLabsSection from "@/components/home/AdotLabsSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-ubuntuReg">
+    <div className="min-h-screen">
       <HomeHero />
       <WhoWeAreSection />
       <WhatWeOfferSection />

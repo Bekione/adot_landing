@@ -18,7 +18,7 @@ const iconMap: Record<IconNames, React.FC<React.SVGProps<SVGSVGElement>>> = {
 
 export default function ServicesOverview() {
   return (
-    <div className="min-h-screen font-ubuntuReg bg-[#f5f5f5]">
+    <div className="min-h-screen">
       {/* Page Header */}
       <GradientHeader
         title="Our Services"

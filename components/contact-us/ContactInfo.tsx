@@ -35,11 +35,11 @@ function ContactCard({ icon: Icon, title, content }: ContactCardProps) {
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="bg-[#d5cea3] p-3 rounded-full text-[#503c3c]">
+      <div className="bg-secondary p-3 rounded-full text-primary">
         <Icon className="h-6 w-6" /> {/* Render the icon dynamically */}
       </div>
       <div>
-        <h3 className="font-semibold text-lg text-[#503c3c] mb-1">{title}</h3>
+        <h3 className="font-semibold font-ubuntuBold text-lg text-primary mb-1">{title}</h3>
         {Array.isArray(content) ? (
           content.map((item, index) => (
             <p key={index} className="text-gray-600">

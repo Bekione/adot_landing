@@ -30,7 +30,7 @@ export default function Features({ features }: FeaturesProps) {
               viewport={{ once: true }}
             >
               <feature.icon className="w-12 h-12 mb-4 text-white" />
-              <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+              <h3 className="text-xl font-semibold font-ubuntuBold mb-2 text-white">{feature.title}</h3>
               <p className="text-white/80">{feature.description}</p>
             </motion.div>
           ))}

@@ -20,7 +20,7 @@ export default function CoreValues() {
       transition={{ duration: 0.6, delay: 0.2 }}
       className=""
     >
-      <h3 className="text-3xl font-semibold mb-8 text-center text-white">Our Core Values</h3>
+      <h3 className="text-3xl font-semibold font-ubuntuBold mb-8 text-center text-white">Our Core Values</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {values.map((value, index) => {
           const Icon = value.icon
@@ -34,7 +34,7 @@ export default function CoreValues() {
                 <Icon size={32} className="text-white" />
               </div>
               <div>
-                <h4 className="text-xl font-bold mb-2">{value.title}</h4>
+                <h4 className="text-xl font-bold font-ubuntuReg mb-2">{value.title}</h4>
                 <p className="">{value.description}</p>
               </div>
             </motion.div>

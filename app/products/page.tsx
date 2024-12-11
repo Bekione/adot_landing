@@ -8,7 +8,7 @@ import { StickyScroll } from "@/components/ui/StickyScrollReveal";
 
 export default function ProductsOverwiew() {
   return (
-    <div className="min-h-screen font-ubuntuReg">
+    <div className="min-h-screen">
       <GradientHeader
         title="Our Products"
         subtitle="Solving real-world problems with innovative solutions tailored for Ethiopian businesses and beyond."

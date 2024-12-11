@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import GradientWord from "./ui/GradientWord";
+import Button from "./ui/Button";
 
 interface HeroProps {
   title: string;
@@ -10,7 +11,7 @@ interface HeroProps {
   backgroundImage: string;
   ctaText?: string;
   ctaLink?: string;
-  target?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top" | undefined;
   noButton?: boolean;
 }
 
@@ -70,14 +71,14 @@ export default function Hero({
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <Link
-              href={ctaLink || "/contact"}
-              target={target || undefined}
+            <Button
+              text={ctaText || "Contact Us"}
+              to={ctaLink || "/contact"}
+              target={target}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              className="w-[25ch] inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-[#503c3c] bg-[linear-gradient(110deg,#503c3c,45%,#704d4d,55%,#503c3c)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors hover:shadow-2xl hover:shadow-[#d5cea3]/[0.3]"
-            >
-              {ctaText || "Contact Us"}
-            </Link>
+              className="w-[25ch] "
+              type="secondary"
+            />
           </motion.div>
         )}
       </div>
