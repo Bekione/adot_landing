@@ -52,6 +52,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href="https://adot-technologies.com" />
       </head>
       <body
