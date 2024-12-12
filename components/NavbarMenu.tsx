@@ -49,7 +49,7 @@ function NavItem({ link, pathname }: { link: NavLink; pathname: string }) {
         href={link.href || '#'}
         className={cn(
           'px-3 py-2 text-md font-medium rounded-md transition-colors',
-          isActive ? 'text-secondary font-bold bg-white/10 font-ubuntuBold' : 'text-secondary hover:text-white'
+          isActive ? 'text-secondary font-bold bg-white/10 font-ubuntuBold' : 'text-secondary hover:text-secondary/70'
         )}
       >
         {link.title}
