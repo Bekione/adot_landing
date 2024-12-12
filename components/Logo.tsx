@@ -14,7 +14,7 @@ const Logo = () => {
           />
           <Image
             className="hidden h-auto w-auto lg:flex"
-            src="/images/logos/logo-text.png"
+            src="/images/logos/logo-text-sm.png"
             alt="Adot logo text"
             width={170}
             height={50}
