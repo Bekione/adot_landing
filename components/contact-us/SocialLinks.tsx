@@ -1,58 +1,40 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import { socialLinks } from '@/data/socialLinks';
+import { motion } from 'framer-motion'
+import { socialLinks } from '@/data/socialLinks' // Import the socialLinks data
 import GradientWord from '../ui/GradientWord';
 
 export default function SocialLinks() {
   return (
     <div className="mt-12 flex flex-col items-center mx-auto">
-      <GradientWord word="Stay Connected" size="sm" />
+      <GradientWord word='Stay Connected' size='sm' />
       <div className="flex space-x-4">
         {socialLinks.map((social) => (
-          <SocialIcon
+          <SocialIcon 
             key={social.name}
-            href={social.href}
+            icon={<social.icon className="h-5 w-5" />} 
+            href={social.href} 
             ariaLabel={social.name}
-            icon={social.isImage ? social.icon : undefined}
-            IconComponent={!social.isImage ? social.icon : undefined}
           />
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-function SocialIcon({
-  icon,
-  IconComponent,
-  href,
-  ariaLabel,
-}: {
-  icon?: string; // For image paths
-  IconComponent?: React.ElementType; // For React components like Lucide
-  href: string;
-  ariaLabel: string;
-}) {
+function SocialIcon({ icon, href, ariaLabel }: { icon: React.ReactNode; href: string; ariaLabel: string }) {
+  console.log(icon);
   return (
-    <motion.a
+    <motion.a 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
-      className="bg-[#503c3c] p-3 rounded-full text-white hover:hero-bg transition duration-300"
+      className="bg-[#503c3c] p-3 rounded-full text-white hover:hero-bg transition-colors duration-300"
       whileHover={{ scale: 1.1, rotate: 5 }}
       transition={{ duration: 0.2 }}
     >
-      {icon ? (
-        <img
-          src={icon}
-          alt={ariaLabel}
-          className="h-5 w-5"
-        />
-      ) : (
-        IconComponent && <IconComponent className="h-5 w-5" />
-      )}
+      {icon}
     </motion.a>
-  );
+  )
 }
