@@ -31,11 +31,11 @@ const Header = () => {
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <div className="mx-auto px-4 py-2 flex justify-between items-center">
+        <div className="w-full mx-auto px-4 py-2 flex justify-between items-center z-50">
           <Logo />
           <NavbarMenu />
           <button
-            className="p-2 rounded-md text-[#d5cea3] md:hidden"
+            className="p-2 rounded-md text-secondary md:hidden"
             onClick={() => setIsSidebarOpen(true)}
             aria-label="Open Menu"
           >
