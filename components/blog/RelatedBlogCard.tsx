@@ -19,11 +19,11 @@ const RelatedBlogCard: React.FC<RelatedBlogCardProps> = ({ post }) => {
         />
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold font-ubuntuBold text-[#503c3c] mb-2">{post.title}</h3>
+        <h3 className="text-lg font-semibold font-ubuntuBold text-primary mb-2">{post.title}</h3>
         <p className="text-sm text-gray-600 mb-4">{post.excerpt}</p>
         <Link
             href={`/blog/${post.id}`}
-            className="group/link flex items-center gap-2 text-[#503c3c] font-bold hover:text-[#503c3c]/80"
+            className="group/link flex items-center gap-2 text-primary font-bold hover:text-primary/80"
           >
             Read post
             <ArrowRight className="w-4 h-4 group-hover/link:-rotate-12 transition-transform duration-300" />

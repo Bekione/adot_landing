@@ -29,7 +29,7 @@ const page = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
-              <h2 className="text-xl md:text-2xl font-ubuntuBold text-[#503c3c] mb-2">
+              <h2 className="text-xl md:text-2xl font-ubuntuBold text-primary mb-2">
                 {term.title}
               </h2>
               <p className="text-gray-700 text-justify">

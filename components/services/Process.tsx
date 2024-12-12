@@ -29,7 +29,7 @@ export default function Process({ steps }: ProcessProps) {
               viewport={{ once: true }}
             >
               <div className="text-center">
-                <div className="inline-block p-4 rounded-full bg-[#d5cea3] mb-4">
+                <div className="inline-block p-4 rounded-full bg-secondary mb-4">
                   <step.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold font-ubuntuBold mb-2 text-primary">{step.title}</h3>

@@ -41,16 +41,16 @@ export default function ServicesOverview() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Background Gradient on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#d5cea3] to-[#503c3c] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Service Content */}
                   <div className="relative z-10 p-8">
                     {/* Icon */}
-                    <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-[#f2ebe3] text-[#503c3c]  transition-all duration-500">
+                    <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-[#f2ebe3] text-primary  transition-all duration-500">
                       <IconComponent className="w-8 h-8" />
                     </div>
 
-                    <h2 className="text-2xl font-bold font-ubuntuBold mb-4 text-[#503c3c]">
+                    <h2 className="text-2xl font-bold font-ubuntuBold mb-4 text-primary">
                       {service.title}
                     </h2>
                     <p className="text-gray-600 group-hover:text-white leading-relaxed mb-6">

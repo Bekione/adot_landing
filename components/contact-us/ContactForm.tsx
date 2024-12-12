@@ -165,7 +165,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full px-8 py-3 rounded-md flex items-center justify-center relative text-white bg-[#503c3c] hover:bg-[#d5cea3] hover:text-primary transition-all duration-300 overflow-hidden z-50"
+          className="w-full px-8 py-3 rounded-md flex items-center justify-center relative text-white bg-primary hover:bg-secondary hover:text-primary transition-all duration-300 overflow-hidden z-50"
           disabled={isLoading}
         >
           <Send className="mr-2 h-5 w-5" />

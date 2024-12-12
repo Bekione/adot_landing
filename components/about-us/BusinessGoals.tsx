@@ -21,7 +21,6 @@ export default function BusinessGoals() {
       className="my-16"
     >
       <GradientWord word="Business Goals" />
-      {/* <h3 className="text-3xl font-semibold mb-8 text-center text-[#503c3c]">Our Business Goals</h3> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {goals.map((goal, index) => (
           <motion.div
@@ -29,7 +28,7 @@ export default function BusinessGoals() {
             whileHover={{ scale: 1.05 }}
             className="bg-white p-6 rounded-lg shadow-lg flex items-center"
           >
-            <span className="text-[#503c3c] text-2xl mr-4">•</span>
+            <span className="text-primary text-2xl mr-4">•</span>
             <p className="text-gray-700">{goal}</p>
           </motion.div>
         ))}

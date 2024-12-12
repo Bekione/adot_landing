@@ -30,7 +30,7 @@ function SocialIcon({ icon, href, ariaLabel }: { icon: React.ReactNode; href: st
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
-      className="bg-[#503c3c] p-3 rounded-full text-white hover:hero-bg transition-colors duration-300"
+      className="bg-primary p-3 rounded-full text-white hover:hero-bg transition-colors duration-300"
       whileHover={{ scale: 1.1, rotate: 5 }}
       transition={{ duration: 0.2 }}
     >

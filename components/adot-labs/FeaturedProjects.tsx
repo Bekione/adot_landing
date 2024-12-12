@@ -42,7 +42,7 @@ export default function FeaturedProjects() {
               </div>
               {/* Card Content */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold font-ubuntuBold mb-2 text-[#503c3c]">
+                <h3 className="text-xl font-bold font-ubuntuBold mb-2 text-primary">
                   {project.name}
                 </h3>
                 <p className="text-gray-600 mb-4 flex-grow">

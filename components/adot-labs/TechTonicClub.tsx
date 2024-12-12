@@ -74,7 +74,7 @@ export default function TechTonicClub() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <benefit.icon className="h-6 w-6 text-[#503c3c] flex-shrink-0" />
+                  <benefit.icon className="h-6 w-6 text-primary flex-shrink-0" />
                   <p className="text-gray-700 text-base leading-relaxed">
                     {benefit.text}
                   </p>

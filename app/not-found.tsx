@@ -20,7 +20,7 @@ const NotFound = () => {
             <h2 className="text-3xl font-semibold font-ubuntuBold text-white mb-4">
               Page Not Found
             </h2>
-            <p className="text-lg text-[#d5cea3] mb-8">
+            <p className="text-lg text-secondary mb-8">
               Oops! The page you're looking for doesn't exist or has been moved.
             </p>
             <Button

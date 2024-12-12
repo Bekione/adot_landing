@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function CallToAction() {
   return (
-    <section className="py-20 bg-[#503c3c] text-white">
+    <section className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4 text-center">
         <motion.h2 
           className="text-3xl font-bold mb-8"
@@ -28,10 +28,10 @@ export default function CallToAction() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="bg-[#d5cea3] text-[#503c3c] hover:bg-[#d5cea3]/90">
+          <button className="bg-secondary text-primary hover:bg-secondary/90">
             <a href="/contact">Contact Us</a>
           </button>
-          <button className="border-white text-white hover:bg-white hover:text-[#503c3c]">
+          <button className="border-white text-white hover:bg-white hover:text-primary">
             <a href="/collaborate">Collaborate with Adot Labs</a>
           </button>
         </motion.div>
