@@ -104,6 +104,7 @@ export const InfiniteMovingCards = ({
                                 src={item.logoUrl}
                                 alt={item.name}
                                 fill
+                                sizes="(max-width: 768px) 100vw, 200px"
                                 className="object-contain"
                             />
                         </div>

@@ -23,7 +23,6 @@ const WhoWeAreSection = () => {
                 <CardItem translateZ="75" className="w-full h-full flex">
                   <Image
                     src="/images/home/adot-office.png"
-                    layout="responsive"
                     width={1000}
                     height={750}
                     className="object-cover rounded-xl group-hover/card:shadow-xl"

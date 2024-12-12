@@ -3,14 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Youtube,
-  ArrowUp,
-} from "lucide-react";
 import { blogPosts } from "@/data/blogs";
 import { contactInformation } from "@/data/contactInformation";
 import { socialLinks } from "@/data/socialLinks";
@@ -50,7 +42,7 @@ export default function Footer() {
                 alt="Adot Labs Logo"
                 width={200}
                 height={90}
-                className="brightness "
+                className="brightness h-auto w-auto"
               />
             </Link>
             <p className="text-white/80">Powering Bold Dreams.</p>
