@@ -25,10 +25,10 @@ export default {
       keyframes: {
         shimmer: {
           from: {
-            "backgroundPosition": "0 0",
+            backgroundPosition: "0 0",
           },
           to: {
-            "backgroundPosition": "-200% 0",
+            backgroundPosition: "-200% 0",
           },
         },
         scroll: {
@@ -36,9 +36,6 @@ export default {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
-      },
-      cursor: {
-        custom: "url('/cursor.cur'), auto",
       },
       fontFamily: {
         openSansReg: ["var(--font-openSans-v)", "sans-serif"],
