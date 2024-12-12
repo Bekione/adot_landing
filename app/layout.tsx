@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Your one-stop solution for creative websites, custom software, and tailored services.",
   keywords:
-    "creative websites, custom software, web development, software solutions, Adot Technologies",
+    "creative websites, custom software, web development, software solutions, Adot Technologies, Adot Labs",
   authors: [{ name: "Adot Technologies", url: "https://adot-technologies.com" }],
   openGraph: {
     title: "Adot Technologies",

@@ -16,7 +16,7 @@ const NotFound = () => {
           className="text-center flex flex-col justify-center"
         >
           <div className="max-w-md w-full text-center">
-            <GradientWord word="404" type="secondary" className="" />
+            <GradientWord word="404" type="secondary" />
             <h2 className="text-3xl font-semibold font-ubuntuBold text-white mb-4">
               Page Not Found
             </h2>
