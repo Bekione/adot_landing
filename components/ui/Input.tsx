@@ -86,7 +86,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-1/2 left-3 transform -translate-y-1/2 text-neutral-400 pointer-events-none text-sm"
+                className="absolute top-1/2 left-3 transform !-translate-y-1/2 text-neutral-400 pointer-events-none text-sm"
               >
                 {placeholders[currentPlaceholder]}
               </motion.span>
