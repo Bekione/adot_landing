@@ -9,7 +9,7 @@ import { BlogPostRaw } from "@/types/blog";
 import RelatedBlogCard from "@/components/blog/RelatedBlogCard";
 import { motion } from "framer-motion";
 import GradientWord from "@/components/ui/GradientWord";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Loader } from "lucide-react";
 
 async function getBlogPost(id: string): Promise<BlogPostSerialized | null> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${id}`);
@@ -43,6 +43,8 @@ async function getAllBlogPosts(): Promise<BlogPostRaw[]> {
 export default function BlogPostPage() {
   const { id } = useParams(); // Use `useParams()` to retrieve the `id` param from the URL
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [blogPost, setBlogPost] = useState<BlogPostSerialized | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostRaw[]>([]);
 
@@ -50,23 +52,40 @@ export default function BlogPostPage() {
     if (!id || Array.isArray(id)) return; // Make sure `id` is a string and available
 
     const fetchData = async () => {
-      const blogData = await getBlogPost(id); // Now `id` is guaranteed to be a string
-      if (blogData) {
-        setBlogPost(blogData);
-        const allPosts = await getAllBlogPosts();
-        const related = allPosts
-          .filter(
-            (p) => p.id !== blogData.id && p.category === blogData.category
-          )
-          .slice(0, 3);
-        setRelatedPosts(related);
+      try {
+        const blogData = await getBlogPost(id); // Now `id` is guaranteed to be a string
+        if (blogData) {
+          setBlogPost(blogData);
+          const allPosts = await getAllBlogPosts();
+          const related = allPosts
+            .filter(
+              (p) => p.id !== blogData.id && p.category === blogData.category
+            )
+            .slice(0, 3);
+          setRelatedPosts(related);
+        } else {
+          setError(true);
+        }
+      } catch (error) {
+        setError(true);
+        console.error('Error fetching blog post:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchData();
   }, [id]); // Use `id` in the dependency array
 
-  if (!blogPost) {
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader className="animate-spin text-primary/90" size={50} />
+      </div>
+    );
+  }
+
+  if ( error ) {
     return (
       <div className="min-h-72 py-24 flex items-center justify-center">
         <motion.div
@@ -89,7 +108,7 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen ">
       {/* Blog Content */}
-      <BlogContent blogPost={blogPost} />
+      {blogPost && <BlogContent blogPost={blogPost} />}
 
       {/* Related Posts */}
       <motion.div

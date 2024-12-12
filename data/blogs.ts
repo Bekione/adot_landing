@@ -226,7 +226,8 @@ For developers and businesses, staying ahead means embracing these trends:
   - Break-even analysis  
   
   <div className="bg-blue-100 text-blue-800 border-l-4 border-blue-300 p-4 mb-4">
-    <strong>Pro Tip:</strong> Use charts to simplify complex financial data—visuals are easier to digest.</div>
+    <strong>Pro Tip:</strong> Use charts to simplify complex financial data—visuals are easier to digest.
+  </div>
   
   ---
   
