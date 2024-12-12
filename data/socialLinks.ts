@@ -5,27 +5,27 @@ import TikTokIcon from "@/components/icons/Tiktok";
 export const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/AdotLabs",
+    href: "https://www.facebook.com/adot-tech",
     icon: Facebook,
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/AdotLabs",
+    href: "https://twitter.com/adot-tech",
     icon: Twitter,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/company/AdotLabs",
+    href: "https://linkedin.com/company/adot-tech",
     icon: Linkedin,
   },
   {
     name: "Telegram",
-    href: "https://t.me/adot-labs",
+    href: "https://t.me/adot-tech",
     icon: TelegramIcon,
   },
   {
     name: "TikTok",
-    href: "https://www.tiktok.com/@AdotLabs",
+    href: "https://www.tiktok.com/@adot-tech",
     icon: TikTokIcon,
   },
 ];
