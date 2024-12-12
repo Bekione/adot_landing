@@ -1,5 +1,6 @@
-// data/socialLinks.ts
-import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
+import TelegramIcon from "@/components/icons/Telegram";
+import TikTokIcon from "@/components/icons/Tiktok";
 
 export const socialLinks = [
   {
@@ -13,11 +14,6 @@ export const socialLinks = [
     icon: Twitter,
   },
   {
-    name: "Instagram",
-    href: "https://instagram.com/AdotLabs",
-    icon: Instagram,
-  },
-  {
     name: "LinkedIn",
     href: "https://linkedin.com/company/AdotLabs",
     icon: Linkedin,
@@ -25,6 +21,11 @@ export const socialLinks = [
   {
     name: "Telegram",
     href: "https://t.me/adot-labs",
-    icon: Send,
+    icon: TelegramIcon,
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@AdotLabs",
+    icon: TikTokIcon,
   },
 ];

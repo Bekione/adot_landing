@@ -1,30 +1,41 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { socialLinks } from '@/data/socialLinks' // Import the socialLinks data
+import { motion } from 'framer-motion';
+import { socialLinks } from '@/data/socialLinks';
 import GradientWord from '../ui/GradientWord';
 
 export default function SocialLinks() {
   return (
     <div className="mt-12 flex flex-col items-center mx-auto">
-      <GradientWord word='Stay Connected' size='sm' />
+      <GradientWord word="Stay Connected" size="sm" />
       <div className="flex space-x-4">
         {socialLinks.map((social) => (
-          <SocialIcon 
+          <SocialIcon
             key={social.name}
-            icon={<social.icon className="h-5 w-5" />} 
-            href={social.href} 
+            href={social.href}
             ariaLabel={social.name}
+            icon={social.isImage ? social.icon : undefined}
+            IconComponent={!social.isImage ? social.icon : undefined}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-function SocialIcon({ icon, href, ariaLabel }: { icon: React.ReactNode; href: string; ariaLabel: string }) {
+function SocialIcon({
+  icon,
+  IconComponent,
+  href,
+  ariaLabel,
+}: {
+  icon?: string; // For image paths
+  IconComponent?: React.ElementType; // For React components like Lucide
+  href: string;
+  ariaLabel: string;
+}) {
   return (
-    <motion.a 
+    <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -33,7 +44,15 @@ function SocialIcon({ icon, href, ariaLabel }: { icon: React.ReactNode; href: st
       whileHover={{ scale: 1.1, rotate: 5 }}
       transition={{ duration: 0.2 }}
     >
-      {icon}
+      {icon ? (
+        <img
+          src={icon}
+          alt={ariaLabel}
+          className="h-5 w-5"
+        />
+      ) : (
+        IconComponent && <IconComponent className="h-5 w-5" />
+      )}
     </motion.a>
-  )
+  );
 }
