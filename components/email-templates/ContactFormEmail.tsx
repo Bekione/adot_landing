@@ -55,8 +55,8 @@ export const ContactEmailTemplate = ({
         </div>
   
         <p style="color: white; font-size: 12px; margin: 10px 0;">
-          © 2024 Adot Technologies. All rights reserved. Gorgis Bldg,<br>
-          3rd floor, Addis Ababa, Ethiopia.
+          © 2024 Adot Technologies. All rights reserved. City Point Hub,<br>
+          22 Mazoria, Addis Ababa, Ethiopia.
         </p>
   
         <div style="margin-top: 10px;">

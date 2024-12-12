@@ -15,6 +15,6 @@ export const contactInformation = [
   {
     icon: MapPin,
     title: "Address",
-    content: "Ayat, Addis Ababa, Ethiopia",
+    content: "City Point Hub, 22 Mazoria, Addis Ababa, Ethiopia",
   },
 ];
