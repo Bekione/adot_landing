@@ -88,13 +88,6 @@
 }
 
 /* ========================== */
-/* Custom Cursor              */
-/* ========================== */
-.hero-section {
-  cursor: url('/cursor.cur'), auto;
-}
-
-/* ========================== */
 /* Animations                 */
 /* ========================== */
 @keyframes bounce-slow {
