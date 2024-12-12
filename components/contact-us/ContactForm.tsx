@@ -39,7 +39,6 @@ const contactFormSchema = z.object({
     }),
 });
 
-
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     fullname: "",
@@ -172,8 +171,13 @@ export default function ContactForm() {
           <Send className="mr-2 h-5 w-5" />
           <span>{isLoading ? "Sending..." : "Send Message"}</span>
         </button>
-        <div className="mt-2  min-h-[20px] text-center text-sm text-green-600">
-          {globalMessage && globalMessage }
+        <div
+          className="mt-2 min-h-[20px] text-center text-sm"
+          style={{
+            color: globalMessage.includes("success") ? "green" : "red",
+          }}
+        >
+          {globalMessage && globalMessage}
         </div>
       </form>
     </motion.div>
