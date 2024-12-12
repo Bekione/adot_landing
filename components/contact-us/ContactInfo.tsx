@@ -8,7 +8,7 @@ export default function ContactInfo() {
   return (
     <div className="mb-12">
       <GradientWord word="Contact Information" size="sm" />
-      <div className="grid gap-6">
+      <div className="grid gap-6 mt-6">
         {contactInformation.map((info, index) => (
           <ContactCard
             key={index}
