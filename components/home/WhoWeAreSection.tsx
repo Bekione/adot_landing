@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../ui/3dCard";
 import Button from "../ui/Button";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 const WhoWeAreSection = () => {
   return (
@@ -22,11 +23,14 @@ const WhoWeAreSection = () => {
               <CardBody className="bg-primary relative group/card w-full sm:w-[22rem] md:w-[25rem] h-auto aspect-[16/10] md:aspect-[16/12] rounded-xl mx-auto">
                 <CardItem translateZ="75" className="w-full h-full flex">
                   <Image
+                    loader={cloudinaryLoader}
                     src="/images/home/adot-office.png"
                     width={1000}
                     height={750}
                     className="object-cover rounded-xl group-hover/card:shadow-xl"
                     alt="Adot office"
+                    placeholder="blur"
+                    blurDataURL={cloudinaryBlurPlaceholder("/images/home/adot-office.png")}
                   />
                 </CardItem>
               </CardBody>
