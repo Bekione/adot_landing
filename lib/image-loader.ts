@@ -1,3 +1,5 @@
+const CLOUDINARY_BASE_URL = process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL;
+
 type CloudinaryLoaderProps = {
     src: string;
     width: number;
@@ -11,7 +13,7 @@ type CloudinaryLoaderProps = {
   }: CloudinaryLoaderProps): string {
     const params = ["f_auto", "c_limit", `w_${width}`, `q_${quality || "auto"}`];
   
-    return `https://res.cloudinary.com/dzhobawko/image/upload/${params.join(
+    return `${CLOUDINARY_BASE_URL}/${params.join(
       ","
     )}/adot/${src}`;
   }
