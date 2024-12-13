@@ -68,7 +68,7 @@ export default function BlogPostPage() {
         }
       } catch (error) {
         setError(true);
-        console.error('Error fetching blog post:', error);
+        // console.error('Error fetching blog post:', error);
       } finally {
         setIsLoading(false);
       }
