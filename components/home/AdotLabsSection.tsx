@@ -5,6 +5,7 @@ import GradientWord from "../ui/GradientWord";
 import Button from "../ui/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 const AdotLabsSection = () => {
   return (
@@ -39,10 +40,15 @@ const AdotLabsSection = () => {
           >
             <div className="w-full flex justify-center">
               <Image
+                loader={cloudinaryLoader}
                 src="/images/adot-labs/adot-lab.avif"
                 alt="Adot Labs"
                 width={500}
                 height={300}
+                placeholder="blur"
+                blurDataURL={cloudinaryBlurPlaceholder(
+                  "/images/adot-labs/adot-lab.avif"
+                )}
                 className="w-full max-w-md h-auto aspect-video rounded-md shadow-lg"
               />
             </div>

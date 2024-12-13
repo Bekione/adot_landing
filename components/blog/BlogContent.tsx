@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { MDXRemote } from "next-mdx-remote";
 import { BlogPostSerialized } from "@/types/blog";
 import { TracingBeam } from "../ui/TracingBeam";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 export default function BlogContent({
   blogPost,
@@ -33,9 +34,12 @@ export default function BlogContent({
           {/* Blog Image */}
           <div className="relative aspect-[21/9] overflow-hidden rounded-lg mb-8">
             <Image
+              loader={cloudinaryLoader}
               src={blogPost.image}
               alt={blogPost.title}
               fill
+              placeholder="blur"
+              blurDataURL={cloudinaryBlurPlaceholder(blogPost.image)}
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent" />

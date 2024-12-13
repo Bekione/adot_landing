@@ -6,6 +6,7 @@ import { labProjects } from "@/data/projects";
 import GradientWord from "../ui/GradientWord";
 import Button from "../ui/Button";
 import { Noise } from "../ui/WobbleCard";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 export default function FeaturedProjects() {
   return (
@@ -33,10 +34,13 @@ export default function FeaturedProjects() {
             >
               <div className="overflow-hidden">
                 <Image
+                  loader={cloudinaryLoader}
                   src={project.image}
                   alt={project.name}
                   width={400}
                   height={250}
+                  placeholder="blur"
+                  blurDataURL={cloudinaryBlurPlaceholder(project.image)}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>

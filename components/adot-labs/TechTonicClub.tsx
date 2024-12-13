@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Sparkles, Wrench, Users, Lightbulb } from 'lucide-react'
 import Image from 'next/image'
 import GradientWord from '../ui/GradientWord'
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 const benefits = [
   { icon: Wrench, text: 'Access to cutting-edge tools and technologies' },
@@ -41,11 +42,14 @@ export default function TechTonicClub() {
             viewport={{ once: true }}
           >
             <Image
+              loader={cloudinaryLoader}
               src="/images/adot-labs/techtonic-logo.jpg"
               alt="TechTonic Club activities"
               width={500}
               height={300}
               sizes="(max-width: 768px) 80vw, 50vw"
+              placeholder="blur"
+              blurDataURL={cloudinaryBlurPlaceholder("/images/adot-labs/techtonic-logo.jpg")}
               className="rounded-xl shadow-xl object-cover w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
             />
           </motion.div>

@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 type Testimonial = {
   quote: string;
@@ -90,11 +91,14 @@ export const AnimatedTestimonials = ({
                   className="absolute inset-0 origin-bottom"
                 >
                   <Image
+                    loader={cloudinaryLoader}
                     src={testimonial.src}
                     alt={testimonial.name}
                     width={500}
                     height={500}
                     draggable={false}
+                    placeholder="blur"
+                    blurDataURL={cloudinaryBlurPlaceholder(testimonial.src)}
                     className="w-full h-full max-w-full rounded-3xl bg-secondary object-cover object-center"
                   />
                 </motion.div>

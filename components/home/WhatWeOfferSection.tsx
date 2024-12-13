@@ -5,6 +5,7 @@ import GradientWord from "../ui/GradientWord";
 import { BentoGrid, BentoGridItem } from "../ui/BentoGrid";
 import Image from "next/image";
 import { offers } from "@/data/serviceOffers";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 const WhatWeOfferSection = () => {
   return (
@@ -30,10 +31,13 @@ const WhatWeOfferSection = () => {
               header={
                 <div className="flex w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary to-[#7c662e] overflow-hidden">
                   <Image
+                    loader={cloudinaryLoader}
                     src={offer.header}
                     alt={offer.title}
                     width={1000}
                     height={1000}
+                    placeholder="blur"
+                    blurDataURL={cloudinaryBlurPlaceholder(offer.header)}
                     className="object-cover w-full h-full aspect-video"
                   />
                 </div>

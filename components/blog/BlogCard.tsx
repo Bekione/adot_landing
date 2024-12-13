@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BlogPostRaw } from "@/types/blog";
 import { ArrowRight } from "lucide-react";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 interface BlogCardProps {
   post: BlogPostRaw;
@@ -41,9 +42,13 @@ export function BlogCard({ post, index }: BlogCardProps) {
           </div>
 
           <Image
+            loader={cloudinaryLoader}
             src={post.image}
             alt={post.title}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            placeholder="blur"
+            blurDataURL={cloudinaryBlurPlaceholder(post.image)}
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
 

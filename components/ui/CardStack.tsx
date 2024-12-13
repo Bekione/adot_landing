@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 let interval: any;
 
@@ -69,12 +70,15 @@ export const CardStack = ({
               }}
             >
               <Image
+                loader={cloudinaryLoader}
                 src={image}
                 alt={`Card ${index}`}
                 layout="fill" 
                 objectFit="cover" 
                 quality={90} 
                 priority={index === 0} // Load the top card image first
+                placeholder="blur"
+                blurDataURL={cloudinaryBlurPlaceholder(image)}
                 className="bg-secondary"
               />
             </motion.div>

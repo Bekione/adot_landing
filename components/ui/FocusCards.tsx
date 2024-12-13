@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Github } from "lucide-react";
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 export const Card = React.memo(
   ({
@@ -25,10 +26,13 @@ export const Card = React.memo(
       )}
     >
       <Image
+        loader={cloudinaryLoader}
         src={card.src}
         alt={card.title}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
+        placeholder="blur"
+        blurDataURL={cloudinaryBlurPlaceholder(card.src)}
         className="absolute inset-0 object-cover"
       />
       <div
