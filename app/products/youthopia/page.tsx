@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CTABlock from "@/components/ui/CTABlock";
@@ -8,6 +5,7 @@ import Highlights from "@/components/products/Highlights";
 import { youthopiaHighlights } from "@/data/highlights";
 import WhyChoose from "@/components/products/WhyChoose";
 import { whyChooseYouthopia } from "@/data/whyChoose";
+import MotionWrapper from "@/components/MotionWrapper";
 
 export default function Youthopia() {
   return (
@@ -29,23 +27,23 @@ export default function Youthopia() {
         ]}
       />
       <div className="flex flex-col items-center gap-6 mt-6 mb-14 mx-auto">
-        <motion.div
+        <MotionWrapper
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="w-full"
         >
           <Highlights highlights={youthopiaHighlights} />
-        </motion.div>
+        </MotionWrapper>
 
-        <motion.div
+        <MotionWrapper
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className=""
         >
           <WhyChoose title="Why Choose Youthopia" cards={whyChooseYouthopia} />
-        </motion.div>
+        </MotionWrapper>
       </div>
 
       <CTABlock

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ErpFeatures from "@/components/products/ErpFeatures";
@@ -10,6 +7,7 @@ import CTABlock from "@/components/ui/CTABlock";
 import { erpHighlights } from "@/data/highlights";
 import WhyChoose from "@/components/products/WhyChoose";
 import { whyChooseERP } from "@/data/whyChoose";
+import MotionWrapper from "@/components/MotionWrapper";
 
 export default function AdotERP() {
   return (
@@ -31,7 +29,7 @@ export default function AdotERP() {
           "/images/products/adot-erp/erp-snap-3.jpg",
         ]}
       />
-      <motion.section
+      <MotionWrapper
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -45,7 +43,7 @@ export default function AdotERP() {
         <Highlights highlights={erpHighlights} />
 
         <WhyChoose title="Why Choose Adot ERP?" cards={whyChooseERP} />
-      </motion.section>
+      </MotionWrapper>
 
       <CTABlock
         title="Ready to Take Control of Your Business?"

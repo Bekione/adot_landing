@@ -9,11 +9,12 @@ import Hero from "@/components/Hero";
 import { webFeatureData } from "@/data/features";
 import { webDevelopmentProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
+import MotionWrapper from "@/components/MotionWrapper";
 
 
 const page = () => {
   return (
-    <motion.div
+    <MotionWrapper
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -38,7 +39,7 @@ const page = () => {
         linkText="Contact Us Now"
         link="/contact"
       />
-    </motion.div>
+    </MotionWrapper>
   );
 };
 

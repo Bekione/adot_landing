@@ -1,7 +1,6 @@
-"use client";
 import Hero from "@/components/Hero";
+import MotionWrapper from "@/components/MotionWrapper";
 import { WobbleCard } from "@/components/ui/WobbleCard";
-import { motion } from "framer-motion";
 import { Clock, Bell } from "lucide-react";
 import Link from "next/link";
 
@@ -19,7 +18,7 @@ export default function ComingSoon() {
         allowScale={false}
         containerClassName=" w-10/12 max-w-2xl mx-auto my-6 bg-primary"
       >
-        <motion.div
+        <MotionWrapper
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -37,7 +36,7 @@ export default function ComingSoon() {
           >
             Get Notified <Bell size={16} className="ml-2" />
           </Link>
-        </motion.div>
+        </MotionWrapper>
       </WobbleCard>
     </section>
   );

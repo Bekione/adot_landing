@@ -1,11 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Code, Smartphone, PenTool, Database } from "lucide-react";
 import GradientHeader from "@/components/GradientHeader";
 import CTABlock from "@/components/ui/CTABlock";
 import { services } from "@/data/serviceOffers";
 import Button from "@/components/ui/Button";
+import MotionWrapper from "@/components/MotionWrapper";
 
 type IconNames = "Code" | "Smartphone" | "PenTool" | "Database";
 
@@ -33,7 +31,7 @@ export default function ServicesOverview() {
               const IconComponent = iconMap[service.icon as IconNames];
 
               return (
-                <motion.div
+                <MotionWrapper
                   key={service.title}
                   className="relative group overflow-hidden rounded-3xl shadow-xl bg-white border border-gray-200 hover:scale-105 transition-transform duration-300"
                   initial={{ opacity: 0, y: 50 }}
@@ -60,7 +58,7 @@ export default function ServicesOverview() {
                     {/* Button */}
                     <Button text="Learn More" to={service.link} />
                   </div>
-                </motion.div>
+                </MotionWrapper>
               );
             })}
           </div>

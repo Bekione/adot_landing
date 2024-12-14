@@ -1,22 +1,17 @@
-"use client";
-
-import CallToAction from "@/components/adot-labs/CallToAction";
 import FeaturedProjects from "@/components/adot-labs/FeaturedProjects";
 import FocusAreas from "@/components/adot-labs/FocusAreas";
 import Internships from "@/components/adot-labs/Internships";
 import TechTonicClub from "@/components/adot-labs/TechTonicClub";
 import Hero from "@/components/Hero";
-import { motion } from "framer-motion";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import About from "@/components/About";
 import CTABlock from "@/components/ui/CTABlock";
+import MotionWrapper from "@/components/MotionWrapper";
 
 const page = () => {
-  useSmoothScroll();
 
   return (
     <div className="min-h-screen">
-      <motion.div
+      <MotionWrapper
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -56,7 +51,7 @@ const page = () => {
             type="secondary"
           />
         </main>
-      </motion.div>
+      </MotionWrapper>
     </div>
   );
 };

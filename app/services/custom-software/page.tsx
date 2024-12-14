@@ -1,5 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
 import React from "react";
 import About from "@/components/About";
 import Features from "@/components/services/Features";
@@ -9,10 +7,11 @@ import Header from "@/components/Hero";
 import { softwareFeatureData } from "@/data/features";
 import { customSoftwareProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
+import MotionWrapper from "@/components/MotionWrapper";
 
 const page = () => {
   return (
-    <motion.div
+    <MotionWrapper
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -38,7 +37,7 @@ const page = () => {
         link="/contact"
         className="mb-32"
       />
-    </motion.div>
+    </MotionWrapper>
   );
 };
 
