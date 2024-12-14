@@ -5,7 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BlogPostRaw } from "@/types/blog";
 import { ArrowRight } from "lucide-react";
-import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
+import cloudinaryLoader, {
+  cloudinaryBlurPlaceholder,
+} from "@/lib/image-loader";
 
 interface BlogCardProps {
   post: BlogPostRaw;
@@ -22,25 +24,6 @@ export function BlogCard({ post, index }: BlogCardProps) {
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <Link href={`/blog/${post.id}`} className="block">
-          {/* Corner Flip Effect */}
-          <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-            <div
-              className="absolute inset-0 bg-gray-200 origin-top-right transform rotate-0 transition-transform duration-500 group-hover:rotate-180"
-              style={{
-                clipPath: "polygon(0 0, 100% 0, 0 100%)", // Creates a folded corner
-                transformStyle: "preserve-3d",
-              }}
-            ></div>
-            {/* Underlying reveal content */}
-            <div
-              className="absolute inset-0 bg-black origin-top-right transform rotate-180 transition-transform duration-500 group-hover:rotate-0"
-              style={{
-                clipPath: "polygon(0 0, 100% 0, 0 100%)",
-                transformStyle: "preserve-3d",
-              }}
-            ></div>
-          </div>
-
           <Image
             loader={cloudinaryLoader}
             src={post.image}
