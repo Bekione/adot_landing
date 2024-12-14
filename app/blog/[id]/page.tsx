@@ -1,174 +1,103 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; // Import `useParams` hook from next/navigation
-import { BlogPostSerialized } from "@/types/blog";
-import BlogContent from "@/components/blog/BlogContent";
+import { Metadata } from "next";
+import { BlogPostSerialized, BlogPostRaw } from "@/types/blog";
 import { serialize } from "next-mdx-remote/serialize";
-import { BlogPostRaw } from "@/types/blog";
+import BlogContent from "@/components/blog/BlogContent";
 import RelatedBlogCard from "@/components/blog/RelatedBlogCard";
-import { motion } from "framer-motion";
 import GradientWord from "@/components/ui/GradientWord";
-import { AlertCircle, Loader } from "lucide-react";
+import { AlertCircle } from "lucide-react";
+import MotionWrapper from "@/components/MotionWrapper";
+import { createMetadata } from "@/lib/create-metadata";
 
+// Fetch a single blog post
 async function getBlogPost(id: string): Promise<BlogPostSerialized | null> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${id}`);
-
-  if (!res.ok) {
-    return null;
-  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${id}`, { cache: "no-store" });
+  if (!res.ok) return null;
 
   const blogPost = await res.json();
-
-  // Serialize the MDX content before passing it to the component
   const mdxContent = await serialize(blogPost.content);
 
-  return {
-    ...blogPost,
-    content: mdxContent, // Return serialized content
-  };
+  return { ...blogPost, content: mdxContent };
 }
 
+// Fetch all blog posts for related posts
 async function getAllBlogPosts(): Promise<BlogPostRaw[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`);
-
-  if (!res.ok) {
-    return [];
-  }
-
-  const blogPosts: BlogPostRaw[] = await res.json();
-  return blogPosts;
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`, { cache: "no-store" });
+  return res.ok ? res.json() : [];
 }
 
-export default function BlogPostPage() {
-  const { id } = useParams(); // Use `useParams()` to retrieve the `id` param from the URL
+// Generate Metadata for the blog post dynamically
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const blogPost = await getBlogPost(params.id);
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const [blogPost, setBlogPost] = useState<BlogPostSerialized | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPostRaw[]>([]);
-
-  useEffect(() => {
-    if (!id || Array.isArray(id)) return; // Make sure `id` is a string and available
-
-    const fetchData = async () => {
-      try {
-        const blogData = await getBlogPost(id); // Now `id` is guaranteed to be a string
-        if (blogData) {
-          setBlogPost(blogData);
-          const allPosts = await getAllBlogPosts();
-          const related = allPosts
-            .filter(
-              (p) => p.id !== blogData.id && p.category === blogData.category
-            )
-            .slice(0, 3);
-          setRelatedPosts(related);
-        } else {
-          setError(true);
-        }
-      } catch (error) {
-        setError(true);
-        // console.error('Error fetching blog post:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [id]); // Use `id` in the dependency array
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader className="animate-spin text-primary/90" size={50} />
-      </div>
-    );
+  if (!blogPost) {
+    return createMetadata({
+      title: "Blog Not Found | Adot Technologies",
+      description: "The blog post you are looking for does not exist.",
+    });
   }
 
-  if ( error ) {
+  return createMetadata({
+    title: blogPost.title,
+    description: blogPost.excerpt || "Read this insightful article.",
+    image: blogPost.image || `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-banners/og-blog.jpg`,
+    path: `/blog/${params.id}`,
+    type: "article",
+  });
+}
+
+export default async function BlogPostPage({ params }: { params: { id: string } }) {
+  const blogPost = await getBlogPost(params.id);
+  const allPosts = await getAllBlogPosts();
+
+  if (!blogPost) {
     return (
       <div className="min-h-72 py-24 flex items-center justify-center">
-        <motion.div
+        <MotionWrapper
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center text-center p-8 bg-gray-200 w-fit h-fit rounded-lg mx-auto"
         >
           <AlertCircle className="w-12 h-12 text-gray-400 mb-4" />
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            No blog posts found
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">Blog Post Not Found</h3>
           <p className="text-gray-600">Make sure you are on the right page.</p>
-        </motion.div>
+        </MotionWrapper>
       </div>
     );
   }
 
+  // Find related posts
+  const relatedPosts = allPosts
+    .filter((p) => p.id !== blogPost.id && p.category === blogPost.category)
+    .slice(0, 3);
+
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       {/* Blog Content */}
-      {blogPost && <BlogContent blogPost={blogPost} />}
+      <BlogContent blogPost={blogPost} />
 
       {/* Related Posts */}
-      <motion.div
+      <MotionWrapper
         className="my-16 flex flex-col items-center mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <GradientWord word="Related Posts" size="sm" />
-        <motion.div
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6 mx-10"
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            show: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.2,
-                duration: 0.8,
-              },
-            },
-          }}
-        >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6 mx-10">
           {relatedPosts.length > 0 ? (
-            relatedPosts.map((relatedPost) => (
-              <motion.div
-                key={relatedPost.id}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 },
-                }}
-                initial="hidden"
-                animate="show"
-                transition={{ duration: 0.5 }}
-              >
-                <RelatedBlogCard post={relatedPost} />
-              </motion.div>
+            relatedPosts.map((post) => (
+              <RelatedBlogCard key={post.id} post={post} />
             ))
           ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center text-center p-8 bg-gray-50 rounded-lg col-span-full row-span-full"
-            >
+            <div className="flex flex-col items-center justify-center text-center p-8 bg-gray-50 rounded-lg col-span-full">
               <AlertCircle className="w-12 h-12 text-gray-400 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                No related blog posts found
-              </h3>
-              <p className="text-gray-600">
-                Tab back to blog to see other blogs.
-              </p>
-            </motion.div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">No related blog posts found</h3>
+              <p className="text-gray-600">Tab back to the blog to see other posts.</p>
+            </div>
           )}
-        </motion.div>
-      </motion.div>
+        </div>
+      </MotionWrapper>
     </div>
   );
 }
