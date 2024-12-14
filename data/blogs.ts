@@ -255,8 +255,8 @@ For developers and businesses, staying ahead means embracing these trends:
     `,
     category: "Business",
     author: {
-      name: "Adot",
-      image: "/images/blog/adot-author.png",
+      name: "Dagmawi Yohanis",
+      image: "/images/teams/team-1.png",
     },
     date: "28 Sep 2024",
     image: "/images/blog/blog-startup.avif",
@@ -617,7 +617,7 @@ For developers and businesses, staying ahead means embracing these trends:
   </div>
   `,
     category: "Productivity",
-    author: { name: "Bereket Kinfe", image: "/images/blog/adot-author.png" },
+    author: { name: "Bereket Kinfe", image: "/images/teams/team-2.png" },
     date: "02 Oct 2024",
     image: "/images/blog/blog-time.avif",
     readTime: "6 min read",
