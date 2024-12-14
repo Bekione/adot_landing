@@ -1,12 +1,15 @@
+"use client";
+
 import { FC } from "react";
 import { motion } from "framer-motion";
 import GradientWord from "../ui/GradientWord";
 import Card from "../ui/Card";
+import { iconMap } from "@/lib/icon-map";
 
 interface WhyChooseProps {
   title: string;
   cards: Array<{
-    icon: React.ComponentType<{ className?: string }>;
+    icon: keyof typeof iconMap;
     title: string;
     description: string;
   }>;
@@ -21,15 +24,18 @@ const WhyChoose: FC<WhyChooseProps> = ({ title, cards }) => (
   >
     <GradientWord word={title} size="sm" />
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-6 mb-12 mx-4 md:mx-auto">
-      {cards.map((card, index) => (
-        <Card
-          key={index}
-          icon={card.icon}
-          title={card.title}
-          description={card.description}
-          delay={index * 0.2}
-        />
-      ))}
+      {cards.map((card, index) => {
+        const Icon = iconMap[card.icon]; // Resolve the icon dynamically
+        return (
+          <Card
+            key={index}
+            icon={Icon}
+            title={card.title}
+            description={card.description}
+            delay={index * 0.2}
+          />
+        );
+      })}
     </div>
   </motion.div>
 );
