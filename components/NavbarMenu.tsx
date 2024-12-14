@@ -115,9 +115,9 @@ function SubLinkItem({
               <Image
                 src={subLink.src}
                 alt={subLink.title}
-                width={300}
-                height={300}
-                className="rounded-lg h-auto w-auto object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 200px"
+                className="rounded-lg h-auto w-auto max-h-[4.5rem] object-cover"
               />
             </div>
           )}

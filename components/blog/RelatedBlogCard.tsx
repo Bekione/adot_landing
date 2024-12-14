@@ -15,6 +15,7 @@ const RelatedBlogCard: React.FC<RelatedBlogCardProps> = ({ post }) => {
           src={post.image}
           alt={post.title}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
         />
       </div>

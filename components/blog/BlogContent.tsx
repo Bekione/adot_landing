@@ -38,6 +38,7 @@ export default function BlogContent({
               src={blogPost.image}
               alt={blogPost.title}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               placeholder="blur"
               blurDataURL={cloudinaryBlurPlaceholder(blogPost.image)}
               className="object-cover"
