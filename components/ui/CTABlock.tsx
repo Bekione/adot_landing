@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion";
 import { WobbleCard } from "./WobbleCard";
 import Button from "./Button";
