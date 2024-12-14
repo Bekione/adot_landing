@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
+import { createMetadata } from "@/lib/create-metadata";
 import React from "react";
 import About from "@/components/About";
 import Features from "@/components/services/Features";
@@ -11,6 +10,12 @@ import { webDevelopmentProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
 import MotionWrapper from "@/components/MotionWrapper";
 
+export const metadata = createMetadata({
+  title: "Web Development",
+  description: "Create fast, responsive, and modern websites with our web development services.",
+  path: "/services/web-development",
+  image: "/images/og-banners/og-web-development.jpg",
+});
 
 const page = () => {
   return (

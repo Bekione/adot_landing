@@ -1,3 +1,4 @@
+import { createMetadata } from "@/lib/create-metadata";
 import React from "react";
 import About from "@/components/About";
 import Features from "@/components/services/Features";
@@ -8,6 +9,13 @@ import { appFeatureData } from "@/data/features";
 import { appDevelopmentProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "App Development",
+  description: "We build high-quality mobile applications that drive user engagement and growth.",
+  path: "/services/app-development",
+  image: "/images/og-banners/og-app-development.jpg",
+});
 
 const page = () => {
   return (

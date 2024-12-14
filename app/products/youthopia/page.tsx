@@ -1,3 +1,4 @@
+import { createMetadata } from "@/lib/create-metadata";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CTABlock from "@/components/ui/CTABlock";
@@ -6,6 +7,13 @@ import { youthopiaHighlights } from "@/data/highlights";
 import WhyChoose from "@/components/products/WhyChoose";
 import { whyChooseYouthopia } from "@/data/whyChoose";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "Youthopia",
+  description: "Youthopia is a children’s media platform designed for both education and entertainment.",
+  path: "/youthopia",
+  image: "/images/og-banners/youthopia.jpg",
+});
 
 export default function Youthopia() {
   return (

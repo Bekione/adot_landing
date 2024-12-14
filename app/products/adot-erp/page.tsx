@@ -1,3 +1,4 @@
+import { createMetadata } from "@/lib/create-metadata";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ErpFeatures from "@/components/products/ErpFeatures";
@@ -8,6 +9,13 @@ import { erpHighlights } from "@/data/highlights";
 import WhyChoose from "@/components/products/WhyChoose";
 import { whyChooseERP } from "@/data/whyChoose";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "Adot ERP",
+  description: "Streamline your operations with Adot ERP, the all-in-one business management solution.",
+  path: "/adot-erp",
+  image: "/images/og-banners/og-adot-erp.jpg",
+});
 
 export default function AdotERP() {
   return (

@@ -1,3 +1,4 @@
+import { createMetadata } from "@/lib/create-metadata";
 import ContactForm from "@/components/contact-us/ContactForm";
 import ContactInfo from "@/components/contact-us/ContactInfo";
 import OfficeLocation from "@/components/contact-us/OfficeLocation";
@@ -5,6 +6,13 @@ import SocialLinks from "@/components/contact-us/SocialLinks";
 import GradientHeader from "@/components/GradientHeader";
 import NewsletterSection from "@/components/home/NewsletterSubscriptionSection";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "Contact Us",
+  description: "Get in touch with Adot Technologies for inquiries, support, or collaboration.",
+  path: "/contact",
+  image: "/images/og-banners/og-contact.jpg",
+});
 
 const page = () => {
   const fadeIn = {

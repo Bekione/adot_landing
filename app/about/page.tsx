@@ -8,6 +8,15 @@ import WhyChoose from "@/components/products/WhyChoose";
 import GradientWord from "@/components/ui/GradientWord";
 import { WobbleCard } from "@/components/ui/WobbleCard";
 import { whyChooseUs } from "@/data/whyChoose";
+import { createMetadata } from "@/lib/create-metadata";
+
+export const metadata = createMetadata({
+  title: "About Us",
+  description:
+    "Learn more about Adot Technologies, our mission, vision, history and how we provide top-notch software solutions.",
+  path: "/about",
+  image: "/images/og-banners/og-about.jpg",
+});
 
 const page = () => {
   return (

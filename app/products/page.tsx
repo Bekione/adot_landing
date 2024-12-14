@@ -1,8 +1,14 @@
+import { createMetadata } from "@/lib/create-metadata";
 import CTABlock from "@/components/ui/CTABlock";
 import { products } from "@/data/products";
 import GradientHeader from "@/components/GradientHeader";
 import { StickyScroll } from "@/components/ui/StickyScrollReveal";
 
+export const metadata = createMetadata({
+  title: "Products",
+  description: "Solving real-world problems with innovative solutions tailored for Ethiopian businesses and beyond.",
+  path: "/products",
+});
 
 export default function ProductsOverwiew() {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import { createMetadata } from "@/lib/create-metadata";
 import About from "@/components/About";
 import Features from "@/components/services/Features";
 import Process from "@/components/services/Process";
@@ -8,6 +8,13 @@ import { webDesignFeatureData, webFeatureData } from "@/data/features";
 import { webDesignProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "Website Design",
+  description: "Stand out with our clean, modern, and visually appealing website designs.",
+  path: "/services/website-design",
+  image: "/images/og-banners/og-web-design.jpg",
+});
 
 const page = () => {
   return (

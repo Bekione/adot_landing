@@ -1,8 +1,15 @@
+import { createMetadata } from "@/lib/create-metadata";
 import Hero from "@/components/Hero";
 import MotionWrapper from "@/components/MotionWrapper";
 import { WobbleCard } from "@/components/ui/WobbleCard";
 import { Clock, Bell } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = createMetadata({
+  title: "Coming Soon",
+  description: "Exciting things are on the way at Adot Technologies. Stay tuned for updates!",
+  path: "/coming-soon",
+});
 
 export default function ComingSoon() {
   return (

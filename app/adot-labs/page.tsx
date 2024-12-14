@@ -1,3 +1,4 @@
+import { createMetadata } from "@/lib/create-metadata";
 import FeaturedProjects from "@/components/adot-labs/FeaturedProjects";
 import FocusAreas from "@/components/adot-labs/FocusAreas";
 import Internships from "@/components/adot-labs/Internships";
@@ -6,6 +7,13 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CTABlock from "@/components/ui/CTABlock";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "Adot Labs",
+  description: "Where Innovation Meets Collaboration",
+  path: "/adot-labs",
+  image: "/images/og-banners/og-adot-labs.jpg",
+});
 
 const page = () => {
 

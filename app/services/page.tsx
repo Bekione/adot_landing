@@ -1,9 +1,17 @@
+import { createMetadata } from "@/lib/create-metadata";
 import { Code, Smartphone, PenTool, Database } from "lucide-react";
 import GradientHeader from "@/components/GradientHeader";
 import CTABlock from "@/components/ui/CTABlock";
 import { services } from "@/data/serviceOffers";
 import Button from "@/components/ui/Button";
 import MotionWrapper from "@/components/MotionWrapper";
+
+export const metadata = createMetadata({
+  title: "Our Services",
+  description: "Explore the range of services Adot Technologies offers to elevate your business.",
+  path: "/services",
+  image: "/images/og-banners/og-service.jpg",
+});
 
 type IconNames = "Code" | "Smartphone" | "PenTool" | "Database";
 
