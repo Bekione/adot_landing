@@ -1,5 +1,3 @@
-"use client";
-
 import CTABlock from "@/components/ui/CTABlock";
 import { products } from "@/data/products";
 import GradientHeader from "@/components/GradientHeader";
