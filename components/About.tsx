@@ -18,7 +18,7 @@ export default function About({ title, description, images }: AboutProps) {
           {/* Left Side Content */}
           <motion.div
             className="w-full md:w-7/12 flex flex-col mb- md:mb-0 px-4"
-            initial={{ x: -50, opacity: 0 }}
+            initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
