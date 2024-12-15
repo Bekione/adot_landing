@@ -22,7 +22,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative overflow-hidden rounded-lg bg-white shadow-md"
     >
-      <div className="relative aspect-[16/9] overflow-hidden">
+      <div className="relative aspect-[16/9] overflow-hidden bg-secondary/90">
         <Link href={`/blog/${post.id}`} className="block">
           <Image
             loader={cloudinaryLoader}
@@ -38,11 +38,11 @@ export function BlogCard({ post, index }: BlogCardProps) {
           {/* Overlay content */}
           <div className="absolute bottom-0 left-0 right-0 p-4 py-3 bg-gradient-to-t from-white/40 to-white/20 backdrop-blur-[5px]">
             <div className="flex justify-between font-ubuntuReg">
-              <div className="flex flex-col items-start gap-2 text-white">
+              <div className="flex flex-col items-start gap-2 text-white text-shadow">
                 <span className="text-sm font-medium">{post.author.name}</span>
                 <span className="text-sm">{post.date}</span>
               </div>
-              <div className="text-white">
+              <div className="text-white text-shadow">
                 <span className="text-sm">{post.category}</span>
               </div>
             </div>
