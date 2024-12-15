@@ -13,20 +13,22 @@ export type BlogCategory =
   | 'Uncategorized'
 
 
-export interface BlogPostRaw {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string; // Raw content as string
-  category: string;
-  author: {
-    name: string;
+  export interface BlogPostRaw {
+    id: string;
+    title: string;
+    excerpt: string;
+    content: string; // Raw content as string
+    category: string;
+    author: {
+      name: string;
+      image: string;
+    };
+    date: string;
     image: string;
-  };
-  date: string;
-  image: string;
-  readTime: string;
-}
+    readTime: string;
+    popularity?: number; // Temporary value for popularity (0 for low, 1 for high)
+  }
+  
 
 export interface BlogPostSerialized {
   id: string;
