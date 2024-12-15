@@ -23,7 +23,6 @@ export default function SocialLinks() {
 }
 
 function SocialIcon({ icon, href, ariaLabel }: { icon: React.ReactNode; href: string; ariaLabel: string }) {
-  console.log(icon);
   return (
     <motion.a 
       href={href}
