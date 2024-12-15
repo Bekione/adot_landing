@@ -57,6 +57,10 @@
   .animate-bounce-slow {
     animation: bounce-slow 1.5s infinite;
   }
+
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* ========================== */
@@ -98,3 +102,5 @@
     transform: translateY(-10px);
   }
 }
+
+
