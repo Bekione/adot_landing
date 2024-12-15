@@ -4,11 +4,21 @@ import { useState } from "react";
 import { z } from "zod";
 import { WobbleCard } from "../ui/WobbleCard";
 import { motion } from "framer-motion";
-
-const emailSchema = z.string().email("Please enter a valid email!");
+import { emailSchema } from "@/schema/emailSubscriptionSchema";
 
 const LoaderIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle animate-spin">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-loader-circle animate-spin"
+  >
     <path d="M21 12a9 9 0 1 1-6.219-8.56" />
   </svg>
 );
@@ -42,7 +52,10 @@ export default function NewsletterSection() {
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
+        // Always display the first validation error message
         setMessage(error.errors[0].message);
+      } else if (error instanceof Error) {
+        setMessage(error.message);
       } else {
         setMessage("Something went wrong. Please try again!");
       }
@@ -55,7 +68,10 @@ export default function NewsletterSection() {
   };
 
   return (
-    <WobbleCard allowScale={false} containerClassName="relative w-11/12 mx-auto my-10 bg-primary overflow-hidden">
+    <WobbleCard
+      allowScale={false}
+      containerClassName="relative w-11/12 mx-auto my-10 bg-primary overflow-hidden"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -78,7 +94,8 @@ export default function NewsletterSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-gray-300 text-lg"
           >
-            Subscribe to our newsletter to get notified when there are new updates about Adot.
+            Subscribe to our newsletter to get notified when there are new
+            updates about Adot.
           </motion.p>
         </div>
 
@@ -109,7 +126,11 @@ export default function NewsletterSection() {
             </button>
 
             {message && (
-              <div className={`absolute top-20 left-1/2 w-fit transform -translate-x-1/2 font-bold text-sm text-center py-2 bg-white/40 px-4 rounded-lg whitespace-nowrap ${isError ? "text-red-500" : "text-green-600"}`}>
+              <div
+                className={`absolute top-20 left-1/2 w-fit transform -translate-x-1/2 font-bold text-sm text-center py-2 bg-white/40 px-4 rounded-lg whitespace-nowrap ${
+                  isError ? "text-red-500" : "text-green-600"
+                }`}
+              >
                 {message}
               </div>
             )}
