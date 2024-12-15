@@ -109,7 +109,7 @@ export default function NewsletterSection() {
             </button>
 
             {message && (
-              <div className={`absolute top-20 left-1/2 w-fit transform -translate-x-1/2 font-bold text-center py-2 bg-white/40 px-4 rounded-lg whitespace-nowrap ${isError ? "text-red-500" : "text-green-600"}`}>
+              <div className={`absolute top-20 left-1/2 w-fit transform -translate-x-1/2 font-bold text-sm text-center py-2 bg-white/40 px-4 rounded-lg whitespace-nowrap ${isError ? "text-red-500" : "text-green-600"}`}>
                 {message}
               </div>
             )}
