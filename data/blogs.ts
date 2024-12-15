@@ -261,6 +261,7 @@ For developers and businesses, staying ahead means embracing these trends:
     date: "28 Sep 2024",
     image: "/images/blog/blog-startup.avif",
     readTime: "7 min read",
+    popularity: 1,
   },
   {
     id: "top-saas-tools-to-streamline-your-small-business",
@@ -510,6 +511,7 @@ For developers and businesses, staying ahead means embracing these trends:
     date: "14 Jan 2022",
     image: "/images/blog/blog-designer.avif",
     readTime: "7 min read",
+    popularity: 1,
   },
   // Productivity
   {
@@ -621,6 +623,7 @@ For developers and businesses, staying ahead means embracing these trends:
     date: "02 Oct 2024",
     image: "/images/blog/blog-time.avif",
     readTime: "6 min read",
+    popularity: 1,
   },
 
   // AI & Innovation
