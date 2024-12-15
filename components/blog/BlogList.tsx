@@ -9,9 +9,10 @@ import { BlogCard } from "./BlogCard";
 import GradientWord from "../ui/GradientWord";
 import GradientHeader from "../GradientHeader";
 import { AlertCircle } from "lucide-react";
+import { format, parse } from "date-fns";
 
+// Categories
 const categories: (BlogCategory | "All")[] = [
-  "All",
   "New",
   "Popular",
   "Tech",
@@ -49,15 +50,28 @@ export function BlogList() {
     fetchPosts();
   }, []);
 
-  // Filter logic for category and search
+  // Filter logic for category, search
   useEffect(() => {
     let updatedPosts = posts;
 
-    if (activeCategory !== "All") {
+    // Filter by category
+    if (activeCategory === "Popular") {
+      updatedPosts = updatedPosts.filter((post) => post.popularity === 1);
+    } else if (activeCategory === "New") {
+      // Sort posts by date in descending order (most recent first)
+      updatedPosts = updatedPosts.sort((a, b) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
+
+      // Slice to only include the three most recent posts
+      updatedPosts = updatedPosts.slice(0, 3);
+    } else if (activeCategory !== "All") {
       updatedPosts = updatedPosts.filter(
         (post) => post.category === activeCategory
       );
     }
+
+    // Filter by search query
     if (searchQuery) {
       updatedPosts = updatedPosts.filter(
         (post) =>
