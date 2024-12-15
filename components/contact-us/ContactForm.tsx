@@ -8,36 +8,8 @@ import { Input } from "../ui/Input";
 import { TextArea } from "../ui/TextArea";
 import { Label } from "../ui/Label";
 import { subjectPlaceholders } from "@/data/placeholder";
-import { z } from "zod";
+import { fullnameSchema, emailSchema, subjectSchema, messageSchema } from "@/schema/contactFormSchema";
 import { cn } from "@/lib/utils";
-
-const contactFormSchema = z.object({
-  fullname: z
-    .string()
-    .min(1, "Please enter your full name")
-    .refine((value) => value.trim().split(/\s+/).length >= 2, {
-      message: "Full name must contain at least two words.",
-    })
-    .refine(
-      (value) =>
-        value
-          .trim()
-          .split(/\s+/)
-          .every((word) => word.length >= 2),
-      { message: "Each word in the full name must have at least 2 letters." }
-    ),
-  email: z.string().email("Please enter a valid email"),
-  subject: z.string().min(1, "Subject is required"),
-  message: z
-    .string()
-    .min(1, "Please enter a message")
-    .refine((value) => value.trim().split(/\s+/).length >= 5, {
-      message: "Message must contain at least 5 words.",
-    })
-    .refine((value) => !/^(hi|hello|hey|test)$/i.test(value.trim()), {
-      message: "Message is too generic. Please provide more details.",
-    }),
-});
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -53,13 +25,27 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Reset previous errors
     setErrors({});
     setGlobalMessage("");
 
     try {
-      // Validate form data
-      contactFormSchema.parse(formData);
+      // Validate each field separately
+      const fullnameError = fullnameSchema.safeParse(formData.fullname);
+      const emailError = emailSchema.safeParse(formData.email);
+      const subjectError = subjectSchema.safeParse(formData.subject);
+      const messageError = messageSchema.safeParse(formData.message);
+
+      const newErrors: Partial<Record<string, string>> = {};
+
+      if (!fullnameError.success) newErrors.fullname = fullnameError.error.errors[0].message;
+      if (!emailError.success) newErrors.email = emailError.error.errors[0].message;
+      if (!subjectError.success) newErrors.subject = subjectError.error.errors[0].message;
+      if (!messageError.success) newErrors.message = messageError.error.errors[0].message;
+
+      if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
+        return;
+      }
 
       setIsLoading(true);
       const response = await fetch("/api/contact", {
@@ -75,15 +61,7 @@ export default function ContactForm() {
         throw new Error("Failed to send the message");
       }
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        const newErrors: Partial<Record<string, string>> = {};
-        error.errors.forEach((err) => {
-          newErrors[err.path[0]] = err.message;
-        });
-        setErrors(newErrors);
-      } else {
-        setGlobalMessage("Something went wrong. Please try again!");
-      }
+      setGlobalMessage("Something went wrong. Please try again!");
     } finally {
       setIsLoading(false);
       setTimeout(() => setGlobalMessage(""), 3000);
@@ -97,15 +75,8 @@ export default function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <GradientWord
-        word="Get in Touch"
-        size="sm"
-        className="ml-2 lg:ml-0 lg:mx-auto"
-      />
-      <form
-        className="space-y-2 mt-6 shadow-xl rounded-lg p-2 md:p-8 md:pb-6"
-        onSubmit={handleSubmit}
-      >
+      <GradientWord word="Get in Touch" size="sm" className="ml-2 lg:ml-0 lg:mx-auto" />
+      <form className="space-y-2 mt-6 shadow-xl rounded-lg p-2 md:p-8 md:pb-6" onSubmit={handleSubmit}>
         <LabelInputContainer>
           <Label htmlFor="fullname">Full Name</Label>
           <Input
@@ -113,9 +84,7 @@ export default function ContactForm() {
             placeholder="John Doe"
             type="text"
             value={formData.fullname}
-            onChange={(e) =>
-              setFormData({ ...formData, fullname: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
           />
           <ErrorMessage message={errors.fullname} />
         </LabelInputContainer>
@@ -125,11 +94,9 @@ export default function ContactForm() {
           <Input
             id="email"
             placeholder="john.doe@example.com"
-            type="email"
+            type="text"
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
           <ErrorMessage message={errors.email} />
         </LabelInputContainer>
@@ -141,9 +108,7 @@ export default function ContactForm() {
             placeholders={subjectPlaceholders}
             type="text"
             value={formData.subject}
-            onChange={(e) =>
-              setFormData({ ...formData, subject: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
           />
           <ErrorMessage message={errors.subject} />
         </LabelInputContainer>
@@ -156,9 +121,7 @@ export default function ContactForm() {
             className="!text-md"
             rows={5}
             value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           />
           <ErrorMessage message={errors.message} />
         </LabelInputContainer>
@@ -184,18 +147,8 @@ export default function ContactForm() {
   );
 }
 
-const LabelInputContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
+const LabelInputContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <div className={cn("flex flex-col space-y-2 w-full", className)}>{children}</div>;
 };
 
 const ErrorMessage = ({ message }: { message?: string }) => {
