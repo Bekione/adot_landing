@@ -9,7 +9,6 @@ import { BlogCard } from "./BlogCard";
 import GradientWord from "../ui/GradientWord";
 import GradientHeader from "../GradientHeader";
 import { AlertCircle } from "lucide-react";
-import { format, parse } from "date-fns";
 
 // Categories
 const categories: (BlogCategory | "All")[] = [
