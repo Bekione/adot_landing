@@ -1,17 +1,17 @@
-'use client'
+// CategoryFilter.tsx
+"use client";
 
-import { motion } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import { BlogCategory } from '@/types/blog'
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { BlogCategory } from '@/types/blog';
 
 interface CategoryFilterProps {
-  categories: (BlogCategory | 'All')[]
-  activeCategory: BlogCategory | 'All'
-  onCategoryChange: (category: BlogCategory | 'All') => void
+  categories: BlogCategory[];
+  activeCategory: BlogCategory | 'All';
+  onCategoryChange: (category: BlogCategory | 'All') => void;
 }
 
 export function CategoryFilter({ categories, activeCategory, onCategoryChange }: CategoryFilterProps) {
-
   return (
     <motion.div 
       className="flex flex-wrap justify- gap-2 mb-8"
@@ -58,11 +58,9 @@ export function CategoryFilter({ categories, activeCategory, onCategoryChange }:
               className="absolute inset-0 bg-primary rounded-full"
             />
           )}
-          <span className="relative block">
-            {category}
-          </span>
+          <span className="relative block">{category}</span>
         </button>
       ))}
     </motion.div>
-  )
+  );
 }
