@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image"; // Import Next.js Image
+
+// Cloudinary Loader and placeholder for blur
+import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 type Card = {
   id: number;
@@ -26,9 +30,16 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative md:w-11/12 lg:w-10/12">
+    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative md:w-11/12 lg:w-10/12">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <motion.div
+          key={i}
+          className={cn(card.className, "")}
+          initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }} // Alternate slide direction
+          whileInView={{ opacity: 1, x: 0 }} // Slide to original position
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }} 
+        >
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
@@ -37,15 +48,15 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               selected?.id === card.id
                 ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-xl h-full w-full"
-                : "bg-white rounded-xl h-full w-full"
+                ? "z-40 bg-secondary/90 rounded-xl h-full w-full"
+                : "bg-secondary/90 rounded-xl h-full w-full"
             )}
             layoutId={`card-${card.id}`}
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
             <ImageComponent card={card} />
           </motion.div>
-        </div>
+        </motion.div>
       ))}
       <motion.div
         onClick={handleOutsideClick}
@@ -61,22 +72,29 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
 const ImageComponent = ({ card }: { card: Card }) => {
   return (
-    <motion.img
-      layoutId={`image-${card.id}-image`}
-      src={card.thumbnail}
-      height="500"
-      width="500"
-      className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200"
-      )}
-      alt="thumbnail"
-    />
+    <motion.div
+      className="relative w-full h-full"
+    >
+      <Image
+        loader={cloudinaryLoader}
+        src={card.thumbnail}
+        alt={card.title}
+        height={500}
+        width={500}
+        className={cn("object-cover object-top absolute inset-0 h-full w-full transition duration-200")}
+        placeholder="blur"
+        blurDataURL={cloudinaryBlurPlaceholder(card.thumbnail)} // Blur placeholder
+      />
+    </motion.div>
   );
 };
 
 const SelectedCard = ({ selected }: { selected: Card | null }) => {
   return (
-    <div className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg overflow-hidden shadow-2xl relative z-[60]">
+    <div
+      className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg overflow-hidden shadow-2xl relative z-[60]"
+      style={{ backgroundImage: `url(${selected?.thumbnail})`, backgroundSize: "cover", backgroundPosition: "center" }}
+    >
       <motion.div
         initial={{
           opacity: 0,
