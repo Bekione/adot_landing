@@ -15,9 +15,13 @@ const WhoWeAreSection = () => {
           {/* Card Section */}
           <motion.div
             className="w-full lg:w-2/5"
-            initial={{ x: -1000, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.43, 0.13, 0.23, 0.96],
+            }}
           >
             <CardContainer>
               <CardBody className="bg-primary relative group/card w-full sm:w-[22rem] md:w-[25rem] h-auto aspect-[16/10] md:aspect-[16/12] rounded-xl mx-auto">
@@ -30,7 +34,9 @@ const WhoWeAreSection = () => {
                     className="object-cover rounded-xl group-hover/card:shadow-xl"
                     alt="Adot office"
                     placeholder="blur"
-                    blurDataURL={cloudinaryBlurPlaceholder("/images/home/adot-office.png")}
+                    blurDataURL={cloudinaryBlurPlaceholder(
+                      "/images/home/adot-office.png"
+                    )}
                   />
                 </CardItem>
               </CardBody>
@@ -40,8 +46,9 @@ const WhoWeAreSection = () => {
           {/* Content Section */}
           <motion.div
             className="w-full lg:w-3/5 lg:text-left"
-            initial={{ x: 1000, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               duration: 0.8,
               ease: [0.43, 0.13, 0.23, 0.96],
