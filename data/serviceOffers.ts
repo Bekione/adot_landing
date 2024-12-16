@@ -1,43 +1,53 @@
-import { Globe, Cog, BadgeDollarSign, Lightbulb, TabletSmartphone } from 'lucide-react';
+import { iconMap } from '@/lib/icon-map';
 
-export const offers = [
+export const offers: Array<{
+  icon: keyof typeof iconMap;
+  title: string;
+  header: string;
+  description: string;
+}> = [
   {
     title: "Creative Website Design",
     description: "Modern, responsive, and visually stunning websites tailored to your brand.",
     header: "/images/home/web-design.avif", 
-    icon: Globe,
+    icon: "Globe",
   },
   {
     title: "Mobile App Development",
     description:
       "Engage your audience on the go with intuitive and user-friendly mobile apps.",
     header: "/images/home/mobile.avif",
-    icon: TabletSmartphone,
+    icon: "TabletSmartphone",
   },
   {
     title: "Custom Software Development",
     description: "Flexible pricing tailored to your budget without compromising quality.",
     header: "/images/home/software.avif",
-    icon: Cog,
+    icon: "Cog",
   },
   {
     title: "Lab for Incubating Ideas",
     description:
       "A creative hub for nurturing and transforming innovative ideas into reality.",
     header: "/images/home/lab.avif",
-    icon: Lightbulb,
+    icon: "Lightbulb",
   },
   {
     title: "Affordable Service Packages",
     description: "Discover the beauty of thoughtful and functional design.",
     header: "/images/home/package.avif",
-    icon: BadgeDollarSign,
+    icon: "BadgeDollarSign",
   },
 ];
 
 
 
-export const services = [
+export const services: Array<{
+  icon: keyof typeof iconMap;
+  title: string;
+  description: string;
+  link: string;
+}> = [
   {
     icon: "Code",
     title: 'Web Development',
