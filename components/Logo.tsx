@@ -13,7 +13,7 @@ const Logo = () => {
             priority
           />
           <Image
-            className="hidden h-auto w-auto lg:flex"
+            className="hidden h-auto w-auto mxl:flex"
             src="/images/logos/logo-text-sm.png"
             alt="Adot logo text"
             width={170}
