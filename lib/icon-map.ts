@@ -29,6 +29,18 @@ import {
   Rocket,
   Puzzle,
   FileText,
+  Users,
+  Leaf,
+  Globe,
+  TabletSmartphone,
+  Cog,
+  BadgeDollarSign,
+  Database,
+  PenTool,
+  Briefcase,
+  CheckCircle,
+  Wrench,
+  Sparkles
 } from "lucide-react";
 
 export const iconMap = {
@@ -62,4 +74,16 @@ export const iconMap = {
   Rocket,
   Puzzle,
   FileText,
+  Users,
+  Leaf,
+  Globe,
+  TabletSmartphone,
+  Cog,
+  BadgeDollarSign,
+  Database,
+  PenTool,
+  Briefcase,
+  CheckCircle,
+  Wrench,
+  Sparkles
 };
