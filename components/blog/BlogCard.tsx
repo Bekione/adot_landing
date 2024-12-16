@@ -18,8 +18,9 @@ export function BlogCard({ post, index }: BlogCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
       className="group relative overflow-hidden rounded-lg bg-white shadow-md"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-secondary/90">
@@ -32,7 +33,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
             sizes="(max-width: 768px) 100vw, 50vw"
             placeholder="blur"
             blurDataURL={cloudinaryBlurPlaceholder(post.image)}
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover h-auto w-auto transition-transform duration-300 group-hover:scale-105"
           />
 
           {/* Overlay content */}

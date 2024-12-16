@@ -72,8 +72,9 @@ export default function ContactForm() {
     <motion.div
       className="bg-white flex flex-col"
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       <GradientWord word="Get in Touch" size="sm" className="ml-2 lg:ml-0 lg:mx-auto" />
       <form className="space-y-2 mt-6 shadow-xl rounded-lg p-2 md:p-8 md:pb-6" onSubmit={handleSubmit}>
