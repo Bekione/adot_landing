@@ -19,17 +19,34 @@ const Header = () => {
   return (
     <>
       <motion.header
-        className="fixed w-full md:w-auto mx-auto rounded-md backdrop-blur-sm font-ubuntuReg"
+        className="fixed w-full md:w-auto mx-auto rounded-md font-ubuntuReg"
         style={{ left: 0, right: 0, marginLeft: "auto", marginRight: "auto" }}
-        initial={{ backgroundColor: "transparent", zIndex: 998, }}
+        initial={{
+          backgroundColor: "transparent",
+          backdropFilter: "none",
+          zIndex: 998,
+          opacity: 0, 
+          y: -30, 
+        }}
         animate={{
+          y: 0,
           backgroundColor: isScrolled ? "rgba(80, 60, 60, 0.9)" : "transparent",
+          backdropFilter: isScrolled ? "blur(8px)" : "none",
           boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none",
           width: isScrolled ? "95%" : "100%",
           top: isScrolled ? "1rem" : 0,
+          opacity: 1,
+          
           zIndex: 9998,
         }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        transition={{
+          y: { duration: 0.6, ease: "easeInOut" },
+          width: { duration: 0.6, ease: "easeInOut" },
+          opacity: { duration: 0.6, ease: "easeInOut" },
+          top: { duration: 0.6, ease: "easeInOut" },
+          
+        }}
+        viewport={{ once: true }}
       >
         <div className="mx-auto px-4 py-2 flex justify-between items-center">
           <Logo />
