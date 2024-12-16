@@ -1,17 +1,13 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Sparkles, Wrench, Users, Lightbulb } from 'lucide-react'
-import Image from 'next/image'
-import GradientWord from '../ui/GradientWord'
-import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
-
-const benefits = [
-  { icon: Wrench, text: 'Access to cutting-edge tools and technologies' },
-  { icon: Users, text: 'Mentorship from industry professionals' },
-  { icon: Sparkles, text: 'Collaborative project opportunities' },
-  { icon: Lightbulb, text: 'Support for tech events and hackathons' },
-]
+import { motion } from "framer-motion";
+import Image from "next/image";
+import GradientWord from "../ui/GradientWord";
+import cloudinaryLoader, {
+  cloudinaryBlurPlaceholder,
+} from "@/lib/image-loader";
+import { iconMap } from "@/lib/icon-map";
+import { techtonicBenefits } from "@/data/benefits";
 
 export default function TechTonicClub() {
   return (
@@ -21,8 +17,9 @@ export default function TechTonicClub() {
         <motion.div
           className="mb-6 text-center"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           <GradientWord
             word="Empowering TechTonic Club"
@@ -49,7 +46,9 @@ export default function TechTonicClub() {
               height={300}
               sizes="(max-width: 768px) 80vw, 50vw"
               placeholder="blur"
-              blurDataURL={cloudinaryBlurPlaceholder("/images/adot-labs/techtonic-logo.jpg")}
+              blurDataURL={cloudinaryBlurPlaceholder(
+                "/images/adot-labs/techtonic-logo.jpg"
+              )}
               className="rounded-xl shadow-xl object-cover w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
             />
           </motion.div>
@@ -63,36 +62,41 @@ export default function TechTonicClub() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-700 mb-6 leading-relaxed text-justify">
-              Adot Labs is proud to partner with and support the TechTonic Club at DBU. 
-              Our collaboration aims to foster innovation and technical excellence among students.
+              Adot Labs is proud to partner with and support the TechTonic Club
+              at DBU. Our collaboration aims to foster innovation and technical
+              excellence among students.
             </p>
 
             {/* Benefits List with Icons */}
             <div className="space-y-4 mb-6 ml-4 md:ml-0">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-start gap-4"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <benefit.icon className="h-6 w-6 text-primary flex-shrink-0" />
-                  <p className="text-gray-700 text-base leading-relaxed">
-                    {benefit.text}
-                  </p>
-                </motion.div>
-              ))}
+              {techtonicBenefits.map((benefit, index) => {
+                const Icon = iconMap[benefit.icon];
+                return (
+                  <motion.div
+                    key={index}
+                    className="flex items-start gap-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <Icon className="h-6 w-6 text-primary flex-shrink-0" />
+                    <p className="text-gray-700 text-base leading-relaxed">
+                      {benefit.text}
+                    </p>
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Call-to-Action */}
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
-              Together, we're building a strong foundation for the next generation of tech innovators.
+              Together, we're building a strong foundation for the next
+              generation of tech innovators.
             </p>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
