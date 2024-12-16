@@ -41,7 +41,7 @@ export default function BlogContent({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               placeholder="blur"
               blurDataURL={cloudinaryBlurPlaceholder(blogPost.image)}
-              className="object-cover"
+              className="object-cover h-auto w-auto"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent" />
           </div>
