@@ -22,7 +22,7 @@ export function NavbarMenu() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden md:flex items-center space-x-4">
+    <nav className="hidden md:flex items-center md:space-x-[0.6rem] lg:space-x-4">
       {navLinks.map((link, index) => (
         <NavItem key={index} link={link} pathname={pathname} />
       ))}
