@@ -1,16 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Lightbulb, ShieldCheck, Award, Users, Leaf, Rocket } from 'lucide-react'
-
-const values = [
-  { title: 'Innovation', description: 'Creating breakthrough technologies that solve real-world problems.', icon: Lightbulb },
-  { title: 'Integrity', description: 'Operating with transparency and honesty in all our endeavors.', icon: ShieldCheck },
-  { title: 'Excellence', description: 'Striving for the highest quality in every aspect of our work.', icon: Award },
-  { title: 'Collaboration', description: 'Enabling shared success with our clients and partners.', icon: Users },
-  { title: 'Sustainability', description: 'Guiding our efforts for long-term impact.', icon: Leaf },
-  { title: 'Empowerment', description: 'Helping individuals and communities thrive through technology.', icon: Rocket },
-]
+import { iconMap } from '@/lib/icon-map'
+import { values } from '@/data/values'
 
 export default function CoreValues() {
   return (
@@ -23,7 +15,7 @@ export default function CoreValues() {
       <h3 className="text-3xl font-semibold font-ubuntuBold mb-8 text-center text-white">Our Core Values</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {values.map((value, index) => {
-          const Icon = value.icon
+          const Icon = iconMap[value.icon];
           return (
             <motion.div
               key={index}
