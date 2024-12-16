@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        mxl: "1080px", // midium extra large
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
