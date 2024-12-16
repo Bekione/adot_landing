@@ -1,28 +1,11 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { CheckCircle, Users, Briefcase, Globe } from 'lucide-react'
-import GradientWord from '../ui/GradientWord'
-import Button from '../ui/Button'
-
-const benefits = [
-  { 
-    icon: Briefcase, 
-    text: 'Hands-on experience in cutting-edge tech projects' 
-  },
-  { 
-    icon: Users, 
-    text: 'Mentorship from industry professionals' 
-  },
-  { 
-    icon: Globe, 
-    text: 'Contribution to real-world open-source projects' 
-  },
-  { 
-    icon: CheckCircle, 
-    text: 'Networking opportunities within the tech community' 
-  },
-]
+import { motion } from "framer-motion";
+import { CheckCircle, Users, Briefcase, Globe } from "lucide-react";
+import GradientWord from "../ui/GradientWord";
+import Button from "../ui/Button";
+import { iconMap } from "@/lib/icon-map";
+import { internBenefits } from "@/data/benefits";
 
 export default function Internships() {
   return (
@@ -32,13 +15,14 @@ export default function Internships() {
         <motion.div
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          viewport={{ once: true }}
         >
-          <GradientWord 
-            word="Join Us: Internships and Collaborations" 
-            size="sm" 
-            className="text-center" 
+          <GradientWord
+            word="Join Us: Internships and Collaborations"
+            size="sm"
+            className="text-center"
           />
         </motion.div>
 
@@ -46,29 +30,36 @@ export default function Internships() {
         <motion.div
           className="max-w-3xl text-justify md:text-center mx-6 md:mx-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
         >
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Adot Labs is dedicated to nurturing the next generation of innovators. Join our internship programs to gain hands-on experience, collaborate on exciting projects, and grow your technical and creative skills. Our interns benefit from:
+            Adot Labs is dedicated to nurturing the next generation of
+            innovators. Join our internship programs to gain hands-on
+            experience, collaborate on exciting projects, and grow your
+            technical and creative skills. Our interns benefit from:
           </p>
 
           {/* Benefits Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                className="flex items-start gap-4"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <benefit.icon className="h-6 w-6 text-primary flex-shrink-0" />
-                <p className="text-gray-700 text-base leading-relaxed">
-                  {benefit.text}
-                </p>
-              </motion.div>
-            ))}
+            {internBenefits.map((benefit, index) => {
+              const Icon = iconMap[benefit.icon];
+              return (
+                <motion.div
+                  key={index}
+                  className="flex items-start gap-4"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <Icon className="h-6 w-6 text-primary flex-shrink-0" />
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    {benefit.text}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Call to Action */}
@@ -76,5 +67,5 @@ export default function Internships() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
