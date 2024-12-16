@@ -4,7 +4,7 @@ import MotionWrapper from '@/components/MotionWrapper'
 
 const page = () => {
   return (
-    <section className="py-12 pt-16 md:py-24">
+    <section className="py-12 pt-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-8">
         <MotionWrapper
           className="mb-8 text-center"

@@ -10,7 +10,7 @@ import AdotLabsSection from "@/components/home/AdotLabsSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <HomeHero />
       <WhoWeAreSection />
       <WhatWeOfferSection />

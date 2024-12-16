@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ErpFeatures from "@/components/products/ErpFeatures";
 import Highlights from "@/components/products/Highlights";
-import GradientWord from "@/components/ui/GradientWord";
 import CTABlock from "@/components/ui/CTABlock";
 import { erpHighlights } from "@/data/highlights";
 import WhyChoose from "@/components/products/WhyChoose";
@@ -19,7 +18,7 @@ export const metadata = createMetadata({
 
 export default function AdotERP() {
   return (
-    <section>
+    <section className="min-h-screen overflow-hidden">
       <Hero
         title="Adot ERP"
         description="All-in-One ERP Solution for Ethiopian Businesses"
@@ -43,10 +42,7 @@ export default function AdotERP() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="flex flex-col items-center gap-6 mt-6 mb-10 mx-auto"
       >
-        <div className="flex flex-col items-center">
-          <GradientWord word="Features" size="sm" />
-          <ErpFeatures />
-        </div>
+        <ErpFeatures />
 
         <Highlights highlights={erpHighlights} />
 

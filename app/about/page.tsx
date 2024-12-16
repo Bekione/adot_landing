@@ -20,8 +20,8 @@ export const metadata = createMetadata({
 
 const page = () => {
   return (
-    <div className="min-h-screen">
-      <section className="py-16 pt-28 md:w-11/12 lg:w-10/12 mx-auto">
+    <div className="min-h-screen overflow-hidden">
+      <section className="py-16 pt-20 md:pt-28 md:w-11/12 lg:w-10/12 mx-auto">
         <MotionWrapper
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ const page = () => {
         >
           <GradientWord word="About Us" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full mt-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full mt-6 overflow-hidden">
             <WobbleCard
               containerClassName="col-span-1 lg:col-span-2 h-full bg-primary min-h-[500px] lg:min-h-[300px]"
               className=""

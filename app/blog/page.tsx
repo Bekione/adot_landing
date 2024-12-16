@@ -11,7 +11,7 @@ export const metadata = createMetadata({
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen overflow-hidden">
       <BlogList />
     </main>
   )

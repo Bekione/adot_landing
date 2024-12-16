@@ -17,7 +17,7 @@ export const metadata = createMetadata({
 
 export default function Youthopia() {
   return (
-    <section>
+    <section className="min-h-screen overflow-hidden">
       <Hero
         title="Youthopia"
         description="Learn, Play, and Grow Together – A Social Learning Platform for Children."
@@ -45,9 +45,9 @@ export default function Youthopia() {
         </MotionWrapper>
 
         <MotionWrapper
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className=""
         >
           <WhyChoose title="Why Choose Youthopia" cards={whyChooseYouthopia} />

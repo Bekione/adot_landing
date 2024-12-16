@@ -12,7 +12,7 @@ export const metadata = createMetadata({
 
 export default function ProductsOverwiew() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <GradientHeader
         title="Our Products"
         subtitle="Solving real-world problems with innovative solutions tailored for Ethiopian businesses and beyond."

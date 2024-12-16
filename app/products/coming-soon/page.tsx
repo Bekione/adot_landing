@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 
 export default function ComingSoon() {
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center overflow-hidden">
       <Hero
         title="Commign Soon"
         description="Our team is hard at work developing an innovative new product that will redefine the way you interact with technology."

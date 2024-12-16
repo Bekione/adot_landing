@@ -18,7 +18,7 @@ export const metadata = createMetadata({
 const page = () => {
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <MotionWrapper
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

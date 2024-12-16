@@ -22,7 +22,7 @@ const page = () => {
   };
 
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full overflow-hidden">
       <GradientHeader
         title="Contact Us"
         subtitle="We are here to help you with any questions you may have. Reach out to us and we will get back to you as soon as possible."
