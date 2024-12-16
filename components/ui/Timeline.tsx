@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -33,10 +29,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full md:-mt-20 md:px-10"
-      ref={containerRef}
-    >
+    <div className="w-full md:-mt-20 md:px-10" ref={containerRef}>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div
@@ -56,12 +49,52 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold font-ubuntuBold text-primary">
                 {item.year}
               </h3>
-              <div>
-                <h2 className="text-2xl font-bold font-ubuntuBold text-primary mb-2">{item.title}</h2>
-                <p className="text-neutral-800  text-lg font-normal mb-8 text-justify break-words hyphens-auto">
-                  {item.description}
-                </p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true, amount: 0.4 }} // Trigger once
+              >
+                <motion.h2
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true }} // Trigger once
+                  className="text-2xl font-bold font-ubuntuBold text-primary mb-2"
+                >
+                  {item.title}
+                </motion.h2>
+
+                <motion.p className="text-neutral-800 text-lg font-normal mb-8 text-justify break-words hyphens-auto">
+                  {item.description.split(" ").map((word, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                        filter: "blur(8px)",
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeOut",
+                        delay: 0.03 * index, // Stagger effect for each word
+                      }}
+                      viewport={{ once: true }} // Trigger once
+                      className="inline-block"
+                    >
+                      {word}&nbsp;
+                    </motion.span>
+                  ))}
+                </motion.p>
+              </motion.div>
             </div>
           </div>
         ))}
