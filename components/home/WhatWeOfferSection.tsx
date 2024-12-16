@@ -5,7 +5,10 @@ import GradientWord from "../ui/GradientWord";
 import { BentoGrid, BentoGridItem } from "../ui/BentoGrid";
 import Image from "next/image";
 import { offers } from "@/data/serviceOffers";
-import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
+import cloudinaryLoader, {
+  cloudinaryBlurPlaceholder,
+} from "@/lib/image-loader";
+import { iconMap } from "@/lib/icon-map";
 
 const WhatWeOfferSection = () => {
   return (
@@ -21,8 +24,9 @@ const WhatWeOfferSection = () => {
 
       {/* BentoGrid */}
       <BentoGrid className="max-w-5xl mx-8 md:mx-0 mt-6 ">
-        {offers.map((offer, i) => (
-         
+        {offers.map((offer, i) => {
+          const Icon = iconMap[offer.icon]
+          return (
             <BentoGridItem
               title={offer.title}
               description={offer.description}
@@ -42,10 +46,11 @@ const WhatWeOfferSection = () => {
                   />
                 </div>
               }
-              icon={<offer.icon className="h-6 w-6 text-neutral-200" />}
+              icon={<Icon className="h-6 w-6 text-neutral-200" />}
               className={i === 3 || i === 6 ? "md:col-span-2" : ""}
             />
-        ))}
+          );
+        })}
       </BentoGrid>
     </motion.div>
   );
