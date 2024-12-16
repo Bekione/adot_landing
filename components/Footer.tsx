@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/data/blogs";
@@ -48,18 +48,30 @@ export default function Footer() {
             <p className="text-white/80">Powering Bold Dreams.</p>
             {/* Social Media Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+              {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="hover:text-white"
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    transition: {
+                      opacity: { duration: 0.4 },
+                      scale: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                        delay: index * 0.2,
+                      },
+                    },
+                  }}
+                  viewport={{ once: true }}
                   aria-label={social.name}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-5 w-5 hover:scale-110 transition-transform duration-150 ease-in-out hover:text-white" />
                 </motion.a>
               ))}
             </div>
