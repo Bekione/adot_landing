@@ -1,109 +1,102 @@
 // projects.ts
 export const webProjects = [
   {
-    title: "Faith Import Landing site",
+    title: "Faith Import & Trade landing site",
     src: "/images/project-snaps/webProject-1.png",
-    liveLink: "https://webproject1.com",
-    githubLink: "https://github.com/example/webproject1",
+    liveLink: "https://www.faithimporttrade.com/",
+    githubLink: "#",
   },
   {
-    title: "Web Project 2",
-    src: "/images/project-snaps/webProject-2.jpg",
-    liveLink: "https://webproject2.com",
-    githubLink: "https://github.com/example/webproject2",
+    title: "WTB Import and Export landing site",
+    src: "/images/project-snaps/webProject-4.png",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "Web Project 3",
-    src: "/images/project-snaps/webProject-3.png",
-    liveLink: "https://webproject3.com",
-    githubLink: "https://github.com/example/webproject3",
+    src: "/images/project-snaps/webProject-2.jpg",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "Web Project 4",
-    src: "/images/project-snaps/webProject-4.png",
-    liveLink: "https://webproject4.com",
-    githubLink: "https://github.com/example/webproject4",
+    src: "/images/project-snaps/webProject-3.png",
+    liveLink: "#",
+    githubLink: "#",
   },
+  
 ];
 
 export const appProjects = [
   {
-    title: "App Project 1",
-    src: "/images/project-snaps/appProject-1.png",
-    liveLink: "https://appproject1.com",
-    githubLink: "https://github.com/example/appproject1",
+    title: "Medicall health app",
+    src: "/images/project-snaps/appProject-4.jpg",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
-    title: "App Project 2",
+    title: "Modern cash-commerse app",
     src: "/images/project-snaps/appProject-2.png",
-    liveLink: "https://appproject2.com",
-    githubLink: "https://github.com/example/appproject2",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "App Project 3",
-    src: "/images/project-snaps/appProject-3.png",
-    liveLink: "https://appproject3.com",
-    githubLink: "https://github.com/example/appproject3",
+    src: "/images/project-snaps/appProject-1.png",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "App Project 4",
-    src: "/images/project-snaps/appProject-4.jpg",
-    liveLink: "https://appproject4.com",
-    githubLink: "https://github.com/example/appproject4",
+    src: "/images/project-snaps/appProject-3.png",
+    liveLink: "#",
+    githubLink: "#",
   },
 ];
 
 export const softwareProjects = [
   {
-    title: "Software Project 1",
+    title: "Iaas Dashboard",
     src: "/images/project-snaps/softwareProject-1.png",
-    liveLink: "https://softwareproject1.com",
-    githubLink: "https://github.com/example/softwareproject1",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
-    title: "Software Project 2",
+    title: "Adot ERP system",
     src: "/images/project-snaps/softwareProject-2.png",
-    liveLink: "https://softwareproject2.com",
-    githubLink: "https://github.com/example/softwareproject2",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
-    title: "Software Project 3",
+    title: "Order management system",
     src: "/images/project-snaps/softwareProject-3.png",
-    liveLink: "https://softwareproject3.com",
-    githubLink: "https://github.com/example/softwareproject3",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
-    title: "Software Project 4",
+    title: "Customer support dashboard",
     src: "/images/project-snaps/softwareProject-4.png",
-    liveLink: "https://softwareproject4.com",
-    githubLink: "https://github.com/example/softwareproject4",
+    liveLink: "#",
+    githubLink: "#",
   },
 ];
 
 export const designProjects = [
   {
-    title: "Design Project 1",
+    title: "Agency landing page design",
     src: "/images/project-snaps/designProject-1.jpg",
-    liveLink: "#",
-    githubLink: "#",
   },
   {
-    title: "Design Project 2",
+    title: "Saas website design",
     src: "/images/project-snaps/designProject-2.png",
-    liveLink: "#",
-    githubLink: "#",
   },
   {
-    title: "Design Project 3",
+    title: "E-learning platform app design",
     src: "/images/project-snaps/designProject-3.jpg",
-    liveLink: "#",
-    githubLink: "#",
   },
   {
-    title: "Design Project 4",
+    title: "Covid-19 mobile app design",
     src: "/images/project-snaps/designProject-4.png",
-    liveLink: "#",
-    githubLink: "#",
   },
 ];
 
