@@ -27,6 +27,14 @@ export default function CoreValues() {
           return (
             <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }} // Trigger once
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2, // Staggered delay
+                ease: 'easeOut',
+              }}
               whileHover={{ scale: 1.05 }}
               className="flex items-start text-white p-4 bg-white/5 rounded-lg shadow-lg"
             >
