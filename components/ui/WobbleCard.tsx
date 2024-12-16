@@ -27,6 +27,10 @@ export const WobbleCard = ({
 
   return (
     <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => {
@@ -35,7 +39,9 @@ export const WobbleCard = ({
       }}
       style={{
         transform: isHovering
-          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(${allowScale ? 1 : 1}, ${allowScale ? 1 : 1}, 1)`
+          ? `translate3d(${mousePosition.x}px, ${
+              mousePosition.y
+            }px, 0) scale3d(${allowScale ? 1 : 1}, ${allowScale ? 1 : 1}, 1)`
           : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
         transition: "transform 0.1s ease-out",
       }}
@@ -54,7 +60,9 @@ export const WobbleCard = ({
         <motion.div
           style={{
             transform: isHovering
-              ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(${allowScale ? 1.03 : 1}, ${allowScale ? 1.03 : 1}, 1)`
+              ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(${
+                  allowScale ? 1.03 : 1
+                }, ${allowScale ? 1.03 : 1}, 1)`
               : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
             transition: "transform 0.1s ease-out",
           }}

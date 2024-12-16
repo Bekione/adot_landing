@@ -16,7 +16,13 @@ interface ProcessProps {
 
 export default function Process({ steps }: ProcessProps) {
   return (
-    <section className="py-8 bg-white md:w-11/12 lg:w-10/12 mx-auto">
+    <motion.section
+      className="py-8 bg-white md:w-11/12 lg:w-10/12 mx-auto"
+      initial={{ opacity: 0 , y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-4 flex flex-col items-center">
         <GradientWord word="Our Process" size="sm" />
         <div className="flex flex-wrap justify-center mt-10 mx-6 md:mx-0">
@@ -26,9 +32,9 @@ export default function Process({ steps }: ProcessProps) {
               <motion.div
                 key={index}
                 className="w-full md:w-1/3 px-4 mb-8"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.3 }}
                 viewport={{ once: true }}
               >
                 <div className="text-center">
@@ -45,6 +51,6 @@ export default function Process({ steps }: ProcessProps) {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

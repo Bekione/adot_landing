@@ -10,27 +10,40 @@ import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader"
 
 export default function FeaturedProjects() {
   return (
-    <section
-      className="py-10 bg-secondary relative overflow-hidden"
-    >
+    <section className="py-10 bg-secondary relative overflow-hidden">
       <Noise />
-      <div className="container mx-auto px-4 flex flex-col items-center">
+      <motion.div
+        className="container mx-auto px-4 flex flex-col items-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           <GradientWord word="Projects We're Working On" size="sm" />
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 md:px-auto md:w-11/12 lg:w-10/12">
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 md:px-auto md:w-11/12 lg:w-10/12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           {labProjects.map((project, index) => (
             <motion.div
               key={project.name}
               className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col h-full group z-50"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.4 }}
+              viewport={{ once: true }}
             >
               <div className="overflow-hidden">
                 <Image
@@ -59,8 +72,8 @@ export default function FeaturedProjects() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
