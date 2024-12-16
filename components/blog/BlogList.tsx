@@ -92,8 +92,9 @@ export function BlogList() {
       <GradientHeader title="" subtitle="">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="space-y-4 text-center mb-12 flex flex-col items-center"
         >
           <GradientWord word="Insights & Updates" type="secondary" />
@@ -125,7 +126,7 @@ export function BlogList() {
               <motion.div
                 key={activeCategory + searchQuery + displayedPosts.length}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
                 className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto"
