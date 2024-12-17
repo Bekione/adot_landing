@@ -36,7 +36,7 @@ export default function ComingSoon() {
           <p className="mb-6 px-2 text-white/80 text-justify">
             Our team is hard at work developing an innovative new product that
             will redefine the way you interact with technology. Stay tuned for
-            updates and be the first to experience what's next from Adot.
+            updates and be the first to experience what&apos;s next from Adot.
           </p>
           <Link href="/contact"
             className="px-8 py-2 rounded-md bg-primary text-white font-bold font-sans transition duration-200 hover:bg-white hover:text-primary border-2 border-transparent hover:border-primary flex items-center z-40 "
