@@ -12,7 +12,7 @@ export default function CallToAction() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Let's Innovate Together
+          Let&apos;s Innovate Together
         </motion.h2>
         <motion.p 
           className="text-xl mb-12 max-w-2xl mx-auto"
@@ -20,7 +20,7 @@ export default function CallToAction() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Whether you're a student, developer, or industry partner, there's a place for you at Adot Labs. Join us in shaping the future of technology and innovation.
+          Whether you&apos;re a student, developer, or industry partner, there&apos;s a place for you at Adot Labs. Join us in shaping the future of technology and innovation.
         </motion.p>
         <motion.div 
           className="flex justify-center gap-4"
