@@ -3,7 +3,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
 type Testimonial = {
@@ -25,9 +25,9 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
   const [isClient, setIsClient] = useState(false); // Flag to track if the component is mounted on the client
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const handlePrev = () => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -51,7 +51,7 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   return (
     <div className="w-10/12 md:max-w-4xl mx-auto antialiased px-4 md:px-8 lg:px-12 pt-12 pb-4 overflow-hidden">
