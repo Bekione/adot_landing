@@ -5,7 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
-let interval: any;
+let interval: NodeJS.Timeout;
 
 type CardStackProps = {
   images: string[];
