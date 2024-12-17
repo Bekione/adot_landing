@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Users, Briefcase, Globe } from "lucide-react";
 import GradientWord from "../ui/GradientWord";
 import Button from "../ui/Button";
 import { iconMap } from "@/lib/icon-map";
