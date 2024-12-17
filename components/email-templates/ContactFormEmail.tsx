@@ -1,6 +1,5 @@
 export const ContactEmailTemplate = ({
     fullname,
-    email,
     subject,
   }: {
     fullname: string;
