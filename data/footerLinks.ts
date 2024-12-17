@@ -3,7 +3,7 @@ export const footerLinks = {
       { title: "Web Development", href: "/services/web-development" },
       { title: "Web Design", href: "/services/web-design" },
       { title: "App Development", href: "/services/app-development" },
-      { title: "Software Development", href: "/services/software-development" },
+      { title: "Software Development", href: "/services/custom-software" },
     ],
     products: [
       { title: "Adot ERP", href: "/products/adot-erp" },
