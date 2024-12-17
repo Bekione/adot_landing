@@ -91,7 +91,7 @@ export default function TechTonicClub() {
 
             {/* Call-to-Action */}
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
-              Together, we're building a strong foundation for the next
+              Together, we&apos;re building a strong foundation for the next
               generation of tech innovators.
             </p>
           </motion.div>
