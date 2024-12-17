@@ -4,7 +4,7 @@ import Features from "@/components/services/Features";
 import Process from "@/components/services/Process";
 import Testimonials from "@/components/services/Testimonial";
 import Hero from "@/components/Hero";
-import { webDesignFeatureData, webFeatureData } from "@/data/features";
+import { webFeatureData } from "@/data/features";
 import { webDesignProcess } from "@/data/process";
 import CTABlock from "@/components/ui/CTABlock";
 import MotionWrapper from "@/components/MotionWrapper";
