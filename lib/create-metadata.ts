@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const baseTitle = "Adot Technologies - Building Bold Dreams";
 const defaultDescription =
   "Your one-stop solution for creative websites, custom software, and tailored services.";
-const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "https://adot-technologies.com";
+const baseURL = process.env.NEXT_PUBLIC_SITE_URL || "https://adot-technologies.com";
 const defaultImage = "/images/og-banners/og-main.jpg";
 const defaultType = "website";
 
