@@ -52,7 +52,7 @@ export const Card = React.memo(
           hovered === index && "opacity-100"
         )}
       >
-        <h3 className="text-lg font-bold">{card.title}</h3>
+        <h3 className="text-lg font-bold text-center px-4">{card.title}</h3>
         <div className="flex space-x-4 mt-2">
           {/* Conditionally render liveLink */}
           {card.liveLink && card.liveLink !== "#" && (
