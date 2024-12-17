@@ -24,9 +24,6 @@ const CTABlock: React.FC<CTABlockProps> = ({
   type = "default",
   className,
 }) => {
-  // Check if the link is external
-  const isExternal = target === "_blank";
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
