@@ -38,8 +38,8 @@ const WhatWeOfferSection = () => {
                     loader={cloudinaryLoader}
                     src={offer.header}
                     alt={offer.title}
-                    width={1000}
-                    height={1000}
+                    width={600}
+                    height={338}
                     placeholder="blur"
                     blurDataURL={cloudinaryBlurPlaceholder(offer.header)}
                     className="object-cover w-full h-full aspect-video"
