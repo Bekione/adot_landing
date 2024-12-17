@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export const InfiniteMovingCardsVarient = ({
   items,
@@ -22,12 +22,9 @@ export const InfiniteMovingCardsVarient = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    addAnimation();
-  }, []);
   const [start, setStart] = useState(false);
-  function addAnimation() {
+
+  const addAnimation = useCallback(() => {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
 
@@ -38,37 +35,30 @@ export const InfiniteMovingCardsVarient = ({
         }
       });
 
-      getDirection();
-      getSpeed();
+      if (containerRef.current) {
+        if (direction === "left") {
+          containerRef.current.style.setProperty("--animation-direction", "forwards");
+        } else {
+          containerRef.current.style.setProperty("--animation-direction", "reverse");
+        }
+
+        if (speed === "fast") {
+          containerRef.current.style.setProperty("--animation-duration", "20s");
+        } else if (speed === "normal") {
+          containerRef.current.style.setProperty("--animation-duration", "40s");
+        } else {
+          containerRef.current.style.setProperty("--animation-duration", "80s");
+        }
+      }
+
       setStart(true);
     }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
-    }
-  };
+  }, [direction, speed]);
+
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
+
   return (
     <div
       ref={containerRef}
@@ -85,7 +75,7 @@ export const InfiniteMovingCardsVarient = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-secondary shadow-2xl px-8 py-6 md:w-[450px]"
             style={{
