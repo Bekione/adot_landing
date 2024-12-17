@@ -60,7 +60,7 @@ export default function ContactForm() {
       } else {
         throw new Error("Failed to send the message");
       }
-    } catch (error) {
+    } catch {
       setGlobalMessage("Something went wrong. Please try again!");
     } finally {
       setIsLoading(false);
