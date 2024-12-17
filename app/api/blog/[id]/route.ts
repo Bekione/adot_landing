@@ -3,8 +3,11 @@ import { BlogPostRaw } from '@/types/blog';
 
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest, context: { params: { id: string } }) {
-  const { params } = context; // Properly await and destructure params
+export async function GET(
+  request: NextRequest,
+  props: { params: Promise<{ id: string }>}
+) {
+  const params = await props.params
   const { id } = params;
 
   // Find the blog post by ID

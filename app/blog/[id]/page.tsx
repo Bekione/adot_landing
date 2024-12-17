@@ -8,15 +8,6 @@ import { AlertCircle } from "lucide-react";
 import MotionWrapper from "@/components/MotionWrapper";
 import { createMetadata } from "@/lib/create-metadata";
 
-export async function generateStaticParams() {
-  // Fetch all blog posts to predefine the dynamic routes
-  const allPosts = await getAllBlogPosts();
-
-  return allPosts.map((post) => ({
-    id: post.id, // Ensure `id` matches the dynamic route
-  }));
-}
-
 // Fetch a single blog post
 async function getBlogPost(id: string): Promise<BlogPostSerialized | null> {
   const res = await fetch(
@@ -40,8 +31,8 @@ async function getAllBlogPosts(): Promise<BlogPostRaw[]> {
 }
 
 // Generate Metadata for the blog post dynamically
-export async function generateMetadata(context: { params: { id: string } }): Promise<Metadata> {
-  const { params } = context; // Destructure params asynchronously
+export async function generateMetadata(context: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const params = await context.params;
   const blogPost = await getBlogPost(params.id);
 
 
@@ -62,8 +53,8 @@ export async function generateMetadata(context: { params: { id: string } }): Pro
 }
 
 
-export default async function BlogPostPage(context: { params: { id: string } }) {
-  const { params } = context; // Destructure params after accessing context
+export default async function BlogPostPage(context: { params: Promise<{ id: string }> }) {
+  const params = await context.params;
   const blogPost = await getBlogPost(params.id);
   const allPosts = await getAllBlogPosts();
 
