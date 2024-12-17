@@ -3,7 +3,7 @@
 import React from "react";
 import GradientWord from "../ui/GradientWord";
 import Button from "../ui/Button";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import cloudinaryLoader, { cloudinaryBlurPlaceholder } from "@/lib/image-loader";
 
