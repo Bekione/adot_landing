@@ -17,5 +17,7 @@ export default function cloudinaryLoader({
 }
 
 export function cloudinaryBlurPlaceholder(src: string): string {
-  return `${CLOUDINARY_BASE_URL}/f_auto,q_10,w_10/adot/${src}`; // Super low quality and small size
+  // Increase quality slightly to 20-30 for better blur effect
+  // Width of 40-50px is often a good balance between size and blur quality
+  return `${CLOUDINARY_BASE_URL}/f_auto,q_25,w_40/adot/${src}`;
 }
