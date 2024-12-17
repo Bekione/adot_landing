@@ -1,5 +1,5 @@
 'use client';
-import { useMotionValue } from 'framer-motion';
+import { useMotionValue, MotionValue } from 'framer-motion';
 import { useMotionTemplate, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -12,11 +12,11 @@ export const EvervaultCard = ({
   name?: string;
   className?: string;
 }) => {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  function onMouseMove({ currentTarget, clientX, clientY }: any) {
-    let { left, top } = currentTarget.getBoundingClientRect();
+  function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLDivElement>) {
+    const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
@@ -44,13 +44,13 @@ export function CardPattern({
   img,
   name,
 }: {
-  mouseX: any;
-  mouseY: any;
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
   img?: string;
   name?: string;
 }) {
-  let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
-  let style = { maskImage, WebkitMaskImage: maskImage };
+  const maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  const style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
     <div className="pointer-events-none">
@@ -82,8 +82,11 @@ export function CardPattern({
   );
 }
 
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+}
 
-export const Icon = ({ className, ...rest }: any) => {
+export const Icon = ({ className, ...rest }: IconProps) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
