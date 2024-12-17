@@ -12,7 +12,15 @@ import {
 import { FocusCards } from "../ui/FocusCards";
 import { motion } from "framer-motion";
 
-const ProjectsTabContent = ({ projects }: { projects: any[] }) => (
+type Project = {
+  title: string;
+  src: string;
+  liveLink?: string;
+  githubLink?: string;
+  description?: string;
+};
+
+const ProjectsTabContent = ({ projects }: { projects: Project[] }) => (
   <div className="w-full overflow-hidden relative h-full p-2 sm:p-4 md:p-8 rounded-2xl bg-gradient-to-br from-primary to-secondary">
     {projects.length === 0 && (
       <div className="text-center text-lg text-white p-8">
