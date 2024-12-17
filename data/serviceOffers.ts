@@ -40,7 +40,11 @@ export const offers: Array<{
   },
 ];
 
-
+export const heroServices = [
+  "creative websites",
+  "custom software",
+  "tailored services",
+];
 
 export const services: Array<{
   icon: keyof typeof iconMap;
