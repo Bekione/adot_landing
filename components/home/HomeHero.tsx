@@ -4,13 +4,9 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/BeamBackground";
 import { FlipWords } from "../ui/FlipWords";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { heroServices } from "@/data/serviceOffers";
 
 const HomeHero = () => {
-  const services = [
-    "creative websites",
-    "custom software",
-    "tailored services",
-  ];
   return (
     <div className="hero-section relative cursor-custom hero-bg row-span-full col-span-full w-full h-screen flex flex-col">
       <BackgroundBeamsWithCollision>
@@ -22,7 +18,7 @@ const HomeHero = () => {
         >
           <h2 className="mx-4 mt-8 md:mt-0 relative techniq z-20 font-ubuntuBold text-3xl sm:text-5xl lg:text-7xl font-extrabold md:font-bold text-center text-white tracking-tight z-1">
             Your one stop solution for <br />
-            <FlipWords words={services} />
+            <FlipWords words={heroServices} />
           </h2>
           <p className="text-lg mx-8 text-white text-center mt-6 sm:mt-10 z-1">
             We are revolutionizing Ethiopia&apos;s Tech Industry with Quality
