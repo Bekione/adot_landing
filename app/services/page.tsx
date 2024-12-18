@@ -7,7 +7,7 @@ export const metadata = createMetadata({
   title: "Our Services",
   description: "Explore the range of services Adot Technologies offers to elevate your business.",
   path: "/services",
-  image: "/images/og-banners/og-service.jpg",
+  image: "/images/og-banners/og-services.jpg",
 });
 
 export default function ServicesOverview() {
