@@ -15,7 +15,7 @@ export const metadata = createMetadata({
   description:
     "Learn more about Adot Technologies, our mission, vision, history and how we provide top-notch software solutions.",
   path: "/about",
-  image: "/images/og-banners/og-about.jpg",
+  image: "/images/og-banners/og-about-us.jpg",
 });
 
 const page = () => {
