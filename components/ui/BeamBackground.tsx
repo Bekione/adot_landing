@@ -114,7 +114,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
-// eslint-disable-next-line no-unused-vars
+// @ts-ignore
 >(({ parentRef, containerRef, beamOptions = {} }, ref) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
