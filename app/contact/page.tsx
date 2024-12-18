@@ -11,7 +11,7 @@ export const metadata = createMetadata({
   title: "Contact Us",
   description: "Get in touch with Adot Technologies for inquiries, support, or collaboration.",
   path: "/contact",
-  image: "/images/og-banners/og-contact.jpg",
+  image: "/images/og-banners/og-contact-us.jpg",
 });
 
 const page = () => {
