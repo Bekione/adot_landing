@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/BeamBackground";
 import { FlipWords } from "../ui/FlipWords";
 import { motion } from "framer-motion";
@@ -7,18 +7,35 @@ import Link from "next/link";
 import { heroServices } from "@/data/serviceOffers";
 
 const HomeHero = () => {
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldAnimate(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="hero-section relative cursor-custom hero-bg row-span-full col-span-full w-full h-screen flex flex-col">
       <BackgroundBeamsWithCollision>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: shouldAnimate ? 0 : 1, y: shouldAnimate ? 20 : 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center flex flex-col justify-center"
         >
-          <h2 className="mx-4 mt-8 md:mt-0 relative techniq z-20 font-ubuntuBold text-3xl sm:text-5xl lg:text-7xl font-extrabold md:font-bold text-center text-white tracking-tight z-1">
-            Your one stop solution for <br />
-            <FlipWords words={heroServices} />
+          <h2 className="mx-4 mt-8 md:mt-0 relative techniq z-20 font-ubuntuBold text-3xl sm:text-5xl lg:text-7xl font-extrabold md:font-bold text-center text-white tracking-tight">
+            <span className="block">Your one stop solution for</span>
+            {shouldAnimate ? (
+              <FlipWords 
+                words={heroServices} 
+                duration={3000}
+              />
+            ) : (
+              <span className="text-primary px-2">{heroServices[0]}</span>
+            )}
           </h2>
           <p className="text-lg mx-8 text-white text-center mt-6 sm:mt-10 z-1">
             We are revolutionizing Ethiopia&apos;s Tech Industry with Quality
