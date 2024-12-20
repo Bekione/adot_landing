@@ -11,7 +11,7 @@ export default function cloudinaryLoader({
   width,
   quality,
 }: CloudinaryLoaderProps): string {
-  const params = ["f_auto", "c_limit", `w_${width}`, `q_${quality || "auto"}`];
+  const params = ["f_auto", "c_scale", `w_${width}`, `q_${quality || 80}`];
 
   return `${CLOUDINARY_BASE_URL}/${params.join(",")}/adot/${src}`;
 }
