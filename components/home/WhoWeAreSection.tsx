@@ -29,14 +29,16 @@ const WhoWeAreSection = () => {
                   <Image
                     loader={cloudinaryLoader}
                     src="/images/home/adot-office.png"
-                    width={1000}
-                    height={750}
+                    width={640}
+                    height={480}
                     className="object-cover rounded-xl group-hover/card:shadow-xl"
                     alt="Adot office"
                     placeholder="blur"
                     blurDataURL={cloudinaryBlurPlaceholder(
                       "/images/home/adot-office.png"
                     )}
+                    sizes="(max-width: 375px) 335px, (max-width: 640px) 375px, 640px"
+                    quality={85}
                   />
                 </CardItem>
               </CardBody>
@@ -65,7 +67,12 @@ const WhoWeAreSection = () => {
               fosters innovation.
             </p>
             <div className="flex justify-start">
-              <Button text="See more" to="/about" className="mt-2" />
+              <Button 
+                text="About Adot" 
+                to="/about" 
+                className="mt-2"
+                aria-label="Discover more about Adot Technologies' mission and vision"
+              />
             </div>
           </motion.div>
         </div>
