@@ -1,7 +1,7 @@
 export const products = [
     {
       title: "Adot ERP",
-      description: "Ador ERP is a comprehensive enterprise resource planning solution tailored for Ethiopian businesses. With various modules designed to streamline processes like inventory, accounting, and HR, it’s the perfect tool to boost efficiency and productivity.",
+      description: "Adot ERP is a comprehensive enterprise resource planning solution tailored for Ethiopian businesses. With various modules designed to streamline processes like inventory, accounting, and HR, it’s the perfect tool to boost efficiency and productivity.",
       link: "/products/adot-erp",
       imageSource: "/images/products/adot-erp/adot-erp.svg", 
       themeColor: "#ffffff",
