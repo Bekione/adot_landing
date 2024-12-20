@@ -15,6 +15,25 @@ type Card = {
   thumbnail: string;
 };
 
+// Add this new component at the top level
+const PreloadedImage = ({ selected }: { selected: Card | null }) => {
+  return (
+    <div 
+      className="absolute inset-0 bg-cover bg-center rounded-lg"
+      style={{ 
+        backgroundImage: `url(${cloudinaryLoader({ 
+          src: selected?.thumbnail || '', 
+          width: 1200,
+          quality: 90 
+        })})`,
+        opacity: 0,
+        position: 'fixed',
+        pointerEvents: 'none',
+      }} 
+    />
+  );
+};
+
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   const [selected, setSelected] = useState<Card | null>(null);
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
@@ -31,6 +50,11 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
   return (
     <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative md:w-11/12 lg:w-10/12">
+      {/* Preload all card images */}
+      {cards.map((card) => (
+        <PreloadedImage key={card.id} selected={card} />
+      ))}
+      
       {cards.map((card, i) => (
         <motion.div
           key={i}
@@ -92,16 +116,18 @@ const ImageComponent = ({ card }: { card: Card }) => {
 const SelectedCard = ({ selected }: { selected: Card | null }) => {
   return (
     <div
-      className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg overflow-hidden shadow-2xl relative z-[60]"
-      style={{ backgroundImage: `url(${selected?.thumbnail})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg overflow-hidden shadow-2xl relative z-[60] bg-cover bg-center"
+      style={{ 
+        backgroundImage: `url(${cloudinaryLoader({ 
+          src: selected?.thumbnail || '', 
+          width: 1200,
+          quality: 90 
+        })})` 
+      }}
     >
       <motion.div
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 0.6,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
         className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
       />
       <motion.div
