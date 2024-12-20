@@ -6,6 +6,42 @@ const nextConfig = {
   },
   async headers() {
     return [
+      // Bypass cache for robots.txt
+      {
+        source: '/robots.txt',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+        ],
+      },
+      // Bypass cache for sitemap.xml
+      {
+        source: '/sitemap.xml',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+        ],
+      },
+      // Bypass cache for manifest.json
+      {
+        source: '/site.webmanifest',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+        ],
+      },
+      // Bypass cache for favicon.ico
+      {
+        source: '/favicon.ico',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+        ],
+      },
       {
         source: '/:all*(svg|jpg|png|webp|avif)',
         headers: [
