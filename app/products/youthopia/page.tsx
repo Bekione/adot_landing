@@ -24,6 +24,7 @@ export default function Youthopia() {
         backgroundImage="/images/products/youthopia/youthopia-kid.jpeg"
         ctaText="Explore Now"
         ctaLink="https://youthopia.vercel.app/"
+        target="_blank"
       />
       <About
         title="About Youthopia"
