@@ -4,8 +4,6 @@ Allow: /
 Disallow: /api
 Disallow: /api/blogs
 
-# Host
-Host: https://adot-technologies.com
 
 # Sitemaps
 Sitemap: https://adot-technologies.com/sitemap.xml
