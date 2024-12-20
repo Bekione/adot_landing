@@ -23,6 +23,10 @@ const categories: (BlogCategory | "All")[] = [
   "Uncategorized",
 ];
 
+// Cache key for localStorage
+const BLOG_CACHE_KEY = 'blog-posts-cache';
+const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+
 export function BlogList() {
   const [posts, setPosts] = useState<BlogPostRaw[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPostRaw[]>([]);
@@ -35,21 +39,48 @@ export function BlogList() {
   const [loading, setLoading] = useState(true); // Add a loading state
   const postsPerPage = 6;
 
-  // Fetch Posts
+  // Fetch Posts with caching
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true); // Start loading
+      setLoading(true);
+      
       try {
+        // Check cache first
+        const cachedData = localStorage.getItem(BLOG_CACHE_KEY);
+        if (cachedData) {
+          const { data, timestamp } = JSON.parse(cachedData);
+          const isExpired = Date.now() - timestamp > CACHE_DURATION;
+          
+          if (!isExpired) {
+            setPosts(data);
+            setFilteredPosts(data);
+            setLoading(false);
+            return;
+          }
+        }
+
+        // Fetch fresh data if cache missing or expired
         const res = await fetch("/api/blogs");
         const data: BlogPostRaw[] = await res.json();
+        
+        // Update cache
+        localStorage.setItem(
+          BLOG_CACHE_KEY,
+          JSON.stringify({
+            data,
+            timestamp: Date.now(),
+          })
+        );
+
         setPosts(data);
         setFilteredPosts(data);
       } catch (error) {
         console.error("Error fetching blog posts:", error);
       } finally {
-        setLoading(false); // Stop loading
+        setLoading(false);
       }
     };
+
     fetchPosts();
   }, []);
 
