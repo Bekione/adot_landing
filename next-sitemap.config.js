@@ -5,14 +5,14 @@ module.exports = {
   outDir: './public',
   exclude: ['/api/*'],
   robotsTxtOptions: {
-    policies: [{ userAgent: '*', allow: '/', disallow: ['/api'] }],
+    policies: [{ userAgent: '*', allow: '/', disallow: ['/api', '/api/blogs'] }],
   },
   transform: async (config, path) => {
     const priorities = {
       '/': '1.0',
       '/about': '0.8',
       '/contact': '0.8',
-      '/services': '0.8',
+      '/services': '0.9',
       '/products': '0.7',
       '/blog': '0.7',
       '/terms': '0.5',
