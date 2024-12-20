@@ -40,11 +40,13 @@ export const Card = React.memo(
         loader={cloudinaryLoader}
         src={card.src}
         alt={card.title}
-        fill
-        sizes="(max-width: 768px) 100vw, 50vw"
+        width={640}
+        height={384}
         placeholder="blur"
         blurDataURL={cloudinaryBlurPlaceholder(card.src)}
-        className="absolute inset-0 object-cover"
+        className="object-cover w-full h-full"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+        quality={75}
       />
       <div
         className={cn(
@@ -56,14 +58,14 @@ export const Card = React.memo(
         <div className="flex space-x-4 mt-2">
           {/* Conditionally render liveLink */}
           {card.liveLink && card.liveLink !== "#" && (
-            <Link href={card.liveLink} target="_blank" rel="noopener noreferrer">
+            <Link href={card.liveLink} target="_blank" rel="noopener noreferrer" aria-label="View live project">
               <ExternalLink className="w-6 h-6 text-white hover:text-primary/60" />
             </Link>
           )}
 
           {/* Conditionally render githubLink */}
           {card.githubLink && card.githubLink !== "#" && (
-            <Link href={card.githubLink} target="_blank" rel="noopener noreferrer">
+            <Link href={card.githubLink} target="_blank" rel="noopener noreferrer" aria-label="View GitHub repository">
               <Github className="w-6 h-6 text-white hover:text-primary/60" />
             </Link>
           )}
